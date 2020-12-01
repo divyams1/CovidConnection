@@ -23,9 +23,10 @@ app.use(passport.initialize());
 
 app.get("/", (req, res) => {
 const newUser = new User({
-        username: "jim",
-        email: "jim@jim.jim",
-        password: "fyi1234"
+        username: "jimmmy",
+        email: "jimjones@gmail.com",
+        password: "fyi1234",
+        password2:"fyi1234"
       });
 
 
