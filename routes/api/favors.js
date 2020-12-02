@@ -19,9 +19,18 @@ router.get("/", (req, res) => {
         .catch(err => res.status(400).json(err));
 })
 
-// router.get("/user/:user_id", (req, res) => {
+router.get("/user/:user_id", (req, res) => {
+    Favor
+        .find({ favor_for_user_id: req.params.user_id })
+        .then(favors => res.status(400).json(err))
+})
+
+// router.delete("/user/:user_id",
+//     passport.authenticate("jwt", { session: false }),
+//     (req, res) => {
+
 //     Favor
-//         .find({ user: req.params.user_id }) not sure about this line
+//         .find({ favorRequest: req.body.id })
 //         .then(favors => res.status(400).json(err))
 // })
 
@@ -38,9 +47,14 @@ router.post("/user/:user_id",
 
         const newFavor = new Favor({
             favor_for_user_id: req.user.id,
-            favor_by_user_id: "not sure",
+            // favor_by_user_id: "not sure",
             favor_description: req.body.favor_description,
-            favor_status: req.body.favor_status,
+            favor_title: req.body.favor_title,
+            favor_lat: req.body.favor_lat,
+            favor_lng: req.body.favor_lng,
+            favor_status: false
+
+            // req.body.favor_status,
             
         });
 

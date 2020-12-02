@@ -19,6 +19,9 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     }
+
+    // add more here for profiles?
+
 })
 
 const User = mongoose.model('users', UserSchema);
