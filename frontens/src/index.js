@@ -5,7 +5,7 @@ import Root from './root';
 
 import configureStore from './store/store';
 
-import jwt_decode from '../node_modules/jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 import { setAuthToken } from './utils/session_api_util';
 

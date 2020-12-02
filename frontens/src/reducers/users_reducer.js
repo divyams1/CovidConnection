@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER } from '../../src/actions/session_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 
 
