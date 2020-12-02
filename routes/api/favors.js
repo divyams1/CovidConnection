@@ -19,11 +19,11 @@ router.get("/", (req, res) => {
         .catch(err => res.status(400).json(err));
 })
 
-router.get("/user/:user_id", (req, res) => {
-    Favor
-        .find({ favor_for_user_id: req.params.user_id })
-        .then(favors => res.status(400).json(err))
-})
+// router.get("/user/:user_id", (req, res) => {
+//     Favor
+//         .find({ favor_for_user_id: req.params.user_id })
+//         .then(favors => res.status(400).json(err))
+// })
 
 // router.delete("/user/:user_id",
 //     passport.authenticate("jwt", { session: false }),
@@ -36,7 +36,7 @@ router.get("/user/:user_id", (req, res) => {
 
 
 // This route will probably be / user /: user_id
-router.post("/user/:user_id",
+router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
         const { isValid, errors } = validateFavorInput(req.body);
@@ -49,9 +49,9 @@ router.post("/user/:user_id",
             favor_for_user_id: req.user.id,
             // favor_by_user_id: "not sure",
             favor_description: req.body.favor_description,
-            favor_title: req.body.favor_title,
-            favor_lat: req.body.favor_lat,
-            favor_lng: req.body.favor_lng,
+            // favor_title: req.body.favor_title,
+            // favor_lat: req.body.favor_lat,
+            // favor_lng: req.body.favor_lng,
             favor_status: false
 
             // req.body.favor_status,

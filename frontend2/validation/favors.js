@@ -1,5 +1,5 @@
 const Validator = require("validator");
-const validText = require("./validText");
+const validText = require("./valid-text");
 
 module.exports = function validateFavorInput(data) {
     let errors = {};

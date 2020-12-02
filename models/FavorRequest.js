@@ -20,17 +20,17 @@ const FavorRequestSchema = new Schema({
 
     favor_title: {
         type: String,
-        required: true
+        // required: true
     },
 
     favor_lat: {
-        type: Float32Array,
-        required: true
+        type: Number,
+        // required: true
     },
 
     favor_lng: {
-        type: Float32Array,
-        required: true
+        type: Number,
+        // required: true
     },
 
     date: {
