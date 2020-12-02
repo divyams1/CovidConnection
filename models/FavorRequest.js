@@ -13,7 +13,7 @@ const FavorRequestSchema = new Schema({
         type: String,
         required: true
     },
-    favor_completed: {
+    favor_status: {
         type: Boolean,
         default: false
     },
@@ -22,6 +22,7 @@ const FavorRequestSchema = new Schema({
         type: Date,
         default: Date.now
     }
+
 
 });
 
