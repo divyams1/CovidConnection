@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
-const validateRegisterInput = require('../../frontend3/validation/register');
-const validateLoginInput = require('../../frontend3/validation/login');
+const validateRegisterInput = require('../../frontend/src/validation/register');
+const validateLoginInput = require('../../frontend/src/validation/login');
 const passport = require('passport');
 
 
@@ -33,7 +33,7 @@ router.post("/register", (req, res) => {
 
   User.findOne({ username: req.body.username }).then(user => {
     if (user) {
-      errors.handle = "User already exists";
+      errors.username = "User already exists";
       return res.status(400).json(errors);
     } else {
       const newUser = new User({
@@ -49,7 +49,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, handle: user.handle };
+              const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
@@ -88,7 +88,7 @@ router.post('/login', (req, res) => {
       bcrypt.compare(password, user.password)
   .then(isMatch => {
     if (isMatch) {
-      const payload = {id: user.id, handle: user.handle};
+      const payload = {id: user.id, username: user.username};
 
       jwt.sign(
         payload,

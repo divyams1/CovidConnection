@@ -34,6 +34,9 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state.password);
+    console.log(this.state.password);
+
     let user = {
       email: this.state.email,
       username: this.state.username,
@@ -69,8 +72,8 @@ class SignupForm extends React.Component {
               />
             <br/>
               <input type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
+                value={this.state.username}
+                onChange={this.update('username')}
                 placeholder="username"
               />
             <br/>

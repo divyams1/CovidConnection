@@ -1,4 +1,4 @@
-src/reducers/session_errors_reducer.js
+
 
 import {
   RECEIVE_SESSION_ERRORS,
