@@ -9,7 +9,7 @@ const validateLoginInput = require('../../frontend2/validation/login');
 const passport = require('passport');
 
 
-router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.json({
     id: req.user.id,
     username: req.user.username,
@@ -18,9 +18,26 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 })
 
 
-router.get("/test", (req, res)  => {
+// router.get('/:user_id', (req, res) => {
 
-    res.json({msg: "This is the user route"});
+//   User
+//     .find({ user: req.params.user_id })
+//     .then(user => 
+//       res.json({
+//         id: user.id,
+//         username: user.username,
+//         email: user.email
+//       })
+//     );
+
+
+//   });
+  
+
+
+router.get("/test", (req, res) => {
+
+  res.json({ msg: "This is the user route" });
 
 });
 
@@ -77,7 +94,7 @@ router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  User.findOne({email})
+  User.findOne({ email })
     .then(user => {
       if (!user) {
         // Use the validations to send the error
@@ -86,25 +103,25 @@ router.post('/login', (req, res) => {
       }
 
       bcrypt.compare(password, user.password)
-  .then(isMatch => {
-    if (isMatch) {
-      const payload = {id: user.id, handle: user.handle};
+        .then(isMatch => {
+          if (isMatch) {
+            const payload = { id: user.id, handle: user.handle };
 
-      jwt.sign(
-        payload,
-        keys.secretOrKey,
-        // Tell the key to expire in one hour
-        {expiresIn: 3600},
-        (err, token) => {
-          res.json({
-            success: true,
-            token: 'Bearer ' + token
-          });
-        });
-    } else {
-      return res.status(400).json({password: 'Incorrect password'});
-    }
-  })
+            jwt.sign(
+              payload,
+              keys.secretOrKey,
+              // Tell the key to expire in one hour
+              { expiresIn: 3600 },
+              (err, token) => {
+                res.json({
+                  success: true,
+                  token: 'Bearer ' + token
+                });
+              });
+          } else {
+            return res.status(400).json({ password: 'Incorrect password' });
+          }
+        })
     })
 })
 
