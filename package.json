@@ -22,12 +22,14 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "validator": "^13.5.1"
+    "validator": "^13.5.1",
+    "node": "^10.13.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
   },
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "server:debug": "nodemon --inspect app.js",
     "start": "node app.js",
     "server": "nodemon app.js",
