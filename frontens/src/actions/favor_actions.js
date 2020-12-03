@@ -1,4 +1,4 @@
-import {getFavors, createFavor} from '../util/favor_api_util'
+import * as APIUtil from '../util/favor_api_util'
 
 export const RECEIVE_FAVORS = "RECEIVE_FAVORS"
 export const RECEIVE_FAVOR = "RECEIVE_FAVOR"
@@ -18,13 +18,13 @@ export const receiveFavor = favor => {
 }
 
 export const fetchFavors = () => dispatch => {
-    return getFavors()
+    return APIUtil.getFavors()
         .then( favors => dispatch(receiveFavors(favors)))
         .catch( err => console.log(err))
 }
 
 export const createFavor = data => dispatch => {
-    return createFavor(data)
+    return APIUtil.createFavor(data)
         .then( favor => dispatch(receiveFavor(favor)))
         .catch( err => console.log(err))
 }
