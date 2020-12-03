@@ -27,9 +27,15 @@ class NavBar extends React.Component {
         );
       } else {
         return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+            <div className="nav-btns">
+                {/* <Link to={'/signup'}>Signup</Link>
+                <Link to={'/login'}>Login</Link> */}
+                {this.props.sign}
+                   
+                   <br/>
+
+                {this.props.log} 
+                 
             </div>
         );
       }
@@ -38,7 +44,8 @@ class NavBar extends React.Component {
   render() {
       return (
         <div>
-            <h1>Corona Corner</h1>
+            <img className="logo-header"  src="https://i.ibb.co/7g5B2Lg/Csquarelogo.png"/>
+            
             { this.getLinks() }
         </div>
       );
