@@ -27,7 +27,6 @@ class FavorCreate extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const favor = Object.assign({}, this.state)
-        debugger
         this.props.createFavor(favor);
         this.props.history.push('/')
     }
