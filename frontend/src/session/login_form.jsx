@@ -1,26 +1,25 @@
-// src/components/session/signup_form.js
+// src/components/session/login_form.js
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: '',
-      username: '',
       password: '',
-      password2: '',
       errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+    if (nextProps.currentUser === true) {
+      this.props.history.push('/favors');
     }
 
     this.setState({errors: nextProps.errors})
@@ -34,17 +33,13 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.password);
-    console.log(this.state.password);
 
     let user = {
       email: this.state.email,
-      username: this.state.username,
-      password: this.state.password,
-      password2: this.state.password2
+      password: this.state.password
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.login(user).then(this.props.closeModal()); 
   }
 
   renderErrors() {
@@ -61,36 +56,38 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br/>
+      <div className="login-form-container">
+        <form className="login-form-box" onSubmit={this.handleSubmit}>
+          <center>Welcome to the Covid Connection! </center>
+          <br/>
+
+            <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
+            
+
+           
+           <br/>
+             
+           <center>Please  Login or {this.props.other}</center>
+            
+          <div onClick={this.props.closeModal} className="close-x">X</div>
+          {this.renderErrors()}
+          <div className="login-form">
               <input type="text"
+              className="form-input"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
             <br/>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="username"
-              />
-            <br/>
               <input type="password"
+              className="form-input"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
             <br/>
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                placeholder="Confirm Password"
-              />
-            <br/>
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
+            <input className="submit-btn" type="submit" value="Submit" />
+            
           </div>
         </form>
       </div>
@@ -98,4 +95,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default withRouter(SignupForm);
+export default withRouter(LoginForm);

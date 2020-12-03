@@ -1,0 +1,57 @@
+.nav-btns{
+     line-height: 100px;
+     width: 300px;
+     font-size: 16pt;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     float: right;
+     top:0;
+     right: 150px;
+     display:  flex;
+     flex-direction: row;
+     
+   }
+
+   .nav-btns-child{
+    /* top: 20px;
+    right: 60px; */
+    background-color:white;
+    color: #001f3f;
+    position: relative;
+    padding: 4px 8px;
+    width: 100px;
+    height: 30px;
+    justify-content: space-between;
+    
+
+   }
+
+
+  img.logo-header{
+width: 340px;
+height: 340px;
+align-self: center;
+margin-bottom: 40px;
+
+ }
+
+
+   .nav-btns-child-login{
+    /* top: 30px;
+    right: 70px; */
+    background-color: #001f3f;
+    color: white ;
+    position: relative;
+    padding: 4px 8px;
+    width: 100px;
+    height: 30px;
+    
+   }
+
+   .title-head{
+
+    margin-bottom: -20px;
+
+   }
