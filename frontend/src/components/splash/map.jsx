@@ -1,6 +1,6 @@
 import { Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import React from 'react';
-// const keys = require('../../../keys');
+
 
 const mapStyles = {
   width: '80%',
