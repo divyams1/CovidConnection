@@ -106,20 +106,15 @@ router.post("/",
             favor_for_user_id: req.user.id,
             // favor_by_user_id: "not sure",
             favor_description: req.body.favor_description,
-            // favor_title: req.body.favor_title,
-            // favor_lat: req.body.favor_lat,
-            // favor_lng: req.body.favor_lng,
+            favor_title: req.body.favor_title,
+            favor_lat: req.body.favor_lat,
+            favor_lng: req.body.favor_lng,
             favor_status: false
-
             // req.body.favor_status,
-            
         });
-
         newFavor
             .save()
             .then(favor => res.json(favor));
-
-
     })
 
 

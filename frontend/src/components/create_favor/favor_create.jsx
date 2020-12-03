@@ -5,10 +5,11 @@ class FavorCreate extends React.Component {
         super(props)
         this.state = {
             title: '',
-            description: '',
+            favor_description: '',
             lat: 0,
             lng: 0
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -25,7 +26,10 @@ class FavorCreate extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const favor = Object.assign()
+        const favor = Object.assign({}, this.state)
+        debugger
+        this.props.createFavor(favor);
+        this.props.history.push('/')
     }
 
     render() {
@@ -39,7 +43,7 @@ class FavorCreate extends React.Component {
                     </label>
                     <h2> Description: </h2>
                     <label>
-                        <textarea type='text' placeholder="Description" value={this.state.description} onChange={this.handleInput('description')} />
+                        <textarea type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
                     <button onClick={this.handleSubmit}> Create Favor </button>
                 </form>

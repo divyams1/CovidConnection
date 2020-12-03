@@ -7,6 +7,9 @@ import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './components/profiles/profile_container';
 import Modal from './modal';
 import './App.css';
+import Splash from './components/splash/splash';
+import { Route } from 'react-router-dom';
+import favor_create_container from './components/create_favor/favor_create_container';
 
 
 
@@ -18,7 +21,8 @@ const App = () => (
     <NavBarContainer />
     </header>
     <Switch>
-      {/* <AuthRoute exact path="/" component={MainPage} />  */}
+      <Route exact path='/add' component = {favor_create_container} />
+      <Route exact path="/" component={Splash} /> 
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
