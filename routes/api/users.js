@@ -18,20 +18,23 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 })
 
 
-// router.get('/:user_id', (req, res) => {
-
-//   User
-//     .find({ user: req.params.user_id })
-//     .then(user => 
-//       res.json({
-//         id: user.id,
-//         username: user.username,
-//         email: user.email
-//       })
-//     );
 
 
-//   });
+router.get('/:id', (req, res) => {
+
+  User
+    .findById( req.params.id )
+    .then(user => 
+      res.json({
+        id: user.id,
+        username: user.username,
+        email: user.email
+      })
+    );
+
+
+});
+  
   
 
 
@@ -40,6 +43,10 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is the user route" });
 
 });
+
+
+
+
 
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -81,6 +88,8 @@ router.post("/register", (req, res) => {
     }
   });
 });
+
+
 
 
 
