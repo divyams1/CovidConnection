@@ -4,18 +4,18 @@ class FavorCreate extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: '',
+            favor_title: '',
             favor_description: '',
-            lat: 0,
-            lng: 0
+            favor_lat: 0,
+            favor_lng: 0
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
     navigator.geolocation.getCurrentPosition( position => {
-        this.setState( { lat: position.coords.latitude })
-        this.setState( { lng: position.coords.longitude})
+        this.setState( { favor_lat: position.coords.latitude })
+        this.setState( { favor_lng: position.coords.longitude})
     })
   }
     handleInput(field) {
@@ -38,7 +38,7 @@ class FavorCreate extends React.Component {
                 <form>
                     <h2> Title: </h2>
                     <label>
-                        <input type='text' placeholder="Title" value={this.state.title} onChange={this.handleInput('title')} />
+                        <input type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
                     <h2> Description: </h2>
                     <label>

@@ -6,18 +6,21 @@ const mapStyles = {
   width: '80%',
   height: '80%'
 }
-export class MapContainer extends React.Component {
+export class MapBox extends React.Component {
 
 
   render() {
-    const locations = [ { lat: 39.419140, lng: -76.452240 } , {lat: 39.352860, lng: -76.407340} , { lat: 39.404890 , lng: -76.442610 }]
-    const marker = ( <Marker position={{ lat: 39.419140, lng: -76.452240 }} title="my house"  /> )
-    const markers = locations.map( location => {
-      return < Marker position={ location } title="favor" />  
+    
+    const favor_locations = this.props.favors.data
+    const markers = favor_locations.map( (favor,idx) => {
+      const lat = favor.favor_lat ||  40.7128
+      const long = favor.favor_long || -74.0060
+      const location = { lat: lat, lng: long } 
+      return < Marker position={ location } title={favor.favor_title || "favor"} key={idx} />
     })
     const map =    (<Map 
         google = {this.props.google}
-        zoom= {14}
+        zoom= {8}
         style={mapStyles}
         initialCenter = {{lat: 39.419140, lng: -76.452240}}
       > 
@@ -36,4 +39,5 @@ export class MapContainer extends React.Component {
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyCS5XZjs6coq1NByM9XDjrrRc1eMRpYlJg'
-})(MapContainer);
+})(MapBox);
+
