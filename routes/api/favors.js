@@ -19,20 +19,77 @@ router.get("/", (req, res) => {
         .catch(err => res.status(400).json(err));
 })
 
-// router.get("/user/:user_id", (req, res) => {
-//     Favor
-//         .find({ favor_for_user_id: req.params.user_id })
-//         .then(favors => res.status(400).json(err))
-// })
 
-// router.delete("/user/:user_id",
+router.get("/users/:user_id", (req, res) => {
+    Favor
+        .find({ favor_for_user_id: req.params.user_id })
+        .then(favors => res.json(favors))
+        .catch(err => res.status(400).json(err))
+})
+
+router.get("/:id", (req, res) => {
+    Favor
+        .findById(req.params.id)
+        .then(favor => res.json(favor))
+        .catch(err => res.status(400).json(err))
+})
+
+
+
+router.delete("/:id",
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+
+    Favor
+        .findById(req.params.id)
+        .then(favor => favor.remove())
+        .then(res.json("Successfully deleted"))
+        .catch(err => res.status(400).json(err))
+        
+})
+
+
+
+// router.put("/:id",
 //     passport.authenticate("jwt", { session: false }),
 //     (req, res) => {
+//         const { isValid, errors } = validateFavorInput(req.body);
 
-//     Favor
-//         .find({ favorRequest: req.body.id })
-//         .then(favors => res.status(400).json(err))
-// })
+//         if (!isValid) {
+//             return res.status(400).json(errors);
+//         }
+
+//         const updatedFavor = {
+//             favor_for_user_id: req.user.id,
+//             // favor_by_user_id: "not sure",
+//             favor_description: req.body.favor_description,
+//             // favor_title: req.body.favor_title,
+//             // favor_lat: req.body.favor_lat,
+//             // favor_lng: req.body.favor_lng,
+//             favor_status: false
+
+//             // req.body.favor_status,
+
+//         };
+
+//         Favor.findByIdAndUpdate(req.params.id, updatedFavor, { new: true }, function (
+//             err,
+//             updatedFavor
+//          ) {
+//             if (err) {
+//                 console.log("err", err);
+//                 res.status(500).send(err);
+//             } else {
+//                 console.log("success");
+//                 res.send(updatedFavor);
+//             }
+//          })
+
+
+//     }
+// )
+
+
 
 
 // This route will probably be / user /: user_id
