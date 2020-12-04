@@ -43,7 +43,7 @@ class Profile extends React.Component {
       
      
       return (
-      <div>
+      <div className="prof-favors">
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
           .map(favor =>   <p  className="favor-list">{favor.favor_description}</p>)
@@ -60,10 +60,12 @@ class Profile extends React.Component {
         
         
           return (
-
-            <div>
-              <ProfileNavContainer />
-              <h2 className="profile-header"> Your quest to make this world a better place.... These are your favors </h2>
+            <>
+            <ProfileNavContainer />
+            <div className="prof-favors">
+              
+              <h1>  Welcome {this.props.currentUser.username}!  </h1>
+              <h2 className="prof-nofavors"> Your quest to make this world a better place.... These are the favors you have done! </h2>
 
               <div>
                 {this.handleFavors()}
@@ -80,6 +82,7 @@ class Profile extends React.Component {
                 <FavorItem key={favor.id} title={favor.title} />
               ))} */}
             </div>
+            </>
           );
         }
       

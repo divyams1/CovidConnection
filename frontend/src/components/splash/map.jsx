@@ -96,6 +96,6 @@ export class MapBox extends React.Component {
 
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyAZpaEFWsQyJOahKBVfBZ1g3mpemxo1VQo'
+  apiKey: 'AIzaSyCS5XZjs6coq1NByM9XDjrrRc1eMRpYlJg'
 })(MapBox);
 

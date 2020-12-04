@@ -82,12 +82,12 @@ favorMenu(){
       
      
       return (
-      <div>
+      <ul className="favor-menu">
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map(favor =>   <p  className="favor-list">{favor.favor_title}</p>)
+          .map(favor =>   <li>{favor.favor_title}</li>)
         }
-    </div> 
+    </ul> 
       )}
 
 
@@ -102,7 +102,7 @@ return(
     <li> User Profile </li>
 <li> Name: {this.props.currentUser.username}</li>
 
- <li>Email: {this.props.currentUser.email} </li>
+ <li> Email: {this.props.currentUser.email} </li>
   <li onClick={this.props.logout}>Log Out</li>
 
 </ul> 
@@ -114,22 +114,22 @@ return(
 
 
 
-handleFavors(){
+// handleFavors(){
 
-    if(this.props.favors){
+//     if(this.props.favors){
       
      
-      return (
-      <div>
-         {this.props.favors
-          .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map(favor =>   <p  className="favor-list">{favor.favor_description}</p>)
-        }
-    </div> 
-      )}
+//       return (
+//       <div>
+//          {this.props.favors
+//           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
+//           .map(favor =>   <p  className="favor-list">{favor.favor_description}</p>)
+//         }
+//     </div> 
+//       )}
 
 
-      }
+//       }
     
 
 
