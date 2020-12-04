@@ -22,13 +22,10 @@ class Splash extends React.Component {
                     <div className="map-div">
                         <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors}/>
                     </div>
-                     <div>
-                        <img className="splash-page-image" src="https://files.slack.com/files-pri/T03GU501J-F01G6KQPQHH/disclaimerpayitfor.png" />
-                    </div>
-                   
                 </div>
-             
-            
+                   <div className="background-div">
+
+                    </div>
             </div>
         )
     }

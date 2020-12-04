@@ -62,13 +62,13 @@
 .map-container-div {
   display: flex;
   flex-direction: column;
- 
-
+}
+.background-div {
+  background-color: lightblue;
+  width: 100%;
 }
 
-.splash-page-image {
-  height: 20%;
-}
+
 
 .covid-small-text {
   width: 500px;
