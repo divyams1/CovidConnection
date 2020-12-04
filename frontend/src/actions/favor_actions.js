@@ -29,3 +29,14 @@ export const createFavor = data => dispatch => {
             dispatch(receiveFavor(favor.data))})
         .catch( err => console.log(err))
 }
+
+// new
+export const fetchFavorsForUser = (data) => dispatch => {
+    debugger
+    return APIUtil.getFavorsForUser(data)
+        .then(favors => dispatch(receiveFavors(favors)))
+        .catch(err => console.log(err))
+}
+
+
+// getFavorsForUser

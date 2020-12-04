@@ -20,7 +20,7 @@ const FavorRequestSchema = new Schema({
 
     favor_title: {
         type: String,
-        // required: true
+        required: true
     },
 
     favor_lat: {

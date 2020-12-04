@@ -25,7 +25,8 @@ const App = () => (
       <Route exact path="/" component={Splash} /> 
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/:user_id" component={ProfileContainer} /> 
+      {/* I changed this last route AJ */}
     </Switch>
   </div>
 );
