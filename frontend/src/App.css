@@ -43,3 +43,51 @@
   width: 500px;
   height: 500px;
 }
+
+.map-container {
+  width: 80%;
+  height: 80%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.covid-connection-header {
+  margin-left: 50px;
+  margin-right: 50px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-container-div {
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+
+.splash-page-image {
+  height: 20%;
+}
+
+.covid-small-text {
+  width: 500px;
+}
+
+.login-text-button {
+  color: white; 
+  text-decoration: none;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+}
+
+.nav-buttons-logged-in {
+  height: 30px;
+  width: 100px;
+}
+
+.nav-btns-top {
+  display: flex;
+  align-items: center;
+}

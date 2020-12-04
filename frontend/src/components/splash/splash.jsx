@@ -10,7 +10,25 @@ class Splash extends React.Component {
     render() {
         return (
             <div>
-                <MapContainer fetchFavors={this.props.fetchFavors} favors={this.props.favors}/>
+                <div className="covid-connection-header">
+                    <h1> What is Covid Connection?  </h1>
+                    <p className="covid-small-text"> Covid Connection is a way to connect with others while you are quarantining. Do you need help with groceries? Do you not not know where 
+                        to find Covid resources or do you just need someone to talk to? 
+                        Covid-Connection will let you connect with other users, see what is around you, and posts favors and view favors from around the country! 
+                    </p>
+                   
+                </div>
+                <div className="map-container-div">
+                    <div className="map-div">
+                        <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors}/>
+                    </div>
+                     <div>
+                        <img className="splash-page-image" src="https://files.slack.com/files-pri/T03GU501J-F01G6KQPQHH/disclaimerpayitfor.png" />
+                    </div>
+                   
+                </div>
+             
+            
             </div>
         )
     }

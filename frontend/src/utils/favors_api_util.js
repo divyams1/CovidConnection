@@ -8,6 +8,6 @@ export const createFavor = data => {
     return axios.post('/api/favors/', data)
 }
 
-export const getFavorsForUser = () => {
-    return axios.get('/api/favors/users/:user_id')
+export const getFavorsForUser = (data) => {
+    return axios.get('/api/favors/users/:user_id', data)
 };

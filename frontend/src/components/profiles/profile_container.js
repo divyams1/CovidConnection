@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
-import { fetchFavors } from '../../actions/favor_actions';
+import { fetchFavors, fetchFavorsForUser} from '../../actions/favor_actions';
 import Profile from '../profile';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    favors: Object.values(state.favors.user),
+    user_profile_id: ownProps.match.params.user_id,
+    favors: Object.values(state.entities.favors),
     currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchFavors: id => dispatch(fetchFavors(id))
+     fetchFavors: () => dispatch(fetchFavors()),
+     fetchFavorsForUser: (user_id) => dispatch(fetchFavorsForUser)
   };
 };
 
