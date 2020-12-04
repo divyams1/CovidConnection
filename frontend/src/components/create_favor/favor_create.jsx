@@ -27,8 +27,8 @@ class FavorCreate extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const favor = Object.assign({}, this.state)
-        this.props.createFavor(favor);
-        this.props.history.push('/')
+        this.props.createFavor(favor).then(this.props.closeModal()).then(window.location.reload());
+        // this.props.history.push('/')
     }
 
     render() {
@@ -36,6 +36,8 @@ class FavorCreate extends React.Component {
             <div className="favor-create-form">
                 <h1> Create a Favor </h1>
                 <form>
+                    <br/>
+                     <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
                     <h2> Title: </h2>
                     <label>
                         <input type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
@@ -44,7 +46,7 @@ class FavorCreate extends React.Component {
                     <label>
                         <textarea type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
-                    <button onClick={this.handleSubmit}> Create Favor </button>
+                    <button onClick={this.handleSubmit}>Create Favor</button>
                 </form>
             </div>
         )

@@ -22,7 +22,6 @@ export const fetchFavors = () => dispatch => {
         .then( favors => dispatch(receiveFavors(favors)))
         .catch( err => console.log(err))
 }
-
 export const createFavor = data => dispatch => {
     return APIUtil.createFavor(data)
         .then( favor => {
@@ -30,8 +29,13 @@ export const createFavor = data => dispatch => {
         .catch( err => console.log(err))
 }
 
-export const fetchFavorsForUser = () => dispatch => {
-    return APIUtil.getFavorsForUser()
+// new
+export const fetchFavorsForUser = (data) => dispatch => {
+    debugger
+    return APIUtil.getFavorsForUser(data)
         .then(favors => dispatch(receiveFavors(favors)))
         .catch(err => console.log(err))
 }
+
+
+// getFavorsForUser
