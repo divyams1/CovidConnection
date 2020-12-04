@@ -105,3 +105,49 @@
 .covid-big-text {
    border-bottom: 2px solid orange;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Oxygen:wght@300&display=swap');
+​
+#favor-form {
+  font-family: 'Oxygen', sans-serif;
+  /* display: flex; */
+  margin-left: 50px
+}
+​
+​
+​
+​
+​
+#favor-form-button {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+​
+​
+#text-form {
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: 'Times New Roman', Times, serif
+}
+​
+#input-form {
+  border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: 'Times New Roman', Times, serif
+}
+​
+​
+​
+#favor-form-title {
+  font-family: 'Oxygen', sans-serif;
+  margin-top: 100px;
+  margin-left: 50px;
+}
