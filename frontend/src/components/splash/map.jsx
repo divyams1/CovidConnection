@@ -66,6 +66,7 @@ export class MapBox extends React.Component {
       return < Marker position={ location } title={favor.favor_title|| "favor"} key={idx} />
       
     })
+  
     const map =    (<Map 
         google = {this.props.google}
         zoom= {8}

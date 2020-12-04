@@ -1,14 +1,22 @@
 import React from 'react';
 import MapContainer from './map';
+import NavBarContainer from '../../session/navbar_container';
 
 
 class Splash extends React.Component {
-    
+    constructor(props){
+        super(props);
+
+    }
+
     componentDidMount() {
         this.props.fetchFavors();
     }
     render() {
         return (
+            <>
+        
+            <NavBarContainer />
             <div>
                 <div className="covid-connection-header">
                     <h1> What is Covid Connection?  </h1>
@@ -27,6 +35,8 @@ class Splash extends React.Component {
 
                     </div>
             </div>
+
+            </>
         )
     }
 }
