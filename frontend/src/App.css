@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .App {
   text-align: center;
 }
@@ -42,4 +42,112 @@
 #map-container {
   width: 500px;
   height: 500px;
+}
+
+.map-container {
+  width: 80%;
+  height: 80%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.covid-connection-header {
+  /* margin-left: 50px;
+  margin-right: 50px;  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 40px;
+  padding-bottom: 150px;
+  
+}
+
+.map-container-div {
+  display: flex;
+  flex-direction: column;
+}
+.background-div {
+  background-color: lightblue;
+  width: 100%;
+}
+
+
+
+.covid-small-text {
+  width: 500px;
+ 
+}
+
+.login-text-button {
+  color: white; 
+  text-decoration: none;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+}
+
+.nav-buttons-logged-in {
+  height: 30px;
+  width: 100px;
+}
+
+.nav-btns-top {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar-top {
+  background-color: lightblue;
+}
+
+.covid-big-text {
+   border-bottom: 2px solid orange;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Oxygen:wght@300&display=swap');
+​
+#favor-form {
+  font-family: 'Oxygen', sans-serif;
+  /* display: flex; */
+  margin-left: 50px
+}
+​
+​
+​
+​
+​
+#favor-form-button {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+​
+​
+#text-form {
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: 'Times New Roman', Times, serif
+}
+​
+#input-form {
+  border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: 'Times New Roman', Times, serif
+}
+​
+​
+​
+#favor-form-title {
+  font-family: 'Oxygen', sans-serif;
+  margin-top: 100px;
+  margin-left: 50px;
 }

@@ -20,9 +20,9 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div>
-                <Link to={'/profile'}>Profile</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+            <div className="nav-btns">
+                <button className="nav-btns-child"><Link to={'/profile'}>View Profile</Link></button>
+                <button className="nav-btns-child-login" onClick={this.logoutUser}>Logout</button>
             </div>
         );
       } else {
@@ -43,8 +43,8 @@ class NavBar extends React.Component {
 
   render() {
       return (
-        <div>
-            <img className="logo-header"  src="https://i.ibb.co/7g5B2Lg/Csquarelogo.png"/>
+        <div className="nav-bar-top">
+            <img className="logo-header"  src="https://files.slack.com/files-pri/T03GU501J-F01G70VFBLK/csquarelogo__3_.png"/>
             
             { this.getLinks() }
         </div>

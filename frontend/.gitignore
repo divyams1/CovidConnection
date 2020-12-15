@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-
+frontend/node_modules
+config/keys.js
+/frontend/keys
+config/keys_dev.js
+/frontend/keys_dev.js
 # testing
 /coverage
 

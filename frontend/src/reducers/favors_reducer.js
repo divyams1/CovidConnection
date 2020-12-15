@@ -7,7 +7,7 @@ const FavorsReducer = ( state = {} , action) => {
         case RECEIVE_FAVORS:
             return Object.assign(  { }, newState, action.favors )
         case RECEIVE_FAVOR:
-            return Object.assign( {}, newState, { [action.favor.id]: action.favor }) 
+            return Object.assign( {}, newState, { [action.favor._id]: action.favor }) 
         default:
             return state; 
     }

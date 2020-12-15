@@ -4,17 +4,18 @@ class FavorCreate extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: '',
-            description: '',
-            lat: 0,
-            lng: 0
+            favor_title: '',
+            favor_description: '',
+            favor_lat: 0,
+            favor_lng: 0
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
     navigator.geolocation.getCurrentPosition( position => {
-        this.setState( { lat: position.coords.latitude })
-        this.setState( { lng: position.coords.longitude})
+        this.setState( { favor_lat: position.coords.latitude })
+        this.setState( { favor_lng: position.coords.longitude})
     })
   }
     handleInput(field) {
@@ -25,23 +26,28 @@ class FavorCreate extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const favor = Object.assign()
+        const favor = Object.assign({}, this.state)
+        this.props.createFavor(favor).then(this.props.closeModal()).then(window.location.reload());
+        // this.props.history.push('/')
     }
 
     render() {
-        const display = ( 
+        const display = (
             <div className="favor-create-form">
-                <h1> Create a Favor </h1>
-                <form>
+                <h1 id={"favor-form-title"}> Create a Favor </h1>
+                <form id={"favor-form"}>
+                    <br/>
+                     <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
                     <h2> Title: </h2>
                     <label>
-                        <input type='text' placeholder="Title" value={this.state.title} onChange={this.handleInput('title')} />
+                        <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
                     <h2> Description: </h2>
                     <label>
-                        <textarea type='text' placeholder="Description" value={this.state.description} onChange={this.handleInput('description')} />
+                        <textarea id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
-                    <button onClick={this.handleSubmit}> Create Favor </button>
+                    <br/>
+                    <button id={"favor-form-button"} onClick={this.handleSubmit}>Create Favor</button>
                 </form>
             </div>
         )

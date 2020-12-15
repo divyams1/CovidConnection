@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const validateFavorInput = require("../../validate/favors")
+const validateFavorInput = require("./favors")
 const Favor = require("../../models/FavorRequest")
 
 router.get("/test", (req, res)  => {
@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 
 router.get("/users/:user_id", (req, res) => {
     Favor
-        .find({ favor_for_user_id: req.body.user_id })
+        .find({ favor_for_user_id: req.params.user_id })
         .then(favors => res.json(favors))
         .catch(err => res.status(400).json(err))
 })

@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "@types/express": "^4.17.9",
     "@types/mongoose": "^5.10.1",
     "bcryptjs": "^2.4.3",
@@ -20,18 +22,18 @@
     "nodemon": "^2.0.6",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-fontawesome": "^1.7.1",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "string-width": "^4.2.0",
-    "strip-ansi": "^6.0.0",
-    "supports-color": "^8.0.0",
-    "validator": "^13.5.1"
+    "validator": "^13.5.1",
+    "node": "^10.13.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
   },
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "server:debug": "nodemon --inspect app.js",
     "start": "node app.js",
     "server": "nodemon app.js",
