@@ -14,13 +14,14 @@ export class MapBox extends React.Component {
   render() {
 
     // const combined_markers = favor_locations.concat(base_markers);
-    if (this.props.favors.data.length === 0) {
+    if (!this.props.favors.data.length) {
       this.props.favors.data = []
     }
     const test_markers = this.props.favors.data.map( (favor,idx) => {
-      const lat = favor.favor_lat ||  40.7128
-      const long = favor.favor_long || -74.0060
-      const location = { lat: lat, lng: long } 
+      const lat = favor.favor_lat 
+      const lng = favor.favor_lng 
+      
+      const location = { lat: lat, lng: lng } 
       const marker = < Marker position={ location } title={`${favor.favor_title} 
     ${favor.favor_description} `|| "favor"} key={idx} />
       return marker
