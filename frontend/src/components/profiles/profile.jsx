@@ -46,7 +46,7 @@ class Profile extends React.Component {
       <div className="prof-favors">
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map(favor =>   <p  className="favor-list">{favor.favor_description}</p>)
+          .map( (favor, idx) =>   <p key={idx}  className="favor-list"> {favor.favor_description}</p>)
         }
     </div> 
       )}

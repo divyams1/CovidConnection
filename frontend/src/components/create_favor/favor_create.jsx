@@ -29,6 +29,7 @@ class FavorCreate extends React.Component {
         const favor = Object.assign({}, this.state)
         this.props.createFavor(favor).then(this.props.closeModal()).then(window.location.reload());
         // this.props.history.push('/')
+        this.props.fetchFavors();
     }
 
     render() {

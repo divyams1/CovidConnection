@@ -26,6 +26,7 @@ class Splash extends React.Component {
                     </p>
                 </div>
                 <div className="map-container-div">
+                    <h1 className="map-header" > View All Favors From All Users</h1>
                     <div className="map-div">
                         <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors}/>
                     </div>
