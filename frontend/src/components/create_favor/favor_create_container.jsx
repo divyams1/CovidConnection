@@ -15,7 +15,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        // fetchFavors: () => dispatch(fetchFavors()),
+        fetchFavors: () => dispatch(fetchFavors()),
         createFavor: favor => dispatch(createFavor(favor)),
         closeModal: () => dispatch(closeModal()),
     }

@@ -47,8 +47,9 @@
 .map-container {
   width: 80%;
   height: 80%;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+  background-color: teal;
 }
 
 .covid-connection-header {
@@ -57,7 +58,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightblue;
+  background-color: teal;
   font-family: 'Open Sans', sans-serif;
   padding-top: 40px;
   padding-bottom: 150px;
@@ -69,10 +70,16 @@
   flex-direction: column;
 }
 .background-div {
-  background-color: lightblue;
+  background-color: teal;
   width: 100%;
 }
-
+.map-header {
+  background-color: teal;
+  text-decoration: underline orange;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 
 
 .covid-small-text {
@@ -99,7 +106,7 @@
 }
 
 .nav-bar-top {
-  background-color: lightblue;
+  background-color:teal;
 }
 
 .covid-big-text {

@@ -1,0 +1,13 @@
+.about {
+    text-align: center;
+}
+
+.about-people {
+    display: flex;
+    justify-content: center;
+}
+
+.person-div {
+    margin-left: 20px;
+    margin-right: 20px;
+}
