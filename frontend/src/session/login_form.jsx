@@ -19,10 +19,18 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/favors');
+      this.props.history.push('/profile');
     }
 
     this.setState({errors: nextProps.errors})
+  }
+
+
+  componentWillUnmount(){
+      
+    this.props.clearSessionErrors();
+
+
   }
 
   update(field) {
@@ -39,7 +47,10 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user).then(this.props.closeModal()); 
+
+      this.props.loginUser(user);
+    
+   
   }
 
   renderErrors() {

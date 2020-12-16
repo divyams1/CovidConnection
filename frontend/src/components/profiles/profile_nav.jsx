@@ -27,6 +27,8 @@ this.showDropdown = this.showDropdown.bind(this);
 this.showUserInfo = this.showUserInfo.bind(this);
 this.renderForm = this.renderForm.bind(this);
 this.favorMenu = this.favorMenu.bind(this);
+this.logoutUser = this.logoutUser.bind(this);
+
 
 }
 
@@ -93,6 +95,12 @@ favorMenu(){
 
       }
 
+
+logoutUser(e) {
+      e.preventDefault();
+      this.props.logout();
+  }
+
 showUserInfo(){
 
 
@@ -103,7 +111,7 @@ return(
 <li> Name: {this.props.currentUser.username}</li>
 
  <li> Email: {this.props.currentUser.email} </li>
-  <li onClick={this.props.logout}>Log Out</li>
+  <button onClick={this.logoutUser}>LogOut</button>
 
 </ul> 
 
