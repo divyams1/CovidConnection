@@ -1,8 +1,11 @@
 // src/components/session/signup_form.js
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import {Link, withRouter } from 'react-router-dom';
+
 import './session.css';
+
+const faker = require('faker');
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -16,16 +19,18 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.demoSignUp = this.demoSignUp.bind(this);
     this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push('/login');
+  //   }
 
-    this.setState({errors: nextProps.errors})
-  }
+  //   this.setState({errors: nextProps.errors})
+  // }
 
   update(field) {
     return e => this.setState({
@@ -35,8 +40,8 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.password);
-    console.log(this.state.password);
+    // console.log(this.state.password);
+    // console.log(this.state.password);
 
     let user = {
       email: this.state.email,
@@ -45,15 +50,42 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history).then(this.props.closeModal()); 
+    let loginUser = {
+
+      email: this.state.email,
+      password: this.state.password
+
+    }
+
+    this.props.signupUser(user);
   }
+
+
+  demoSignUp(e) {
+    e.preventDefault();
+    let passw = faker.internet.password();
+    let user = {
+      email: faker.internet.email(),
+      username: faker.internet.userName(),
+      password: passw,
+      password2: passw
+    }
+
+    this.props.signupUser(user);
+  }
+
+  componentWillUnmount(){
+
+   this.props.clearSessionErrors();
+  }
+
 
   renderErrors() {
     return(
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            {this.props.errors[error]}
           </li>
         ))}
       </ul>
@@ -73,9 +105,11 @@ class SignupForm extends React.Component {
           
            <br/>
            <center> Please  Sign Up or {this.props.other} </center>
-             
+        <center> Use Demo <Link onClick={this.demoSignUp}>Demo </Link> </center>
+
           <div onClick={this.props.closeModal} className="close-x">X</div>
-          {this.renderErrors()}
+                          
+                          {this.renderErrors()}
           <div className="login-form">
             <br/>
               <input type="text"
@@ -111,6 +145,7 @@ class SignupForm extends React.Component {
              type="submit" value="Submit" />
            
           </div>
+
         </form>
       </div>
     );
