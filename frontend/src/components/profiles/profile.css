@@ -1,13 +1,33 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+@font-face{
+
+font-family: 'langar' , cursive;
+src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Langar&family=Press+Start+2P&display=swap');
+
+
+@font-face{
+
+font-family: 'Press Start 2P', cursive;
+src: url('https://fonts.googleapis.com/css2?family=Langar&family=Press+Start+2P&display=swap');
+
+}
+
 
 .prof-nofavors{
 
-background: #fff0f4; 
-color: darkblue;
+background: #F0BBD4; 
+color: #001f3f;
 font-weight: bolder;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-family: 'langar', cursive;
 font-size: 20px;
-border: 1px solid blue;
+border: 1px solid #001f3f;
 padding: 10px;
 border-radius: 0 ;
 position: relative; 
@@ -18,14 +38,13 @@ justify-content: center;
 }
 
 
-
 .prof-favors{
 
-background-color: skyblue; 
-color: darkblue;
+background-color:   teal; 
+color:#001f3f;
 font-weight: bolder;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-font-size: 40px;
+font-family: 'langar', cursive;
+font-size: 24px;
 /* border: 1px solid orange; */
 padding: 10px;
 border-radius: 0 ;
@@ -42,11 +61,11 @@ justify-content: center;
 
 button.home-lk{
 
-   color:#FFFFFF;
+   color:#001f3f;
     max-width: 40px;
    max-height: 40px;
    /* margin-left: 15px; */
- background-color: hsla(0,0%,100%,.3);
+ /* background-color: hsla(0,0%,100%,.3); */
  align-items: center;
 
 
@@ -58,12 +77,14 @@ button.home-lk{
 
    button.favor-button{
 
-   color:#FFFFFF;
-    max-width: 40px;
-   max-height: 40px;
+   color: #001f3f;
+    max-width: 42px;
+   max-height: 38px;
    /* margin-right: 15px; */
- background-color: hsla(0,0%,100%,.3);
- align-items: center;
+ /* background-color: hsla(0,0%,100%,.3); */
+ align-items: left;
+ background: #ffffff4d;
+ padding: 1px 6px;
 
     
 
@@ -100,6 +121,35 @@ button.home-lk{
   overflow: hidden;
   background-color: #f1f1f1;
   padding: 20px 10px;
+}
+
+
+.favor-btn{
+
+  width: 80px;
+  height: 40px;
+  background-color: #FFFFFF4d;
+  color: #F0BBD4;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  font-family: 'langar', cursive;
+  cursor: pointer;
+
+
+}
+
+.logout-menu{
+
+cursor: pointer;
+
+}
+
+.add-favor{
+
+width: 32px;
+height: 32px;
+
 }
 
 .header a {
@@ -166,7 +216,7 @@ button.home-lk{
 .user-info-list > li {
     background-color: #001f3f;
     display: block;
-    color: orange;
+    color: #F0BBD4;
     font-size:14px;
     cursor: pointer;
 
@@ -190,7 +240,7 @@ button.home-lk{
 .favor-menu > li {
     background-color: #001f3f;
     display: block;
-    color: orange;
+    color: #F0BBD4;
     font-size:14px;
     cursor: pointer;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
@@ -223,7 +273,7 @@ float: right;
     align-content: center;
 	text-align: left;
 	top: 60px;
-	right: 0;
+	right: 20;
     width: 230px;
     background-color: #001f3f;
     
@@ -237,6 +287,7 @@ float: right;
   
     font-size: 18px;
     cursor: pointer;
+    color: #F0BBD4;
 
 
 }
@@ -260,7 +311,7 @@ background-color: gray;
 
  img.logo-bd{
 width: 20px;
-height: 20px;
+height: 15px;
 background-color: gray;
  }   
 
@@ -283,13 +334,13 @@ margin-left: -10px;
  .header-nav{
     width: 100%;
     height: 32;
-    background-color: #001f3f;
+   background-color:#001f3f;
     padding: 4px;
     display: flex;
     overflow: hidden;
     top: 0;
     max-height: 36px;
-    color: orange;
+    color: #F0BBD4;
     justify-content: space-evenly;
    }
 
@@ -300,6 +351,7 @@ margin-left: -10px;
   box-sizing: content-box;
   margin: auto 0;
   z-index: 100;
+   color:#001f3f;
   /* position: sticky; */
    }
 
@@ -334,7 +386,9 @@ margin-left: -10px;
   text-align: center;
   /* width: 100%; */
   margin-left: 200px;
-  color: #FFFFFF;
+  color: #001f3f;
+  background-color: hsla(0,0%,100%,.3);
+
 
 
    }
@@ -344,14 +398,14 @@ margin-left: -10px;
   font-size: 18px;
   text-align: center;
   
-  color: orange;
+  color: #F0BBD4;
   justify-content: space-evenly;
  
   float: left;
   
   max-height: 40px;
   max-width: 40px;
-  background-color: gray;
+  /* background-color: gray; */
 
    margin-bottom: 10px;
 
@@ -362,6 +416,8 @@ margin-left: -10px;
     width: 15px;
     height: 15px;
     font-size: 10px;
+    color: #F0BBD4;
+    align-self: left;
 
    }
 
@@ -375,17 +431,17 @@ margin-left: -10px;
    img.banner{
 
     width: 100%;
-    height: 60%;
+    height: 25%;
 
    }
    img.support-banner{
 
     width: 100%;
-    height: 50%
+    height: 25%
    }
 
    .fstyle{
 
-    color: #FFA500;
+    color: #F0BBD4;
 
    }

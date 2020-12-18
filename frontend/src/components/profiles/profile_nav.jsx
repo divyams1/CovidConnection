@@ -111,7 +111,7 @@ return(
 <li> Name: {this.props.currentUser.username}</li>
 
  <li> Email: {this.props.currentUser.email} </li>
-  <button onClick={this.logoutUser}>LogOut</button>
+  <button className="logout-menu" onClick={this.logoutUser}>LogOut</button>
 
 </ul> 
 

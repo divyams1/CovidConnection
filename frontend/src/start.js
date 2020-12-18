@@ -10,6 +10,7 @@ import { Route } from 'react-router-dom';
 import FavorCreateContainer from './components/create_favor/favor_create_container';
 import About from './components/about/about'
 import AboutContainer from './components/about/about_container';
+import CovidHelp from './components/covid_help/covid_help';
 
 
 
@@ -19,14 +20,14 @@ const App = () => (
      <Modal />
     
     <Switch>
-      
+      <Route exact path="/about" component={AboutContainer} />
       <Route exact path="/" component={SplashContainer} /> 
       <ProtectedRoute exact path='/add' component = {FavorCreateContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/:user_id" component={ProfileContainer} /> 
-      <Route exact path="/about" component={AboutContainer} />
-    
+      <ProtectedRoute exact path="/profile" component={ProfileContainer} /> 
+      <ProtectedRoute exact path="/covid" component={CovidHelp} />
+
     </Switch>
   </div>
 );

@@ -39,6 +39,8 @@ class FavorCreate extends React.Component {
                 <form id={"favor-form"}>
                     <br/>
                      <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
+                     <div onClick={this.props.closeModal} className="close-x">X</div>
+
                     <h2> Title: </h2>
                     <label>
                         <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
