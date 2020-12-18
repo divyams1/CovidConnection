@@ -14,8 +14,12 @@ class About extends React.Component {
                     <div className="about-people">
                         <div className="person-div">
                             <h2> Divyam Satyarthi </h2>
+                            <img src="githubimage.png" />
                             <a href="https://github.com/divyams1">  Github </a>
+                            <img src="linkedin.png" />
                             <a href="https://www.linkedin.com/in/divyam-satyarthi-b6628513b/"> LinkedIn </a>
+                            <img src="angellist.png" />
+                            <a href="https://angel.co/u/divyam-satyarthi"> Angel List</a>
                             <h4> Email: divyamsat@gmail.com </h4>
                             <h4> Phone: 443-838-7815</h4>
                         </div>
