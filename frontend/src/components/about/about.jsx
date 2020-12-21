@@ -1,5 +1,5 @@
 import React from 'react';
-
+import HospitalsNear from './hospitals_near'
 
 class About extends React.Component {
 
@@ -40,7 +40,10 @@ class About extends React.Component {
                             <h4> Phone: 585-794-3850  </h4>
                         </div>
                     </div>
+                    <HospitalsNear />
                 </div>
+
+                
         )
     }
 }
