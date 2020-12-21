@@ -104,11 +104,12 @@ router.post("/",
 
         const newFavor = new Favor({
             favor_for_user_id: req.user.id,
-            // favor_by_user_id: "not sure",
+            favor_by_user_id: null,
             favor_description: req.body.favor_description,
             favor_title: req.body.favor_title,
             favor_lat: req.body.favor_lat,
             favor_lng: req.body.favor_lng,
+            favor_for_username: req.user.username, 
             favor_status: false
             // req.body.favor_status,
         });
@@ -117,7 +118,16 @@ router.post("/",
             .then(favor => res.json(favor));
     })
 
-
+router.patch('/:id', (req, res) => {
+    const favor = Favor
+        .findById(req.params.id)
+        // .then(favor => res.json(favor))
+        // .catch(err => res.status(400).json(err))
+    if (!favor) return res.status(404).json({})
+    favor.favor_by_user_id = req.user.id;
+    favor.status = true;
+    favor.save()
+});
 
 module.exports = router;
 
