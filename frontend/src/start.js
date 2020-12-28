@@ -11,7 +11,7 @@ import FavorCreateContainer from './components/create_favor/favor_create_contain
 import About from './components/about/about'
 import AboutContainer from './components/about/about_container';
 import CovidHelp from './components/covid_help/covid_help';
-
+import NewsFeedContainer from './components/newsfeed/newsfeed_container';
 
 
 
@@ -20,8 +20,9 @@ const App = () => (
      <Modal />
     
     <Switch>
-      <Route exact path="/about" component={AboutContainer} />
       <Route exact path="/" component={SplashContainer} /> 
+      <Route exact path="/about" component={AboutContainer} />
+      <Route exact path="/newsfeed" component={NewsFeedContainer} />
       <ProtectedRoute exact path='/add' component = {FavorCreateContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
