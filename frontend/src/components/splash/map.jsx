@@ -15,11 +15,14 @@ export class MapBox extends React.Component {
 
     
     
-    const favors = this.props.favors.data || []
+    let favors = this.props.favors.data || []
+   
+    if ( this.props.userShow ) {
+        favors = favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id )
+    }
     const test_markers = favors.map( (favor,idx) => {
       const lat = favor.favor_lat 
       const lng = favor.favor_lng 
-      
       const location = { lat: lat, lng: lng } 
       const marker = < Marker position={ location } title={`${favor.favor_title} 
     ${favor.favor_description} `|| "favor"} key={idx} />

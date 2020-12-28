@@ -6,7 +6,8 @@ import Splash from './splash';
 
 const mSTP = state => {
     return {
-        favors: state.entities.favors
+        favors: state.entities.favors,
+        currentUser: state.session.user 
     }
 }
 
