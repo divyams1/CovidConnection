@@ -9,6 +9,7 @@ class NewsFeed extends React.Component {
         let favors = ( <div> </div>)
         if ( this.props.favors.data) {
             favors = this.props.favors.data.map( favor => {
+                debugger
              return(   
             <div>
             <h2> {favor.favor_title} </h2>   
