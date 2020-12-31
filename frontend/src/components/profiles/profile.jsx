@@ -9,6 +9,7 @@ class Profile extends React.Component {
         this.state = this.props.favors;
         this.handleFavors = this.handleFavors.bind(this);
         this.handleNoFavors = this.handleNoFavors.bind(this);
+        this.updateFavor = this.props.updateFavor.bind(this);
     }
     
     componentDidMount() {
@@ -37,22 +38,30 @@ class Profile extends React.Component {
               </>
     )}
 
-    handleFavors(){
+  handleFavors() {
 
-    if(this.props.favors){
-      
-     
+    if (this.props.favors) {
+
+
       return (
-      <div className="prof-favors">
-         {this.props.favors
-          .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map(favor =>   <p  className="favor-list">{favor.favor_description}</p>)
-        }
-    </div> 
-      )}
+        <div className="prof-favors">
+          {this.props.favors
+            /// .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
+            .filter(favor => favor.favor_for_user_id)
+            ///.filter(favor => favor.favor_status)
+            .map((favor, idx) =>
+              <div>
+                <p key={idx} className="favor-list"> {favor.favor_description}</p>
+                <button onClick={() => this.props.updateFavor(favor)}>{`${favor.favor_status}`}</button>
+              </div>
+            )
+          }
+        </div>
+      )
+    }
 
 
-      }
+  }
     
     render() {
 
@@ -64,13 +73,13 @@ class Profile extends React.Component {
             <ProfileNavContainer />
             <div className="prof-favors">
               
-              <h1>  Welcome {this.props.currentUser.username}!  </h1>
+                <h1>  Welcome {this.props.user_profile_id}!  </h1>
               <h2 className="prof-nofavors"> Your quest to make this world a better place.... These are the favors you have done! </h2>
 
               <div>
                 {this.handleFavors()}
 
-                {this.handleNoFavors()}
+                {/* {this.handleNoFavors()} */}
               </div>
               <div  className="banners">
                      <img className="support-banner" src="https://i.ibb.co/Mcy8SMY/disclaimerpayitfor.png" />
