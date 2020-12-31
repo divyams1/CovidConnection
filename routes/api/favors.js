@@ -113,7 +113,6 @@ router.post("/",
             favor_title: req.body.favor_title,
             favor_lat: req.body.favor_lat,
             favor_lng: req.body.favor_lng,
-            favor_for_username: req.user.username, 
             favor_status: false
             // req.body.favor_status,
         });
