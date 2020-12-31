@@ -13,3 +13,9 @@ export const createFavor = data => {
     return axios.post('/api/favors/', data)
 }
 
+export const updateFavor = data => {
+    return axios.patch('/api/favors/:id', data)
+}
+
+
+

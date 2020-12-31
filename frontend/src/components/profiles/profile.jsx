@@ -11,6 +11,7 @@ class Profile extends React.Component {
         this.handleFavors = this.handleFavors.bind(this);
         this.handleNoFavors = this.handleNoFavors.bind(this);
         this.renderForm = this.renderForm.bind(this);
+        this.updateFavor = this.props.updateFavor.bind(this);
     }
     
     componentDidMount() {
@@ -54,11 +55,11 @@ class Profile extends React.Component {
               </>
     )}
 
-    handleFavors(){
+  handleFavors() {
 
-    if(this.props.favors){
-      
-     
+    if (this.props.favors) {
+
+
       return (
       <div className="prof-favors">
          {this.props.favors
@@ -69,7 +70,7 @@ class Profile extends React.Component {
       )}
 
 
-      }
+  }
     
     render() {
 
@@ -81,7 +82,7 @@ class Profile extends React.Component {
             <ProfileNavContainer />
             <div className="prof-favors">
               
-              <h1>  Welcome {this.props.currentUser.username}!  </h1>
+                <h1>  Welcome {this.props.user_profile_id}!  </h1>
               <h2 className="prof-nofavors"> Your quest to make this world a better place.... These are the favors you have done! </h2>
                <h3>  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress.      <NavLink to="/covid">Covid Help</NavLink>        </h3>   
 
@@ -90,7 +91,7 @@ class Profile extends React.Component {
               <div>
                 {this.handleFavors()}
 
-                {this.handleNoFavors()}
+                {/* {this.handleNoFavors()} */}
               </div>
               </div>
               <div  className="banners">

@@ -5,13 +5,14 @@ const validateFavorInput = require("../../validate/favors")
 const Favor = require("../../models/FavorRequest")
 
 router.get("/test", (req, res)  => {
-
+    
     res.json({msg: "This is the favors route"});
 
 });
 
 
 router.get("/", (req, res) => {
+    
     Favor
         .find()
         .sort({ date: -1 })
@@ -21,6 +22,7 @@ router.get("/", (req, res) => {
 
 
 router.get("/users/:user_id", (req, res) => {
+    
     Favor
         .find({ favor_for_user_id: req.body.user_id })
         .then(favors => res.json(favors))
@@ -28,6 +30,7 @@ router.get("/users/:user_id", (req, res) => {
 })
 
 router.get("/:id", (req, res) => {
+    
     Favor
         .findById(req.params.id)
         .then(favor => res.json(favor))
@@ -104,6 +107,7 @@ router.post("/",
 
         const newFavor = new Favor({
             favor_for_user_id: req.user.id,
+            favor_for_username: req.user.username,
             favor_by_user_id: null,
             favor_description: req.body.favor_description,
             favor_title: req.body.favor_title,
@@ -116,7 +120,31 @@ router.post("/",
         newFavor
             .save()
             .then(favor => res.json(favor));
-    })
+    }
+)
+
+
+router.patch('/:id',
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+
+        console.log(req.user.id)
+        let update;
+
+     const filter = { _id: req.body._id };
+     if (req.body.favor_status === false) {
+        update = { favor_status: true, favor_by_user_id: req.user.id };
+     } else {
+        update = { favor_status: false, favor_by_user_id: null};
+     }
+
+        const favor = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));
+
+    
+});
+
+
+    
 
 router.patch('/:id', (req, res) => {
     const favor = Favor
