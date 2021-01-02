@@ -21,7 +21,7 @@ class NewsFeed extends React.Component {
         }
          favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
          favors = ( this.state.favorRequests? favors.filter( favor => favor.status === true) : favors )
-        
+        //  favors = ( this.state.userSearch? )
         return(
             <div>
                 <h1> View Favors Other Users Have Made </h1>
