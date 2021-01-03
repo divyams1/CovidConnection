@@ -2,15 +2,22 @@ import React from 'react'
 
 
 class NewsFeed extends React.Component {
-    componentDidMount() {
-        this.props.fetchFavors();
+    constructor(props) {
+        super(props)
         this.state = { myFavors: false, favorRequests: false, userSearch: false, forUser: ''}
     }
+    componentDidMount() {
+        this.props.fetchFavors();
+    }
     render() {
-        let favors = ( <div> </div>)
-        if ( this.props.favors.data) {
-            favors = this.props.favors.data.map( favor => {
-                debugger
+        
+        let favors = Object.values(this.props.favors.data) || [];
+        debugger
+        favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
+        favors = ( this.state.favorRequests? favors.filter( favor => favor.status === true) : favors )
+        favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+        favors = this.props.favors.data.map( favor => {
+
              return(   
             <div>
             <h2> {favor.favor_title} </h2>   
@@ -18,10 +25,7 @@ class NewsFeed extends React.Component {
             <p> {favor.favor_for_username}</p>
             </div>)
         })
-        }
-         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
-         favors = ( this.state.favorRequests? favors.filter( favor => favor.status === true) : favors )
-        //  favors = ( this.state.userSearch? )
+         
         return(
             <div>
                 <h1> View Favors Other Users Have Made </h1>
