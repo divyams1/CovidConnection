@@ -26,6 +26,7 @@ const App = () => (
       <ProtectedRoute exact path='/add' component = {FavorCreateContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/covid"  component={CovidHelp} />
       <ProtectedRoute exact path="/:user_id" component={ProfileContainer} /> 
     
     </Switch>
