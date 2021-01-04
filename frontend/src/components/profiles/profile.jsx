@@ -18,6 +18,7 @@ class Profile extends React.Component {
     }
     
     componentDidMount() {
+      
       console.log(this.props.currentUser.id)
       this.props.fetchFavors();
       this.state = this.props.favors;
