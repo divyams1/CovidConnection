@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
-
+import './newsfeed.css'
+import ProfileNavContainer from '../profiles/profile_nav_container';
 
 class NewsFeed extends React.Component {
     constructor(props) {
@@ -35,28 +36,33 @@ class NewsFeed extends React.Component {
 
     }
     render() {
-        
+        let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
+        let request_text = this.state.favorRequests?   "View All Posts" : "View Requests"
         let favors = (this.props.favors.data) || [];
         
         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
         
         favors = ( this.state.favorRequests? favors.filter( favor => favor.status === true) : favors )
         favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
-        favors = favors.map( favor => {
+        favors = favors.map( (favor, idx)=> {
              return(   
-            <div>
-            <h1> {favor.favor_title} </h1>
-            <p> {favor.favor_description} </p>
-            <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+            <div id = {idx} className="whole-favor">
+                
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p> {favor.favor_description} </p>
+                <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
             </div>)
+            
         })
     
         return(
-            <div>
-                <button onClick={this.userShow}>View Your Favors</button>
-                <button onClick={this.requestShow}> View Requests Others Have Made</button>
+            <div className="newsfeed-whole">
+                <ProfileNavContainer />
+                <h1> Newsfeed </h1>
+                <button onClick={this.userShow}> {favor_text} </button>
+                <button onClick={this.requestShow}> {request_text} </button>
                 {/* <input type="text"  onChange={this.updateName}></input> */}
-                <h1> View Favors Other Users Have Made </h1>
+                
                 {favors}
             </div>
         )
