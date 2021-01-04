@@ -4,6 +4,7 @@ import NavBarContainer from '../../session/navbar_container';
 import './about.css'
 import '../../App.css'
 import {Link} from 'react-router-dom'
+import AboutContainer from '../about/about_container'
 
 class Splash extends React.Component {
     constructor(props){
@@ -38,6 +39,7 @@ class Splash extends React.Component {
                     </p>
                     <br className="text-map-div">
                     </br>
+                    <AboutContainer />
                           <h1 className="map-header" > View All Favors From All Users</h1>
                     <button className="map-button" onClick={this.userShow}> {button_text} </button>
                 </div>
