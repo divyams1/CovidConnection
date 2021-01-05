@@ -1,4 +1,4 @@
-import { RECEIVE_FAVOR, RECEIVE_FAVORS, UPDATE_FAVOR } from '../actions/favor_actions';
+import { RECEIVE_FAVOR, RECEIVE_FAVORS, UPDATE_FAVOR, DELETE_FAVOR } from '../actions/favor_actions';
 
 const FavorsReducer = ( state = {} , action) => {
     Object.freeze(state);
@@ -15,6 +15,13 @@ const FavorsReducer = ( state = {} , action) => {
             // debugger
             // return Object.assign({}, newState) //<-- here
             return Object.assign({}, newState, { [action.favor._id]: action.favor })
+        case DELETE_FAVOR:
+            debugger
+            
+            /// newState.data[action.favor._id] = action.favor;
+            // debugger
+            // return Object.assign({}, newState) //<-- here
+            return Object.assign({}, newState, { [action.favor_id]: action.favor })
             
         default:
             return state; 

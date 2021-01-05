@@ -98,6 +98,7 @@ class Profile extends React.Component {
           <div>
           <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
           <button onClick={() => this.props.updateFavor(favor)}>{`${favor.favor_status}`}</button>
+          <button onClick={() => this.props.deleteFavor(favor)}>{`${favor.favor_status}`}</button>
           </div>
           
           )
