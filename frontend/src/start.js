@@ -12,7 +12,7 @@ import About from './components/about/about'
 import AboutContainer from './components/about/about_container';
 import CovidHelp from './components/covid_help/covid_help';
 import NewsFeedContainer from './components/newsfeed/newsfeed_container';
-
+import ProfileShowContainer from './components/profile_show/profile_show_container';
 
 
 const App = () => (
@@ -26,7 +26,10 @@ const App = () => (
       <ProtectedRoute exact path='/add' component = {FavorCreateContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/covid"  component={CovidHelp} />
       <ProtectedRoute exact path="/:user_id" component={ProfileContainer} /> 
+      <ProtectedRoute exact path="profile" component={ProfileContainer} /> 
+      <Route exact path="/user/:user_id" component={ProfileShowContainer} />
     
     </Switch>
   </div>

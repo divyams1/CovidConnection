@@ -23,3 +23,20 @@
 .map-div {
     background-color: teal;
 }
+
+.link-image {
+    height: 70px;
+    width: 100px;
+    margin: 10px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.link-text-image {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}

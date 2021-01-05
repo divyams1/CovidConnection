@@ -1,0 +1,26 @@
+.newsfeed-whole {
+    background-color: teal;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+@font-face{
+
+font-family: 'langar' , cursive;
+src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+}
+
+.whole-favor {
+    font-family: 'langar', cursive;
+    width: 40%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.favor-header {
+    margin-bottom: 5px;
+}
