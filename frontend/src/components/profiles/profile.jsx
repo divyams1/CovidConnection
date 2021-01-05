@@ -12,6 +12,7 @@ class Profile extends React.Component {
 
         this.state = this.props.favors;
         this.handleFavors = this.handleFavors.bind(this);
+        this.handleFavorRequests = this.handleFavorRequests.bind(this);
         this.handleNoFavors = this.handleNoFavors.bind(this);
         this.renderForm = this.renderForm.bind(this);
         this.handleTime = this.handleTime.bind(this);
@@ -88,18 +89,41 @@ class Profile extends React.Component {
 
     if(this.props.favors){
       
-     
+     debugger
       return (
       <div className="prof-favors">
          {this.props.favors
-          .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map( (favor, idx) =>   <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>)
+          .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Done") ))
+          .map( (favor, idx) =>  
+             <div key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</div>  )
         }
     </div> 
       )}
 
 
       }
+
+
+    handleFavorRequests(){
+
+        debugger
+
+    if(this.props.favors){
+       
+     
+      return (
+      <div className="prof-favors">
+         {this.props.favors
+          .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Request") ))
+          .map( (favor, idx) =>  
+             <div key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</div>  )
+        }
+    </div> 
+      )}
+
+
+      }
+    
     
     render() {
 
@@ -109,6 +133,7 @@ class Profile extends React.Component {
         // const hasFavors = this.handleFavors();
         
         const favors = (this.props.favors ? this.handleFavors() : this.handleNoFavors());
+        const favorRequests = this.handleFavorRequests();
           return (
             <>
             <ProfileNavContainer />
@@ -156,11 +181,23 @@ class Profile extends React.Component {
                 <div className="favor-lst">
                       {favors}
                 </div>
-                       
-              <div className="prof-favors">
-                {/* {this.handleFavors()}
+                  <br /> <br /> <br /> <br />
 
-                {this.handleNoFavors()} */}
+              <div className="prof-favors">
+
+                      <h3 className="prof-req-hd2"> These are the favors you have requested from others  </h3> <br />
+
+
+                      <h2 className="prof-req-hd"> <FontAwesomeIcon icon={faUser} /> Requested Favors</h2>
+
+                      <center> <button className="favor-req-btn" onClick={this.renderForm('favor')}> 
+                      <img className="add-favor" src="https://i.ibb.co/Bz1RZS5/cross.png" /> Request Favor</button></center>
+
+
+                <div className="favor-lst2">
+                      {favorRequests}
+                </div>
+
 
                      
               </div>

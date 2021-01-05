@@ -7,9 +7,12 @@ class FavorCreate extends React.Component {
             favor_title: '',
             favor_description: '',
             favor_lat: 0,
-            favor_lng: 0
+            favor_lng: 0,
+            favor_status: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleDropInput = this.handleDropInput.bind(this);
     }
 
     componentDidMount() {
@@ -24,12 +27,22 @@ class FavorCreate extends React.Component {
         }
     }
 
+    handleDropInput(e) {
+         
+     this.setState({ "favor_status": e.currentTarget.value })
+     
+    }
+
     handleSubmit(e) {
+
+        debugger
         e.preventDefault();
         const favor = Object.assign({}, this.state)
         this.props.createFavor(favor).then(this.props.closeModal()).then(window.location.reload());
         // this.props.history.push('/')
+
         this.props.fetchFavors();
+        
     }
 
     render() {
@@ -45,6 +58,16 @@ class FavorCreate extends React.Component {
                     <label>
                         <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
+                    <h2> Request:</h2>
+                    <select value={this.state.favor_status} onChange={this.handleDropInput} >
+                          <option value="N/A">N/A </option>
+                          <option value= "Done" >Done</option> 
+                          <option value= "Request" >Request</option>
+                          <option value= "Doing"  >Doing</option>  
+                    </select>
+                    {/* <label>
+                        <input id={"input-form"} type='text' placeholder="Request"  />
+                    </label> */}
                     <h2> Description: </h2>
                     <label>
                         <textarea id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
