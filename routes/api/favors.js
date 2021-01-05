@@ -137,7 +137,7 @@ router.patch('/:id',
         update = { favor_status: false, favor_by_user_id: null};
      }
 
-        const favor = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));
+        const favorr = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));
 
     
 });

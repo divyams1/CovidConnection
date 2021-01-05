@@ -3,6 +3,7 @@ import ProfileNavContainer from './profile_nav_container';
 import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
+import { updateFavor } from '../../utils/favors_api_util';
 
 // import FavorItem from '../favors/favor_item';
 
@@ -93,7 +94,13 @@ class Profile extends React.Component {
       <div className="prof-favors">
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map( (favor, idx) =>   <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>)
+          .map( (favor, idx) =>   
+          <div>
+          <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+          <button onClick={() => this.props.updateFavor(favor)}>{`${favor.favor_status}`}</button>
+          </div>
+          
+          )
         }
     </div> 
       )}

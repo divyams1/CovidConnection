@@ -10,7 +10,7 @@ const FavorsReducer = ( state = {} , action) => {
             debugger
             return Object.assign( {}, newState, { [action.favor._id]: action.favor })
         case UPDATE_FAVOR:
-            // debugger
+            debugger
             /// newState.data[action.favor._id] = action.favor;
             // debugger
             // return Object.assign({}, newState) //<-- here
