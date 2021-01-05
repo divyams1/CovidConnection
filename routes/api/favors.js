@@ -145,16 +145,7 @@ router.patch('/:id',
 
     
 
-router.patch('/:id', (req, res) => {
-    const favor = Favor
-        .findById(req.params.id)
-        // .then(favor => res.json(favor))
-        // .catch(err => res.status(400).json(err))
-    if (!favor) return res.status(404).json({})
-    favor.favor_by_user_id = req.user.id;
-    favor.status = true;
-    favor.save()
-});
+
 
 module.exports = router;
 
