@@ -26,7 +26,9 @@ const App = () => (
       <ProtectedRoute exact path='/add' component = {FavorCreateContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} /> 
+      <Route exact path="/covid"  component={CovidHelp} />
+      <ProtectedRoute exact path="/:user_id" component={ProfileContainer} /> 
+      <ProtectedRoute exact path="profile" component={ProfileContainer} /> 
       <Route exact path="/user/:user_id" component={ProfileShowContainer} />
     
     </Switch>
