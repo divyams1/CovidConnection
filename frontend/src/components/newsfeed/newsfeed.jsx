@@ -64,8 +64,8 @@ class NewsFeed extends React.Component {
         
         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
         
-        favors = ( this.state.favorRequests? favors.filter( favor => favor.status === true) : favors )
-        favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+        favors = ( this.state.favorRequests ? favors.filter( favor => favor.status === "request") : favors )
+        favors = ( this.state.userSearch ? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
         favors = favors.map( (favor, idx)=> {
              return(   
             <div id = {idx} className="whole-favor">
