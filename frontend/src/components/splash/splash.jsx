@@ -9,8 +9,9 @@ import AboutContainer from '../about/about_container'
 class Splash extends React.Component {
     constructor(props){
         super(props);
-        this.state = { userShow:  false }
+        this.state = { userShow:  false , requestShow: false }
         this.userShow = this.userShow.bind(this);
+        this.requestShow = this.requestShow.bind(this);
     }
 
     componentDidMount() {
@@ -24,8 +25,17 @@ class Splash extends React.Component {
             this.setState( {userShow: false })
         }
     }
+
+    requestShow() {
+        if ( !this.state.requestShow) {
+            this.setState( {requestShow: true })
+        } else {
+            this.setState( {requestShow: false})
+        }
+    }
     render() {
         const button_text = ( this.state.userShow ? "View All Favors" : "View Your Favors" )
+        const request_text =  ( this.state.requestShow? "View Favor Requests" : "View Completed Favors")
         return (
             <>
         
@@ -42,11 +52,12 @@ class Splash extends React.Component {
                     
                           <h1 className="map-header" > View All Favors From All Users</h1>
                     <button className="map-button" onClick={this.userShow}> {button_text} </button>
+                    <button className="map-button" onClick={this.requestShow}> {request_text} </button>
                 </div>
                 <div className="map-container-div">
               
                     <div className="map-div">
-                        <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors} userShow={this.state.userShow} currentUser={this.props.currentUser}/>
+                        <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors} userShow={this.state.userShow} requestShow={this.state.requestShow} currentUser={this.props.currentUser}/>
                     </div>
                 </div>
                    <div className="background-div">

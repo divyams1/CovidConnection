@@ -20,6 +20,9 @@ export class MapBox extends React.Component {
     if ( this.props.userShow ) {
         favors = favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id )
     }
+    if (this.props.requestShow ) {
+      favors = favors.filter( favor => favor.status === true)
+    }
     const test_markers = favors.map( (favor,idx) => {
       const lat = favor.favor_lat 
       const lng = favor.favor_lng 

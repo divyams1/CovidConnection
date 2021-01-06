@@ -31,7 +31,15 @@ class NewsFeed extends React.Component {
 
     updateName() {
         return e=> {
-            this.setState( { forUser: e.currentTarget.value })
+            
+            
+            if ( e.currentTarget.value === "") {
+                this.setState( {userSearch: false })
+            } else {
+                this.setState( {userSearch: true })
+            }
+            this.setState( { 'forUser' : e.currentTarget.value })
+            
         }
 
     }
@@ -61,11 +69,17 @@ class NewsFeed extends React.Component {
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Requests"
         let favors = (this.props.favors.data) || [];
-        
         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
         
         favors = ( this.state.favorRequests ? favors.filter( favor => favor.status === "request") : favors )
-        favors = ( this.state.userSearch ? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+        favors = ( this.state.userSearch ? favors.filter( favor =>  {
+            const length = this.state.forUser.length;
+            if ( favor.favor_for_username) {
+            return favor.favor_for_username.slice(0, length)  === this.state.forUser
+            } else {
+               return false 
+            }
+        }) : favors)
         favors = favors.map( (favor, idx)=> {
              return(   
             <div id = {idx} className="whole-favor">
@@ -85,7 +99,7 @@ class NewsFeed extends React.Component {
                 <button onClick={this.userShow}> {favor_text} </button>
                 <button onClick={this.requestShow}> {request_text} </button>
 
-                <input type="text"  onChange={this.updateName}></input>
+                <input type="text"placeholder="Search a Username" value={this.state.forUser} onChange={this.updateName()}></input>
                 
                 {favors}
             </div>
