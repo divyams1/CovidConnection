@@ -42,9 +42,8 @@ router.get("/:id", (req, res) => {
 router.delete("/:id",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-
     Favor
-        .findById(req.params.id)
+        .findById(req.body.data._id)
         .then(favor => favor.remove())
         .then(res.json("Successfully deleted"))
         .catch(err => res.status(400).json(err))
@@ -105,6 +104,8 @@ router.post("/",
             return res.status(400).json(errors);
         }
 
+        console.log(req.body)
+
         const newFavor = new Favor({
             favor_for_user_id: req.user.id,
             favor_for_username: req.user.username,
@@ -127,7 +128,7 @@ router.patch('/:id',
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
 
-        console.log(req.user.id)
+        console.log(req.body)
         let update;
 
      const filter = { _id: req.body._id };
@@ -137,7 +138,7 @@ router.patch('/:id',
         update = { favor_status: false, favor_by_user_id: null};
      }
 
-        const favor = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));
+        const favorr = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));
 
     
 });
@@ -145,16 +146,7 @@ router.patch('/:id',
 
     
 
-router.patch('/:id', (req, res) => {
-    const favor = Favor
-        .findById(req.params.id)
-        // .then(favor => res.json(favor))
-        // .catch(err => res.status(400).json(err))
-    if (!favor) return res.status(404).json({})
-    favor.favor_by_user_id = req.user.id;
-    favor.status = true;
-    favor.save()
-});
+
 
 module.exports = router;
 

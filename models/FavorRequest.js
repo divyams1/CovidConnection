@@ -15,7 +15,7 @@ const FavorRequestSchema = new Schema({
     },
     favor_by_username: {
         type: String,
-        required: true
+        default: null
     },
     favor_description: {
         type: String,
