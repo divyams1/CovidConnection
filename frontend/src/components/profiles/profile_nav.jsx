@@ -1,7 +1,9 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCircle, faPlus, faBell, faNewspaper} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCircle, faPlus, faBell, faNewspaper, faUser} from '@fortawesome/free-solid-svg-icons';
+// import {faFileuser} from '@fortawesome/free-solid-svg-icons';
 import './profile.css';
 
 
@@ -199,6 +201,14 @@ return (
 
       </div> 
 
+      <div className="header-nav-mid">
+           
+           <button className="home-lk2"><Link to={"/profile"}> <span className="news"> Profile  </span> <FontAwesomeIcon className="fstyle2" icon={faUser}  /> </Link>                 
+           </button> 
+
+
+      </div> 
+
       <div className="header-nav-mid">     
             <button className="favor-button" onClick={this.showDropdown("favors")}>
                 <span className="favor-button"> Favors </span>
@@ -217,7 +227,7 @@ return (
 
     </div>
 
-    <div className="header-nav-mid" onClick={this.showDropdown("add")}><button className="home-lk"><FontAwesomeIcon className="fstyle" icon={faPlus}/></button> 
+    <div className="header-nav-right" onClick={this.showDropdown("add")}><button className="home-lk"><FontAwesomeIcon className="fstyle" icon={faPlus}/></button> 
                         {this.state.add ? this.addMenu() : null}
 
 
