@@ -13,9 +13,11 @@ class Profile extends React.Component {
         this.state = this.props.favors;
         this.handleFavors = this.handleFavors.bind(this);
         this.handleFavorRequests = this.handleFavorRequests.bind(this);
+        this.handleCurrentFavors = this.handleCurrentFavors.bind(this);
         this.handleNoFavors = this.handleNoFavors.bind(this);
         this.renderForm = this.renderForm.bind(this);
         this.handleTime = this.handleTime.bind(this);
+
     }
     
     componentDidMount() {
@@ -95,7 +97,7 @@ class Profile extends React.Component {
          {this.props.favors
           .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Done") ))
           .map( (favor, idx) =>  
-             <div key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</div>  )
+             <section key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</section>  )
         }
     </div> 
       )}
@@ -116,13 +118,35 @@ class Profile extends React.Component {
          {this.props.favors
           .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Request") ))
           .map( (favor, idx) =>  
-             <div key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</div>  )
+             <section key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</section>  )
         }
     </div> 
       )}
 
 
       }
+
+
+      handleCurrentFavors(){
+
+        debugger
+
+    if(this.props.favors){
+       
+     
+      return (
+      <div className="prof-favors">
+         {this.props.favors
+          .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Doing") ))
+          .map( (favor, idx) =>  
+             <section key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</section>  )
+        }
+    </div> 
+      )}
+
+
+      }
+    
     
     
     render() {
@@ -134,6 +158,7 @@ class Profile extends React.Component {
         
         const favors = (this.props.favors ? this.handleFavors() : this.handleNoFavors());
         const favorRequests = this.handleFavorRequests();
+        const currentFavors = this.handleCurrentFavors();
           return (
             <>
             <ProfileNavContainer />
@@ -181,6 +206,8 @@ class Profile extends React.Component {
                 <div className="favor-lst">
                       {favors}
                 </div>
+
+                </div>
                   <br /> <br /> <br /> <br />
 
               <div className="prof-favors">
@@ -201,7 +228,33 @@ class Profile extends React.Component {
 
                      
               </div>
+
+
+
+               <br /> <br /> <br /> <br />
+
+              <div className="prof-favors">
+
+                      <h3 className="prof-req-hd2"> These are the favors you are currently doing for others  </h3> <br />
+
+
+                      <h2 className="prof-req-hd"> <FontAwesomeIcon icon={faUser} /> Current Favors</h2>
+
+                      
+                <div className="favor-lst2">
+                      {currentFavors}
+                </div>
+
+
+                     
               </div>
+
+
+
+
+
+
+              
               
                <div>
                         {/* <img className="banner" src="https://i.ibb.co/MSmtpdb/Stay.jpg" alt="covid help"/> */}
