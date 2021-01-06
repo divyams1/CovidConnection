@@ -2,6 +2,8 @@ import * as APIUtil from '../utils/favors_api_util';
 
 export const RECEIVE_FAVORS = "RECEIVE_FAVORS"
 export const RECEIVE_FAVOR = "RECEIVE_FAVOR"
+export const UPDATE_FAVOR = "UPDATE_FAVOR"
+export const DELETE_FAVOR = "DELETE_FAVOR"
 
 export const receiveFavors = favors => {
     return {
@@ -17,6 +19,19 @@ export const receiveFavor = favor => {
     }
 }
 
+export const changeFavor = favor => {
+    return {
+        type: UPDATE_FAVOR,
+        favor
+    }
+}
+export const removeFavor = favor => {
+    return {
+        type: DELETE_FAVOR,
+        favor
+    }
+}
+
 export const fetchFavors = () => dispatch => {
     return APIUtil.getFavors()
         .then( favors => dispatch(receiveFavors(favors)))
@@ -27,6 +42,25 @@ export const createFavor = data => dispatch => {
         .then( favor => {
             dispatch(receiveFavor(favor.data))})
         .catch( err => console.log(err))
+}
+
+export const deleteFavor = data => dispatch => {
+    return APIUtil.deleteFavor(data)
+        .then(favor => {
+            dispatch(removeFavor(data))
+        })
+        .catch(err => console.log(err))
+}
+
+
+export const updateFavor = data => dispatch => {
+    debugger
+    return APIUtil.updateFavor(data)
+        .then(favor => {
+            debugger
+            dispatch(changeFavor(favor.data))
+        })
+        .catch(err => console.log(err))
 }
 
 // new

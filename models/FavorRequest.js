@@ -13,6 +13,10 @@ const FavorRequestSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
     },
+    favor_by_username: {
+        type: String,
+        default: null
+    },
     favor_description: {
         type: String,
         required: true

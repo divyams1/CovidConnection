@@ -13,3 +13,16 @@ export const createFavor = data => {
     return axios.post('/api/favors/', data)
 }
 
+export const updateFavor = data => {
+    return axios.patch('/api/favors/:id', data)
+}
+
+export const deleteFavor = data => {
+    debugger
+    return axios.delete('/api/favors/:id', { data: { data }})
+}
+
+
+
+
+
