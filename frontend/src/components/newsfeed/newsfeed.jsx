@@ -95,13 +95,27 @@ class NewsFeed extends React.Component {
         return(
             <div className="newsfeed-whole">
                 <ProfileNavContainer />
-                <h1> Newsfeed </h1>
-                <button onClick={this.userShow}> {favor_text} </button>
-                <button onClick={this.requestShow}> {request_text} </button>
+                <div className="news-banners">
+                           <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
+                       <NavLink to="/covid">Covid Help</NavLink> </h3>   
 
-                <input type="text"placeholder="Search a Username" value={this.state.forUser} onChange={this.updateName()}></input>
-                
-                {favors}
+                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
+
+                      {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
+
+                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+
+                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
+
+                </div>
+                <div className="newsfeed-whole">
+                    <h1> Newsfeed </h1>
+                    <button onClick={this.userShow}> {favor_text} </button>
+                    <button onClick={this.requestShow}> {request_text} </button>
+                    <input type="text"placeholder="Search a Username" value={this.state.forUser} onChange={this.updateName()}></input>
+
+                    {favors}
+                </div>
             </div>
         )
     }
