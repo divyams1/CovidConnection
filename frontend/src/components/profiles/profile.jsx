@@ -179,12 +179,6 @@ class Profile extends React.Component {
 
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
 
-
-
-                     
-                    
-
-
                               
 
               </div>    

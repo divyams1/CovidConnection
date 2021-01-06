@@ -48,17 +48,17 @@ class FavorCreate extends React.Component {
     render() {
         const display = (
             <div className="favor-create-form">
-                <h1 id={"favor-form-title"}> Create a Favor </h1>
+                <h1 className="form-head" id={"favor-form-title"}> Create a Favor </h1>
                 <form id={"favor-form"}>
                     <br/>
                      <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
                      <div onClick={this.props.closeModal} className="close-x">X</div>
 
-                    <h2> Title: </h2>
+                    <h2 className="form-head"> Title: </h2>
                     <label>
                         <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
-                    <h2> Request:</h2>
+                    <h2 className="form-head"> Status:</h2>
                     <select value={this.state.favor_status} onChange={this.handleDropInput} >
                           <option value="N/A">N/A </option>
                           <option value= "Done" >Done</option> 
@@ -68,7 +68,7 @@ class FavorCreate extends React.Component {
                     {/* <label>
                         <input id={"input-form"} type='text' placeholder="Request"  />
                     </label> */}
-                    <h2> Description: </h2>
+                    <h2 className="form-head"> Description: </h2>
                     <label>
                         <textarea id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>

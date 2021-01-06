@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCircle, faPlus, faBell} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCircle, faPlus, faBell, faNewspaper} from '@fortawesome/free-solid-svg-icons';
 import './profile.css';
 
 
@@ -80,20 +80,25 @@ return(
 
 favorMenu(){
 
- if(this.props.favors){
+ if(this.props.favors.length === 0) return null;
       
      
+   const favors =  this.props.favors
+                   .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
+                    .map(favor => {
+            
+            return ( <li> {favor.favor_title}</li>);
+        })
+
       return (
-      <ul className="favor-menu">
-         {this.props.favors
-          .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map(favor =>   <li>{favor.favor_title}</li>)
-        }
-    </ul> 
-      )}
 
+            <div className="favor-menu">
+            <span>  {favors} </span>
 
-      }
+            </div>
+      )
+    
+    }
 
 
 logoutUser(e) {
@@ -183,9 +188,18 @@ return (
 
          
            <button className="home-lk"><Link to={"/"}><FontAwesomeIcon className="fstyle" icon={faHome}  /></Link></button> 
+            
+        </div>
+
+         <div className="header-nav-left2">
+           
+           <button className="home-lk2"><Link to={"/newsfeed"}> <span className="news"> News  </span> <FontAwesomeIcon className="fstyle2" icon={faNewspaper}  /> </Link>                 
+           </button> 
+
+
       </div> 
 
-      <div className="header-nav-left">     
+      <div className="header-nav-mid">     
             <button className="favor-button" onClick={this.showDropdown("favors")}>
                 <span className="favor-button"> Favors </span>
                 
