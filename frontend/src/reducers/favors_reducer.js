@@ -10,18 +10,35 @@ const FavorsReducer = ( state = {} , action) => {
             debugger
             return Object.assign( {}, newState, { [action.favor._id]: action.favor })
         case UPDATE_FAVOR:
+            
+            let r;
             debugger
+            
+            for (let i = 0; i < newState.data.length; i++) {
+                if (newState.data[i]._id === action.favor._id) {
+                    r = i;
+                }
+            }
+            newState.data = newState.data.filter(favor => favor._id !== action.favor._id);
+            newState.data.splice(r, 0, action.favor)
+
+
+
+            
             /// newState.data[action.favor._id] = action.favor;
             // debugger
             // return Object.assign({}, newState) //<-- here
             return Object.assign({}, newState, { [action.favor._id]: action.favor })
         case DELETE_FAVOR:
             debugger
+
+            newState.data = newState.data.filter(favor => favor !== action.favor);
+            
             
             /// newState.data[action.favor._id] = action.favor;
             // debugger
             // return Object.assign({}, newState) //<-- here
-            return Object.assign({}, newState, { [action.favor_id]: action.favor })
+            return Object.assign({}, newState)
             
         default:
             return state; 

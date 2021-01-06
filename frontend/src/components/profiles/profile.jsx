@@ -62,6 +62,14 @@ class Profile extends React.Component {
               </>
     )}
 
+    handleButtonName(favor_status){
+      if (favor_status === true) {
+        return "This is taken"
+      } else {
+        return "This is not taken yet"
+      }
+    }
+
     handleTime(time){
 
     let currentDate = new Date(time);
@@ -97,7 +105,7 @@ class Profile extends React.Component {
           .map( (favor, idx) =>   
           <div>
           <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
-          <button onClick={() => this.props.updateFavor(favor)}>{`${favor.favor_status}`}</button>
+          <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor.favor_status)}</button>
           <button onClick={() => this.props.deleteFavor(favor)}>{`${favor.favor_status}`}</button>
           </div>
           

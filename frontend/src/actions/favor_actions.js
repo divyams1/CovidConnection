@@ -25,10 +25,10 @@ export const changeFavor = favor => {
         favor
     }
 }
-export const removeFavor = favor_id => {
+export const removeFavor = favor => {
     return {
         type: DELETE_FAVOR,
-        favor_id
+        favor
     }
 }
 
@@ -47,7 +47,7 @@ export const createFavor = data => dispatch => {
 export const deleteFavor = data => dispatch => {
     return APIUtil.deleteFavor(data)
         .then(favor => {
-            dispatch(removeFavor(data._id))
+            dispatch(removeFavor(data))
         })
         .catch(err => console.log(err))
 }
