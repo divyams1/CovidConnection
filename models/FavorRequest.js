@@ -22,6 +22,11 @@ const FavorRequestSchema = new Schema({
         default: false
     },
 
+    string_favor_status: {
+        type: String,
+        default: null
+    },
+
     favor_title: {
         type: String,
         required: true
