@@ -56,7 +56,7 @@ class NewsFeed extends React.Component {
         favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
         debugger
         favors = favors.map( (favor, idx)=> {
-            if (!this.props.currentUser.id) {
+            if (!this.props.currentUser) {
                 return <div id={idx} className="whole-favor">
 
                     <h2 className="favor-header"> {favor.favor_title} </h2>
