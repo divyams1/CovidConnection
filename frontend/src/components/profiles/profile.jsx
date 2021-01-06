@@ -3,6 +3,7 @@ import ProfileNavContainer from './profile_nav_container';
 import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
+import FavorsReducer from '../../reducers/favors_reducer';
 
 
 // import FavorItem from '../favors/favor_item';
@@ -62,9 +63,10 @@ class Profile extends React.Component {
               </>
     )}
 
-    handleButtonName(favor_status){
-      if (favor_status === true) {
-        return "This is taken"
+    handleButtonName(favor){
+      
+      if (favor.favor_status === true) {
+        return "This is taken by " + favor.favor_by_username
       } else {
         return "This is not taken yet"
       }
@@ -80,6 +82,8 @@ class Profile extends React.Component {
     hours = (hours < 10) ? `0${hours}` : hours;
     minutes = (minutes < 10) ? `0${minutes}` : minutes;
     seconds = (seconds < 10) ? `0${seconds}` : seconds;
+
+
 
     return (
       
@@ -97,17 +101,37 @@ class Profile extends React.Component {
 
     if(this.props.favors){
       
+
+      
      
       return (
       <div className="prof-favors">
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
-          .map( (favor, idx) =>   
-          <div>
-          <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
-          <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor.favor_status)}</button>
-          <button onClick={() => this.props.deleteFavor(favor)}>delete</button>
+          .map( (favor, idx) => {   
+            if (!this.props.currentUser.id) {
+              return <div>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
+                {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+              </div>
+            } else if (favor.favor_for_user_id === this.props.currentUser.id) {
+              return <div>
+              <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+              {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */ }
+              <button onClick={() => this.props.deleteFavor(favor)}>delete</button>
           </div>
+            } else {
+
+              return <div>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button>
+                {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+              </div>
+
+            }
+          
+          }
           
           )
         }

@@ -5,10 +5,6 @@ const FavorRequestSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
     },
-    favor_for_username: {
-        type: String, 
-        required: true
-    },
     favor_by_user_id: {
         type: Schema.Types.ObjectId,
         ref: 'users',
