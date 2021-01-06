@@ -36,6 +36,28 @@ class NewsFeed extends React.Component {
 
     }
     render() {
+    const handleTime = (time) => {
+
+    let currentDate = new Date(time);
+    let hours = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    let seconds = currentDate.getSeconds();
+
+    hours = (hours < 10) ? `0${hours}` : hours;
+    minutes = (minutes < 10) ? `0${minutes}` : minutes;
+    seconds = (seconds < 10) ? `0${seconds}` : seconds;
+
+    return (
+      
+
+      <div className="date"> 
+        <span> Date: {currentDate.toDateString()} </span> 
+        <span className="time-str"> Time: {hours} :{minutes} :{seconds} </span>
+      </div> 
+
+    )
+
+    }
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Requests"
         let favors = (this.props.favors.data) || [];
@@ -50,6 +72,7 @@ class NewsFeed extends React.Component {
                 
                 <h2 className="favor-header"> {favor.favor_title} </h2>
                 <p> {favor.favor_description} </p>
+                {handleTime(favor.date)}
                 <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
             </div>)
             
@@ -61,7 +84,8 @@ class NewsFeed extends React.Component {
                 <h1> Newsfeed </h1>
                 <button onClick={this.userShow}> {favor_text} </button>
                 <button onClick={this.requestShow}> {request_text} </button>
-                {/* <input type="text"  onChange={this.updateName}></input> */}
+
+                <input type="text"  onChange={this.updateName}></input>
                 
                 {favors}
             </div>

@@ -39,7 +39,7 @@ class Splash extends React.Component {
                     </p>
                     <br className="text-map-div">
                     </br>
-                    <AboutContainer />
+                    
                           <h1 className="map-header" > View All Favors From All Users</h1>
                     <button className="map-button" onClick={this.userShow}> {button_text} </button>
                 </div>
