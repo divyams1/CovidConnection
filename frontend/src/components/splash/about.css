@@ -40,3 +40,11 @@
     flex-direction: column;
     margin: 20px;
 }
+
+.user-search-bar {
+    background-color:white;
+    color: #001f3f;
+    width: 292.5px;
+    height: 30px;
+    text-align: center;
+}

@@ -9,7 +9,7 @@ import AboutContainer from '../about/about_container'
 class Splash extends React.Component {
     constructor(props){
         super(props);
-        this.state = { userShow:  false , requestShow: false }
+        this.state = { userShow:  false , requestShow: false, userSearch: false, forUser: '' }
         this.userShow = this.userShow.bind(this);
         this.requestShow = this.requestShow.bind(this);
     }
@@ -17,7 +17,20 @@ class Splash extends React.Component {
     componentDidMount() {
         this.props.fetchFavors();
     }
+       updateName() {
+        return e=> {
+            
+            
+            if ( e.currentTarget.value === "") {
+                this.setState( {userSearch: false })
+            } else {
+                this.setState( {userSearch: true })
+            }
+            this.setState( { 'forUser' : e.currentTarget.value })
+            
+        }
 
+    }
     userShow() {
         if ( !this.state.userShow ) {
             this.setState( { userShow: true})
@@ -51,13 +64,14 @@ class Splash extends React.Component {
                     </br>
                     
                           <h1 className="map-header" > View All Favors From All Users</h1>
-                    <button className="map-button" onClick={this.userShow}> {button_text} </button>
-                    <button className="map-button" onClick={this.requestShow}> {request_text} </button>
+                    <button className="map-button nav-btns-child" onClick={this.userShow}> {button_text} </button>
+                    <button className="map-button nav-btns-child-login" onClick={this.requestShow}> {request_text} </button>
+                    <input type="text" placeholder="Search a Username" className="user-search-bar" value={this.state.forUser} onChange={this.updateName()}></input>
                 </div>
                 <div className="map-container-div">
               
                     <div className="map-div">
-                        <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors} userShow={this.state.userShow} requestShow={this.state.requestShow} currentUser={this.props.currentUser}/>
+                        <MapContainer className="map-container" fetchFavors={this.props.fetchFavors} favors={this.props.favors} userShow={this.state.userShow} requestShow={this.state.requestShow} currentUser={this.props.currentUser} userSearch={this.state.userSearch} forUser={this.state.forUser}/>
                     </div>
                 </div>
                    <div className="background-div">
