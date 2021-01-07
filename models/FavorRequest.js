@@ -27,10 +27,10 @@ const FavorRequestSchema = new Schema({
         required: true
     },
 
-    string_favor_status: {
-        type: String,
-        default: null
-    },
+    // string_favor_status: {
+    //     type: String,
+    //     default: null
+    // },
 
     favor_title: {
         type: String,
