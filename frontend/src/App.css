@@ -3,7 +3,7 @@
 .App {
   text-align: center;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -82,7 +82,7 @@
 
 .covid-small-text {
   width: 500px;
- 
+  font-family: 'Roboto', sans-serif;
 }
 
 .login-text-button {
@@ -160,3 +160,4 @@
 .text-map-div {
   height: 300px;
 }
+
