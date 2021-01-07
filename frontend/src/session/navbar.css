@@ -30,10 +30,12 @@
 
 
   img.logo-header{
-width: 340px;
-height: 340px;
+width: 150px;
+height: 150px;
 align-self: center;
 margin-bottom: 40px;
+margin-right: 50px;
+margin-left: 50px;
 
  }
 

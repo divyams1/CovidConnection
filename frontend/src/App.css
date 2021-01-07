@@ -113,6 +113,12 @@
 
 .nav-bar-top {
   background-color:#005eaa;
+  display: flex;
+}
+
+.nav-bar-left {
+  display: flex;
+  justify-content: center;
 }
 
 .covid-big-text {

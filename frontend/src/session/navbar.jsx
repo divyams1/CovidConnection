@@ -44,14 +44,16 @@ class NavBar extends React.Component {
   render() {
       const logAbout = ( 
         <div>
-         <button className="nav-btns-child"><Link to={'/newsfeed'}>Newsfeed</Link></button>
-         <button className="nav-btns-child-login"><Link to={'/about'}>About</Link></button> 
+         <button className="nav-btns-child login-links"><Link to={'/newsfeed'}>Newsfeed</Link></button>
+         <button className="nav-btns-child-login login-links"><Link to={'/about'}>About</Link></button> 
          </div>
   )
       return (
         <div className="nav-bar-top">
-            {/* <img className="logo-header"  src="https://files.slack.com/files-pri/T03GU501J-F01G70VFBLK/csquarelogo__3_.png"/> */}
+          <div className="nav-bar-left">
+            <img className="logo-header"  src="https://i.ibb.co/MRxjXpp/Clogo.png"/>
             { logAbout }
+          </div>
             { this.getLinks() }
         </div>
       );
