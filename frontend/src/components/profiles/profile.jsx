@@ -95,9 +95,9 @@ class Profile extends React.Component {
             } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Request") {
               return <div>
               <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
-              <p>This favor has not been taken yet</p>
+              <p className="favor-list">This favor has not been taken yet</p>
               {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */ }
-              <button onClick={() => this.props.deleteFavor(favor)}>delete</button>
+              <button className="favor-list"onClick={() => this.props.deleteFavor(favor)}>delete</button>
           </div>
             } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Doing") {
               return <div>

@@ -51,7 +51,7 @@ class NavBar extends React.Component {
       return (
         <div className="nav-bar-top">
           <div className="nav-bar-left">
-            <img className="logo-header"  src="https://i.ibb.co/MRxjXpp/Clogo.png"/>
+            <img className="logo-header"  src="https://i.ibb.co/CnDtS7D/Clogo2.png"/>
             { logAbout }
           </div>
             { this.getLinks() }
