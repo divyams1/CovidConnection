@@ -14,9 +14,12 @@ class Profile extends React.Component {
 
         this.state = this.props.favors;
         this.handleFavors = this.handleFavors.bind(this);
+        this.handleFavorRequests = this.handleFavorRequests.bind(this);
+        this.handleCurrentFavors = this.handleCurrentFavors.bind(this);
         this.handleNoFavors = this.handleNoFavors.bind(this);
         this.renderForm = this.renderForm.bind(this);
         this.handleTime = this.handleTime.bind(this);
+
     }
     
     componentDidMount() {
@@ -114,9 +117,49 @@ class Profile extends React.Component {
 
     if(this.props.favors){
       
+     debugger
+      return (
+      <div className="prof-favors">
+         {this.props.favors
+          .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Done") ))
+          .map( (favor, idx) =>  
+             <section key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</section>  )
+        }
+    </div> 
+      )}
 
-      
+
+      }
+
+
+    handleFavorRequests(){
+
+        debugger
+
+    if(this.props.favors){
+       
      
+      return (
+      <div className="prof-favors">
+         {this.props.favors
+          .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Request") ))
+          .map( (favor, idx) =>  
+             <section key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</section>  )
+        }
+    </div> 
+      )}
+
+
+      }
+
+
+      handleCurrentFavors(){
+
+        debugger
+
+    if(this.props.favors){
+       
+     //this  has two filters from the both requests so check ASAP. 
       return (
       <div className="prof-favors">
          {this.props.favors
@@ -175,6 +218,9 @@ class Profile extends React.Component {
           }
           
           )
+          .filter(favor => ( (favor.favor_for_user_id === this.props.currentUser.id) && (favor.favor_status === "Doing") ))
+          .map( (favor, idx) =>  
+             <section key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</section>  )
         }
     </div> 
       )}
@@ -235,6 +281,8 @@ class Profile extends React.Component {
 
   }
     
+    
+    
     render() {
 
       // const this_user_favors = this.listOfRequest();
@@ -243,7 +291,8 @@ class Profile extends React.Component {
         // const hasFavors = this.handleFavors();
         
         const favors = (this.props.favors ? this.handleFavors() : this.handleNoFavors());
-        const taken_favors = (this.props.favors ? this.handleTakenFavors() : this.handleNoTakenFavors());
+        const favorRequests = this.handleFavorRequests();
+        const currentFavors = this.handleCurrentFavors();
           return (
             <>
             <ProfileNavContainer />
@@ -263,12 +312,6 @@ class Profile extends React.Component {
                      <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
 
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
-
-
-
-                     
-                    
-
 
                               
 
@@ -292,20 +335,54 @@ class Profile extends React.Component {
                       {favors}
                 </div>
 
-                  <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Taken Favors</h2>
+                </div>
+                  <br /> <br /> <br /> <br />
 
-                  <div className="favor-lst">
-                    {taken_favors}
-                  </div>
-                       
               <div className="prof-favors">
-                {/* {this.handleFavors()}
 
-                {this.handleNoFavors()} */}
+                      <h3 className="prof-req-hd2"> These are the favors you have requested from others  </h3> <br />
+
+
+                      <h2 className="prof-req-hd"> <FontAwesomeIcon icon={faUser} /> Requested Favors</h2>
+
+                      <center> <button className="favor-req-btn" onClick={this.renderForm('favor')}> 
+                      <img className="add-favor" src="https://i.ibb.co/Bz1RZS5/cross.png" /> Request Favor</button></center>
+
+
+                <div className="favor-lst2">
+                      {favorRequests}
+                </div>
+
 
                      
               </div>
+
+
+
+               <br /> <br /> <br /> <br />
+
+              <div className="prof-favors">
+
+                      <h3 className="prof-req-hd2"> These are the favors you are currently doing for others  </h3> <br />
+
+
+                      <h2 className="prof-req-hd"> <FontAwesomeIcon icon={faUser} /> Current Favors</h2>
+
+                      
+                <div className="favor-lst2">
+                      {currentFavors}
+                </div>
+
+
+                     
               </div>
+
+
+
+
+
+
+              
               
                <div>
                         {/* <img className="banner" src="https://i.ibb.co/MSmtpdb/Stay.jpg" alt="covid help"/> */}

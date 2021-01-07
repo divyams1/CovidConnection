@@ -6,7 +6,8 @@ import React from 'react';
 const mapStyles = {
   width: '80%',
   height: '80%',
-  margin: '75px'
+  'margin-left' : '10%',
+  'margin-right' : '5%'
 }
 export class MapBox extends React.Component {
 
@@ -20,6 +21,17 @@ export class MapBox extends React.Component {
     if ( this.props.userShow ) {
         favors = favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id )
     }
+    if (this.props.requestShow ) {
+      favors = favors.filter( favor => favor.status === true)
+    }
+    favors = ( this.props.userSearch ? favors.filter( favor =>  {
+            const length = this.props.forUser.length;
+            if ( favor.favor_for_username) {
+            return favor.favor_for_username.slice(0, length)  === this.props.forUser
+            } else {
+               return false 
+            }
+        }) : favors)
     const test_markers = favors.map( (favor,idx) => {
       const lat = favor.favor_lat 
       const lng = favor.favor_lng 
