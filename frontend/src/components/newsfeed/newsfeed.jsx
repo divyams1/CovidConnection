@@ -110,9 +110,9 @@ class NewsFeed extends React.Component {
                 </div>
                 <div className="newsfeed-whole">
                     <h1> Newsfeed </h1>
-                    <button onClick={this.userShow}> {favor_text} </button>
-                    <button onClick={this.requestShow}> {request_text} </button>
-                    <input type="text"placeholder="Search a Username" value={this.state.forUser} onChange={this.updateName()}></input>
+                    <button onClick={this.userShow} className="map-button nav-btns-child" > {favor_text} </button>
+                    <button onClick={this.requestShow} className="map-button nav-btns-child-login"> {request_text} </button>
+                    <input type="text"placeholder="Search a Username" className="user-search-bar" value={this.state.forUser} onChange={this.updateName()}></input>
 
                     {favors}
                 </div>
