@@ -3,7 +3,7 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:hover, a:active { text-decoration: none; }
-
+/* 
 body {
     background: #005eaa; 
 }
@@ -23,4 +23,4 @@ html {
 
 head {
     background: #005eaa; 
-}
+} */
