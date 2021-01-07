@@ -13,6 +13,11 @@ const FavorRequestSchema = new Schema({
         type: String,
         default: null
     },
+    favor_for_username: {
+        type: String,
+        default: null
+    },
+
     favor_description: {
         type: String,
         required: true
