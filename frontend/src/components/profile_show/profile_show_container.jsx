@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchFavors, fetchFavorsForUser } from '../../actions/favor_actions';
 import ProfileShow from './profile_show';
+import { updateFavor, deleteFavor } from '../../actions/favor_actions';
 import {openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,6 +21,8 @@ const mapDispatchToProps = dispatch => {
     fetchFavorsForUser: (user_id) => dispatch(fetchFavorsForUser),
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
+    updateFavor: (favor) => dispatch(updateFavor(favor)),
+    deleteFavor: (favor_id) => dispatch(deleteFavor(favor_id))
   };
 };
 
