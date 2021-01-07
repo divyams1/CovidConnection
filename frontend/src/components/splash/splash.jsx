@@ -55,18 +55,24 @@ class Splash extends React.Component {
             <NavBarContainer />
             <div>
                 <div className="covid-connection-header">
-                    <h1 className="covid-big-text"> What is Covid Connection?  </h1>
-                    <p className="covid-small-text"> Covid Connection is a way to connect with others while you are quarantining. Do you need help with groceries? Do you not not know where 
-                        to find Covid resources or do you just need someone to talk to? 
-                        Covid-Connection will let you connect with other users, see what is around you, and posts favors and view favors from around the country! View the map below or the <Link to="/newsfeed"> Newsfeed</Link> to see the favors others have posted.
-                    </p>
+                    <h1 className="covid-big-text"> COVID Connection  </h1>
+                    <h2 className="covid-md-text"> During troubling times like these, we all need to help each other. COVID Connection is a way to do this!</h2>
+                    <ul className="covid-small-text"> 
+                        <li className="covid-small-text"> Connect with other users </li>
+                        <li className="covid-small-text" > Make posts asking for help or just to say how you are! </li>
+                        <li className="covid-small-text"> Find other users posts and give them a helping hand. </li>
+                        <li className="covid-small-text"> Use the map below to find users near you!</li>
+                    </ul>
                     <br className="text-map-div">
                     </br>
                     
-                          <h1 className="map-header" > View All Favors From All Users</h1>
+                    <h1 className="map-header" > Favor Map </h1>
+                    <p className="covid-md-text"> Search for favors using the map, or use the buttons below to search for specific favors!</p>
+                    <div className="map-search">
                     <button className="map-button nav-btns-child" onClick={this.userShow}> {button_text} </button>
                     <button className="map-button nav-btns-child-login" onClick={this.requestShow}> {request_text} </button>
-                    <input type="text" placeholder="Search a Username" className="user-search-bar" value={this.state.forUser} onChange={this.updateName()}></input>
+                    <input type="text" placeholder="Search a Username" className="input-search  user-search-bar" value={this.state.forUser} onChange={this.updateName()}></input>
+                    </div>
                 </div>
                 <div className="map-container-div">
               

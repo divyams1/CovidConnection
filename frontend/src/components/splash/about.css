@@ -19,6 +19,7 @@
     width: 300px;
     font-family: 'Robot', sans-serif;
     border-radius: 7px;
+    margin: 5px;
 }
 
 .map-div {
@@ -48,4 +49,19 @@
     width: 292.5px;
     height: 30px;
     text-align: center;
+}
+
+.map-search {
+    display: flex;
+}
+
+.input-search {
+    margin-left: 10px; 
+    border: none;
+    border-radius: 10px;
+}
+
+.login-links:visited {
+    text-decoration: none;
+    color: white;
 }

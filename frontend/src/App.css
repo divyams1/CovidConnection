@@ -9,6 +9,8 @@
   pointer-events: none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -47,7 +49,7 @@
 .map-container {
   width: 80%;
   height: 80%;
-  background-color: teal;
+  background-color: #005eaa;
 }
 
 .covid-connection-header {
@@ -56,10 +58,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: teal;
+  background-color: #005eaa;
   font-family: 'Open Sans', sans-serif;
   padding-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 50px;
   
 }
 
@@ -68,21 +70,27 @@
   flex-direction: column;
 }
 .background-div {
-  background-color: teal;
+  background-color:#005eaa;
   width: 100%;
 }
 .map-header {
-  background-color: teal;
-  text-decoration: underline orange;
+  background-color: #005eaa;
+  border-bottom: 4px solid orange;
+  
   text-align: center;
   padding: 0;
   margin: 0;
+  margin-bottom: 30px;
 }
 
 
 .covid-small-text {
   width: 500px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', 'sans-serif';
+}
+.covid-md-text {
+  width: 750px;
+  font-family: 'Open Sans', 'sans-serif';
 }
 
 .login-text-button {
@@ -104,11 +112,11 @@
 }
 
 .nav-bar-top {
-  background-color:teal;
+  background-color:#005eaa;
 }
 
 .covid-big-text {
-   border-bottom: 2px solid orange;
+   border-bottom: 4px solid orange;
 }
 
 
@@ -161,3 +169,8 @@
   height: 300px;
 }
 
+body {
+  margin: 0;
+  font-family: 'Oxygen', sans-serif;
+  color: #fff;
+}

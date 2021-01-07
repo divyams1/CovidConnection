@@ -7,7 +7,8 @@ const mapStyles = {
   width: '80%',
   height: '80%',
   'margin-left' : '10%',
-  'margin-right' : '5%'
+  'margin-right' : '5%',
+  'border' : '2px solid black'
 }
 export class MapBox extends React.Component {
 
