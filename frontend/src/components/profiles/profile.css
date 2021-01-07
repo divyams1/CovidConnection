@@ -223,7 +223,7 @@ margin-left: -23%;
     padding: 0;
     position: fixed;
     justify-content: space-evenly;
-    margin-top: 20px;
+    margin-top: 30px;
 
 
    }
@@ -326,8 +326,8 @@ button.home-lk{
 
   width: 80px;
   height: 40px;
-  background-color: #001F3F;
-  color: #F0BBD4;
+  background-color: #005eaa;
+  color: #FFFFFF;
   display: flex;
   flex-direction: row;
   border-radius: 8px;
@@ -540,8 +540,8 @@ margin-left: -10px;
  }
 
  .favor-list { 
-   margin-left: -27%;
-   float: middle;
+   margin-left: -40px;
+   /* float: middle; */
  }
 
 
@@ -687,4 +687,8 @@ margin-left: -10px;
      border: 1px solid black;
      padding-bottom: 20px;
      width: 33%;
+     margin-left: 500px;
+     border-radius: 12px;
+     background-color: lightgray;
+
    }
