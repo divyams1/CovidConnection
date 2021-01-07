@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const validateFavorInput = require("../../validate/favors")
 const Favor = require("../../models/FavorRequest")
+const User = require("../../models/User")
 
 router.get("/test", (req, res)  => {
     
@@ -114,7 +115,9 @@ router.post("/",
             favor_title: req.body.favor_title,
             favor_lat: req.body.favor_lat,
             favor_lng: req.body.favor_lng,
-            favor_status: false
+            favor_status: false,
+            string_favor_status: null
+
             // req.body.favor_status,
         });
         newFavor
@@ -132,10 +135,11 @@ router.patch('/:id',
         let update;
 
      const filter = { _id: req.body._id };
+     
      if (req.body.favor_status === false) {
-        update = { favor_status: true, favor_by_user_id: req.user.id };
+        update = { favor_status: true, favor_by_user_id: req.user.id, favor_by_username: req.user.username};
      } else {
-        update = { favor_status: false, favor_by_user_id: null};
+        update = { favor_status: false, favor_by_user_id: null, favor_by_username: null };
      }
 
         const favorr = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));

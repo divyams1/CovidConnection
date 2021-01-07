@@ -5,10 +5,6 @@ const FavorRequestSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
     },
-    favor_for_username: {
-        type: String, 
-        required: true
-    },
     favor_by_user_id: {
         type: Schema.Types.ObjectId,
         ref: 'users',
@@ -17,6 +13,11 @@ const FavorRequestSchema = new Schema({
         type: String,
         default: null
     },
+    favor_for_username: {
+        type: String,
+        default: null
+    },
+
     favor_description: {
         type: String,
         required: true
@@ -24,6 +25,11 @@ const FavorRequestSchema = new Schema({
     favor_status: {
         type: Boolean,
         default: false
+    },
+
+    string_favor_status: {
+        type: String,
+        default: null
     },
 
     favor_title: {

@@ -35,6 +35,16 @@ class NewsFeed extends React.Component {
         }
 
     }
+
+    handleButtonName(favor) {
+
+        if (favor.favor_status === true) {
+            return "This is taken by " + favor.favor_by_username
+        } else {
+            return "This is not taken yet"
+        }
+    }
+
     render() {
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Requests"
@@ -44,14 +54,67 @@ class NewsFeed extends React.Component {
         
         favors = ( this.state.favorRequests? favors.filter( favor => favor.status === true) : favors )
         favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+        debugger
         favors = favors.map( (favor, idx)=> {
-             return(   
-            <div id = {idx} className="whole-favor">
-                
-                <h2 className="favor-header"> {favor.favor_title} </h2>
-                <p> {favor.favor_description} </p>
-                <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
-            </div>)
+            if (!this.props.currentUser) {
+                return <div id={idx} className="whole-favor">
+
+                    <h2 className="favor-header"> {favor.favor_title} </h2>
+                    <p> {favor.favor_description} </p>
+                    {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
+                    {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+                    <br></br>
+                    <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+                </div>
+            } else if (favor.favor_for_user_id === this.props.currentUser.id) {
+                return <div id={idx} className="whole-favor">
+
+                    <h2 className="favor-header"> {favor.favor_title} </h2>
+                    <p> {favor.favor_description} </p>
+                    {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
+                    <button onClick={() => this.props.deleteFavor(favor)}>delete</button>
+                    <br></br>
+                    <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+                </div>
+            } else if (favor.favor_by_user_id !== null && favor.favor_for_user_id !== this.props.currentUser.id && favor.favor_by_user_id !== this.props.currentUser.id) {
+                return <div id={idx} className="whole-favor">
+
+                    <h2 className="favor-header"> {favor.favor_title} </h2>
+                    <p> {favor.favor_description} </p>
+                    {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
+                    {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+                    <p>{this.handleButtonName(favor)}</p>
+                    <br></br>
+                    <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+                </div>
+            } else if (favor.favor_by_user_id !== null && favor.favor_for_user_id !== this.props.currentUser.id && favor.favor_by_user_id === this.props.currentUser.id) {
+                return <div id={idx} className="whole-favor">
+
+                    <h2 className="favor-header"> {favor.favor_title} </h2>
+                    <p> {favor.favor_description} </p>
+                    <button onClick={() => this.props.updateFavor(favor)}>You have accepted this favor request, click here to undo</button>
+                    {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+                    
+                    <br></br>
+                    <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+                </div>
+            }
+
+            
+            else {
+
+                return <div id={idx} className="whole-favor">
+
+                    <h2 className="favor-header"> {favor.favor_title} </h2>
+                    <p> {favor.favor_description} </p>
+                    <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button>
+                    {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+                    <br></br>
+                    <Link to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+                </div>
+
+            }
+             
             
         })
     
