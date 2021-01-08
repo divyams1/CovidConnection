@@ -19,7 +19,12 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     font-family: 'Josefin Sans', sans-serif;
     width: 40%;
     margin-bottom: 30px;
+    margin-right: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center;
 }
 
 .favor-header {
@@ -60,9 +65,18 @@ p.favor-newsfeed {
 
 .favor-item2 {
     border: 1px solid black;
-     padding-bottom: 20px;
-     width: 33%;
-     margin-left: 500px;
+    padding-bottom: 20px;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+     /* margin-left: 500px; */
      border-radius: 12px;
      background-color: lightgray;
+}
+
+#link-text {
+    display: flex;
+    flex-direction: row;
 }

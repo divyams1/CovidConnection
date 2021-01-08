@@ -20,6 +20,8 @@ class ProfileShow extends React.Component {
       this.props.fetchFavors();
       this.state = this.props.favors;
       this.props.closeModal();
+      this.props.fetchUsers();
+      this.props.getUser(this.props.user_profile_id);
       // this.props.fetchFavorsForUser({ user_id: this.props.user_profile_id });
     }
     componentWillReceiveProps(newState) {
@@ -188,6 +190,17 @@ class ProfileShow extends React.Component {
         // const hasFavors = this.handleFavors();
         const favors = (this.props.favors ? this.handleFavors() : this.handleNoFavors());
         const taken_favors = (this.props.favors ? this.handleTakenFavors() : this.handleNoTakenFavors());
+        
+        let this_user = "";
+
+        if (this.props.users) {
+          this_user = this.props.users.find(user => user._id === this.props.user_profile_id);
+        }
+
+      
+        
+        
+        debugger
           return (
             <>
             <ProfileNavContainer />
@@ -201,7 +214,7 @@ class ProfileShow extends React.Component {
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
               </div>
             <div className="prof-favors">
-              {/* <h1 className="favor-header">  Welcome {this.props.currentUser.username}!  </h1> */}
+              <h1 className="favor-header">  {this_user.username}  </h1>
               <h3 className="prof-fav-hd2"> These are the good deeds you have done for others  </h3> <br />
                 <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Requested Favors</h2>
                 <center> </center>

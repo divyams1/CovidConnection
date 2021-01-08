@@ -54,8 +54,8 @@ class NewsFeed extends React.Component {
                     {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                     <br></br>
-                    <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
-                </div>
+                    <p>Favor for:  <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>             
+                    </div>
             } else if (favor.favor_for_user_id === this.props.currentUser.id) {
                 return <div id={idx}  className="favor-item2">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
@@ -63,7 +63,7 @@ class NewsFeed extends React.Component {
                     {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                     <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
                     <br></br>
-                    <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
+                    <p>Favor for:  <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>
                 </div>
             } else if (favor.favor_by_user_id !== null && favor.favor_for_user_id !== this.props.currentUser.id && favor.favor_by_user_id !== this.props.currentUser.id) {
                 return <div id={idx}  className="favor-item2">
@@ -73,8 +73,8 @@ class NewsFeed extends React.Component {
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                     <p>{this.handleButtonName(favor)}</p>
                     <br></br>
-                    <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
-                </div>
+                    <p>Favor for:  <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>      
+                    </div>
             } else if (favor.favor_by_user_id !== null && favor.favor_for_user_id !== this.props.currentUser.id && favor.favor_by_user_id === this.props.currentUser.id) {
                 return <div id={idx}  className="favor-item2">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
@@ -82,8 +82,8 @@ class NewsFeed extends React.Component {
                     <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>Accepted Favor, Click to Undo</button>
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                     <br></br>
-                    <Link className="showLinks"  to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
-                </div>
+                    <p>Favor for:  <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>               
+                    </div>
             }
             else {
                 return <div id={idx}  className="favor-item2">
@@ -92,8 +92,10 @@ class NewsFeed extends React.Component {
                     <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button>
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                     <br></br>
-                    <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link>
-                </div>
+                    
+                        <p>Favor for:  <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>
+                               
+                    </div>
             }
         })
         return(
