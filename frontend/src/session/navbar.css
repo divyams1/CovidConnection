@@ -28,6 +28,11 @@
 
    }
 
+   .nav-btns-child:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }
+
 
   img.logo-header{
 width: 225px;
@@ -50,6 +55,11 @@ border: none;
     height: 30px;
     
    }
+
+   .nav-btns-child-login:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }
 
    .title-head{
 

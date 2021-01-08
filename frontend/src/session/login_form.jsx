@@ -72,7 +72,7 @@ class LoginForm extends React.Component {
           <center>Welcome to the Covid Connection! </center>
           <br/>
 
-            <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
+            <center><img className="logo-img"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/></center>
             
 
            

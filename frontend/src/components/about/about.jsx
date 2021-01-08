@@ -3,12 +3,14 @@ import HospitalsNear from './hospitals_near'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeBranch} from '@fortawesome/free-solid-svg-icons'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { NavLink, Link } from 'react-router-dom';
+import './about.css'
 
 class About extends React.Component {
 
     render() {
-        const git = <FontAwesomeIcon icon={faCodeBranch} size="lg" />
-        const link = <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+        const git = <img alt="icon" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height={30} width={30}></img>;
+        const link = <img alt="icon" src="https://pngmind.com/wp-content/uploads/2019/08/Linkedin-Logo-Png-Transparent-Background.png" width={30} height = {30} ></img>
         return(
             <div className="about">
                     <div className="about-header">
@@ -61,13 +63,13 @@ class About extends React.Component {
                             <h2> Anthony Collichio </h2>
                             <div className="links">
                                     <div className="link-text-image">
-                                        <a href="https://github.com/collich55">
+                                <a  href="https://github.com/collich55">
                                             {git}
                                             <p> Github</p>
                                             </a>
                                     </div>
                                     <div className="link-text-image">
-                                        <a href="https://www.linkedin.com/in/anthony-collichio-451b11103/"> 
+                                <a  href="https://www.linkedin.com/in/anthony-collichio-451b11103/"> 
                                             {link}
                                             <p> LinkedIn </p>
                                         </a>
@@ -77,6 +79,7 @@ class About extends React.Component {
                             <h4> Phone: 585-794-3850  </h4>
                         </div>
                     </div>
+                    <Link id="back-link" to={'/'}>Back</Link>
                 </div>
 
                 

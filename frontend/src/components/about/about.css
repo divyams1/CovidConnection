@@ -1,0 +1,38 @@
+div.about.a { text-decoration: none; color:lightblue; }
+a { text-decoration: none; color: gray }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+
+/* body {
+    background: #005eaa; 
+} */
+
+/* div {
+    background: #005eaa; 
+} */
+
+div.about {
+     background: #005eaa;
+     height: 100vh;
+     margin: 0;
+     padding-top: 100px;
+}
+
+/* html {
+    background: #005eaa; 
+} */
+
+head {
+    background: #005eaa; 
+}
+
+#back-link {
+    font-size: large;
+    border: solid 2px;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
