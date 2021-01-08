@@ -1,9 +1,10 @@
 .newsfeed-whole {
-    background-color: teal;
+    background-color:white;
     display: flex; 
     flex-direction: column;
     align-items: center;
     height: 100%;
+    color:  #005eaa;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
@@ -15,7 +16,7 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 }
 
 .whole-favor {
-    font-family: 'langar', cursive;
+    font-family: 'Josefin Sans', sans-serif;
     width: 40%;
     margin-bottom: 30px;
     text-align: center;
@@ -38,4 +39,16 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     margin-top: 20px;
     left: 0;
     padding-left: 0;
+}
+
+#newsfeed-title {
+    margin-top: 5%;
+}
+
+.showLinks {
+    color: #005eaa;
+}
+
+.favor-newsfeed {
+    color:  #005eaa;
 }
