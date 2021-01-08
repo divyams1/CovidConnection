@@ -1,5 +1,5 @@
 div.about.a { text-decoration: none; color:lightblue; }
-a { text-decoration: none; color: gray }
+/* a { text-decoration: none; color: gray } */
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }

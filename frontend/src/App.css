@@ -200,3 +200,8 @@ body {
      background-image: none;
      filter: brightness(85%);
     }
+
+
+    button { 
+      font-family: 'Josefin Sans', sans-serif;
+    }
