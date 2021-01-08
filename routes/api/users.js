@@ -10,6 +10,7 @@ const passport = require('passport');
 
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  
   res.json({
     id: req.user.id,
     username: req.user.username,
@@ -21,9 +22,12 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 
 router.get('/:id', (req, res) => {
-
+  console.log(req)
+  console.log(req.body)
+  console.log(req.params)
+  debugger
   User
-    .findById( req.params.id )
+    .findById( req.body )
     .then(user => 
       res.json({
         id: user.id,
@@ -34,6 +38,14 @@ router.get('/:id', (req, res) => {
 
 
 });
+
+router.get("/", (req, res) => {
+  User
+    .find()
+    .sort({ date: -1 })
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json(err));
+})
   
   
 
