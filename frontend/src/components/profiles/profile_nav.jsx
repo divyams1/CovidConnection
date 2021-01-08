@@ -164,7 +164,7 @@ return (
 
     <ul className="notes-list">
         <li> No notifications at this time! </li>
-        <img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/>
+        <img className="logo-img"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>
 
     </ul>
 )
