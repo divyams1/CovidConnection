@@ -57,3 +57,12 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 p.favor-newsfeed {
     color: darkblue;
 }
+
+.favor-item2 {
+    border: 1px solid black;
+     padding-bottom: 20px;
+     width: 33%;
+     margin-left: 500px;
+     border-radius: 12px;
+     background-color: lightgray;
+}
