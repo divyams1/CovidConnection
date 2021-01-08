@@ -79,7 +79,7 @@ class About extends React.Component {
                             <h4> Phone: 585-794-3850  </h4>
                         </div>
                     </div>
-                    <Link to={'/'}>Back</Link>
+                    <Link id="back-link" to={'/'}>Back</Link>
                 </div>
 
                 
