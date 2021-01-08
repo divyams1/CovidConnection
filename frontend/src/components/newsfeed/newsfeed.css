@@ -56,17 +56,19 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     margin-top: 5%;
 }
 
-.showLinks {
+.newspage-links {
     color: #005eaa;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .favor-newsfeed {
-    color: darkblue;
+    width: 80%;
+    text-align: center;
+    margin-top: 4px; 
+    margin-bottom: 4px;
 }
 
-p.favor-newsfeed {
-    color: darkblue;
-}
 
 .favor-item2 {
     border: 1px solid black;
@@ -79,9 +81,14 @@ p.favor-newsfeed {
      /* margin-left: 500px; */
      border-radius: 12px;
      background-color: lightgray;
+     margin-bottom: 10px;
 }
 
 #link-text {
     display: flex;
     flex-direction: row;
+}
+
+.favor-item2:hover {
+    background-color: pink;
 }
