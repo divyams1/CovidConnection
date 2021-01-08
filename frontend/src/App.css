@@ -149,6 +149,13 @@
   font-size: 16px;
   border-radius: 10px;
 }
+
+
+   #favor-form-button:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }
+
 ​
 ​
 #text-form {
@@ -180,3 +187,16 @@ body {
   font-family: 'Oxygen', sans-serif;
   color: #fff;
 }
+
+
+
+   .nav-buttons-logged-in:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }
+
+
+   .nav-btns-top:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }

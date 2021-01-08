@@ -22,6 +22,11 @@
     margin: 5px;
 }
 
+.map-button:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }
+
 .map-div {
     background-color: teal;
 }
@@ -60,6 +65,11 @@
     border: none;
     border-radius: 10px;
 }
+
+.input-search:hover{
+     background-image: none;
+     filter: brightness(85%);
+    }
 
 .login-links:visited {
     text-decoration: none;
