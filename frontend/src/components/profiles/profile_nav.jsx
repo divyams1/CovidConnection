@@ -181,11 +181,13 @@ return (
     
  
          <a href="https://hidden-caverns-32878.herokuapp.com/#">
-                                 <img className="logo-bx"  src="https://i.ibb.co/1mHJgBD/C.png"/>
+                                 {/* <img className="logo-bx"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/> */}
+
+                                  <img className="logo-bx"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>
 
          </a>
                    
-     <div className="header-nav-left">
+     <div className="-left">
                      
 
          
@@ -195,7 +197,7 @@ return (
 
          <div className="header-nav-left2">
            
-           <button className="home-lk2"><Link to={"/newsfeed"}> <span className="news"> News  </span> <FontAwesomeIcon className="fstyle2" icon={faNewspaper}  /> </Link>                 
+           <button className="home-lk3"><Link to={"/newsfeed"}> <span className="news"> News  </span> <FontAwesomeIcon className="fstyle2" icon={faNewspaper}  /> </Link>                 
            </button> 
 
 
@@ -203,7 +205,7 @@ return (
 
       <div className="header-nav-mid">
            
-           <button className="home-lk2"><Link to={"/profile"}> <span className="news"> Profile  </span> <FontAwesomeIcon className="fstyle2" icon={faUser}  /> </Link>                 
+           <button className="home-lk4"><Link to={"/profile"}> <span className="profiles"> Profile <FontAwesomeIcon className="fstyle3" icon={faUser}  />  </span> </Link>                 
            </button> 
 
 
@@ -214,14 +216,14 @@ return (
                 <span className="favor-button"> Favors </span>
                 
 
-                     <img className="logo-bd"  src="https://i.ibb.co/1mHJgBD/C.png"/>
+                     <img className="logo-bd"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>
                 
                 </button>
 
                 {this.state.favors ? this.favorMenu() : null}
 
     </div>
-    <div className="header-nav-mid" onClick={this.showDropdown("info")}> <button className="home-lk"> <FontAwesomeIcon className="fstyle" icon={faCircle}/></button> 
+    <div className="header-nav-mid" onClick={this.showDropdown("info")}> <button className="home-lk5"> <FontAwesomeIcon className="fstyle" icon={faCircle}/></button> 
 
             {this.state.info ? this.showUserInfo() : null}
 
