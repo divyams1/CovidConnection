@@ -86,7 +86,7 @@ class Profile extends React.Component {
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
           .map( (favor, idx) => {
-            if (!this.props.currentUser.id) {
+            if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
               return <div className="favor-item" >
                  <h2 className="favor-header"> {favor.favor_title} </h2>
                 <p key={idx} className="favor-list">  {favor.favor_description}</p>
@@ -151,7 +151,7 @@ class Profile extends React.Component {
           {this.props.favors
             .filter(favor => favor.favor_by_user_id === this.props.currentUser.id)
             .map((favor, idx) => {
-              if (!this.props.currentUser.id) {
+              if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
                 return <div className="favor-item">
                   <h2 className="favor-header"> {favor.favor_title} </h2>
                   <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
@@ -195,6 +195,11 @@ class Profile extends React.Component {
         // const hasFavors = this.handleFavors();
         const favors = (this.props.favors ? this.handleFavors() : this.handleNoFavors());
         const taken_favors = (this.props.favors ? this.handleTakenFavors() : this.handleNoTakenFavors());
+      // if (!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0)) {
+      //   return (
+      //     <h1>You are not logged in</h1>
+      //   )
+      // }
           return (
             <>
             <ProfileNavContainer />
