@@ -5,14 +5,12 @@ const validateFavorInput = require("./favors")
 const Favor = require("../../models/FavorRequest")
 
 router.get("/test", (req, res)  => {
-    debugger
     res.json({msg: "This is the favors route"});
 
 });
 
 
 router.get("/", (req, res) => {
-    debugger
     Favor
         .find()
         .sort({ date: -1 })

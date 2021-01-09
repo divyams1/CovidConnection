@@ -204,7 +204,10 @@ class Profile extends React.Component {
                        <NavLink to="/covid">Covid Help</NavLink> </h3>
                       <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
                       {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
-                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+                     {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
+                     {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
+                     {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
+                      <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
               </div>
             <div className="prof-favors">

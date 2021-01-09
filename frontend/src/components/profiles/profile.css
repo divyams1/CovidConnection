@@ -652,7 +652,7 @@ margin-left: -10px;
  }
 
  .favor-list { 
-   margin-left: -40px;
+   margin-left: -30px;
    /* float: middle; */
  }
 
@@ -840,4 +840,12 @@ margin-left: -10px;
      padding-left: 30px;
 
    }
+
+
+   .submit-btn[disabled] {
+  cursor: not-allowed;
+  background-color: #f4f5f7;
+  color: #a5adba;
+}
+
 

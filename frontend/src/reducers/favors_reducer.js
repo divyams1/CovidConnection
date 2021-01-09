@@ -26,7 +26,6 @@ const FavorsReducer = ( state = {} , action) => {
 
             
             /// newState.data[action.favor._id] = action.favor;
-            // debugger
             // return Object.assign({}, newState) //<-- here
             return Object.assign({}, newState, { [action.favor._id]: action.favor })
         case DELETE_FAVOR:
@@ -36,7 +35,6 @@ const FavorsReducer = ( state = {} , action) => {
             
             
             /// newState.data[action.favor._id] = action.favor;
-            // debugger
             // return Object.assign({}, newState) //<-- here
             return Object.assign({}, newState)
             

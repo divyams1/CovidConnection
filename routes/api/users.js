@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
   console.log(req)
   console.log(req.body)
   console.log(req.params)
-  debugger
+  
   User
     .findById( req.body )
     .then(user => 
