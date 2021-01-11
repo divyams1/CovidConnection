@@ -41,9 +41,10 @@ align-self: center;
    padding: 20px;
    background:whitesmoke;
    position: relative;
-   height: 650px;
-   width: 650px;
+   height: 500px;
+   width: 500px;
   background-color: aliceblue;
+  border-radius: 8px;
 
  }
 
@@ -53,6 +54,7 @@ color: #001f3f;
 padding: 10px;
 width: 180px;
 margin-bottom: 5px;
+border-radius: 8px;
 
  }
 
