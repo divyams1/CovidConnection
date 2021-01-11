@@ -54,10 +54,9 @@ export const deleteFavor = data => dispatch => {
 
 
 export const updateFavor = data => dispatch => {
-    
     return APIUtil.updateFavor(data)
         .then(favor => {
-           
+            
             dispatch(changeFavor(favor.data))
         })
         .catch(err => console.log(err))

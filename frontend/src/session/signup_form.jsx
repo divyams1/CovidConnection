@@ -105,7 +105,7 @@ class SignupForm extends React.Component {
           
            <br/>
            <center> Please  Sign Up or {this.props.other} </center>
-        <center> Use Demo <Link onClick={this.demoSignUp}>Demo </Link> </center>
+        <center> Use <Link onClick={this.demoSignUp}>Demo </Link> </center>
 
           <div onClick={this.props.closeModal} className="close-x">X</div>
                           
@@ -116,21 +116,21 @@ class SignupForm extends React.Component {
                 className="form-input"
                 value={this.state.email}
                 onChange={this.update('email')}
-                placeholder="Email"
+                placeholder="Enter Email"
               />
             <br/>
               <input type="text"
                 className="form-input"
                 value={this.state.username}
                 onChange={this.update('username')}
-                placeholder="username"
+                placeholder="Enter Username"
               />
             <br/>
               <input type="password"
                className="form-input"
                value={this.state.password}
                 onChange={this.update('password')}
-                placeholder="Password"
+                placeholder="Enter Password"
               />
             <br/>
               <input type="password"

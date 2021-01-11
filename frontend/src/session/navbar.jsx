@@ -44,8 +44,8 @@ class NavBar extends React.Component {
   render() {
       const logAbout = ( 
         <div>
-         <button className="nav-btns-child login-links"><Link to={'/newsfeed'}>Newsfeed</Link></button>
-         <button className="nav-btns-child-login login-links"><Link to={'/about'}>About</Link></button> 
+         <button id = "news" className="nav-btns-child login-links"><Link to={'/newsfeed'}>Newsfeed</Link></button>
+         <button id = "abt" className="nav-btns-child-login login-links"><Link to={'/about'}>About</Link></button> 
          </div>
   )
       return (

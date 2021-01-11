@@ -21,6 +21,16 @@ class FavorCreate extends React.Component {
         this.setState( { favor_lng: position.coords.longitude})
     })
   }
+
+
+   componentWillReceiveProps(newState) {
+      this.setState({  favor_title: newState.favor_title,
+            favor_description: newState.favor_description,
+            favor_lat: newState.favor_lat,
+            favor_lng: newState.favor_lng,
+            favor_status: newState.favor_status, });
+    }
+   
     handleInput(field) {
         return e=> {
             this.setState( { [field]: e.currentTarget.value })
@@ -49,12 +59,17 @@ class FavorCreate extends React.Component {
     render() {
         const display = (
             <div className="favor-create-form">
-                <h1 className="form-head" id={"favor-form-title"}> Create a Favor </h1>
+                
                 <form id={"favor-form"}>
+                    <center><h1 className="form-head" id={"favor-form-title"}> Create a Favor </h1></center>
+
                     <br/>
-                     <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center>
+                       <center><img className="logo-img"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/></center>
+
+                     {/* <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center> */}
                      <div onClick={this.props.closeModal} className="close-x">X</div>
 
+                    <div className="favor-form-div">
                     <h2 className="form-head"> Title: </h2>
                     <label>
                         <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
@@ -74,7 +89,8 @@ class FavorCreate extends React.Component {
                         <textarea id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
                     <br/>
-                    <button id={"favor-form-button"} onClick={this.handleSubmit}>Create Favor</button>
+                    <button id={"favor-form-button"}  disabled={!this.state.favor_title} onClick={this.handleSubmit}>Create Favor</button>
+                    </div>
                 </form>
             </div>
         )

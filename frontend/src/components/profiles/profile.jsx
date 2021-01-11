@@ -24,6 +24,26 @@ class Profile extends React.Component {
     componentWillReceiveProps(newState) {
       this.setState({ favors: newState.favors });
     }
+
+
+    componentDidUpdate(prevProps) {
+
+ 
+   
+
+
+        if (this.props.favors !== prevProps.favors) {
+
+        
+
+            const newFavors = this.props.favors;
+            this.setState({ favors: newFavors })
+        }
+
+
+}
+
+
     componentWillUnmount() {
         this.props.closeModal();
     }
@@ -86,7 +106,7 @@ class Profile extends React.Component {
          {this.props.favors
           .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
           .map( (favor, idx) => {
-            if (!this.props.currentUser.id) {
+            if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
               return <div className="favor-item" >
                  <h2 className="favor-header"> {favor.favor_title} </h2>
                 <p key={idx} className="favor-list">  {favor.favor_description}</p>
@@ -151,7 +171,7 @@ class Profile extends React.Component {
           {this.props.favors
             .filter(favor => favor.favor_by_user_id === this.props.currentUser.id)
             .map((favor, idx) => {
-              if (!this.props.currentUser.id) {
+              if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
                 return <div className="favor-item">
                   <h2 className="favor-header"> {favor.favor_title} </h2>
                   <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
@@ -195,21 +215,33 @@ class Profile extends React.Component {
         // const hasFavors = this.handleFavors();
         const favors = (this.props.favors ? this.handleFavors() : this.handleNoFavors());
         const taken_favors = (this.props.favors ? this.handleTakenFavors() : this.handleNoTakenFavors());
+      // if (!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0)) {
+      //   return (
+      //     <h1>You are not logged in</h1>
+      //   )
+      // }
           return (
             <>
             <ProfileNavContainer />
             <div className="profile-view">
             <div  className="banners">
-                     <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
-                       <NavLink to="/covid">Covid Help</NavLink> </h3>
-                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
+                     {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
+                       <NavLink to="/covid">Covid Help</NavLink> </h3> */}
+                      {/* <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" /> */}
                       {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
-                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
-                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
+                     {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
+                     {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
+                     {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
+                      {/* <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" />  */}
+                       <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
+
+                      <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
+                      {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
               </div>
             <div className="prof-favors">
               <h1 className="favor-title">  Welcome {this.props.currentUser.username}!  </h1>
-              <h3 className="prof-fav-hd2"> These are the good deeds you have done for others  </h3> <br />
+              <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br />
                 <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Requested Favors</h2>
                 <center> <button className="favor-btn" onClick={this.renderForm('favor')}>
                 <img className="add-favor" src="https://i.ibb.co/Bz1RZS5/cross.png" /> Add Favor</button></center>

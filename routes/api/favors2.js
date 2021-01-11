@@ -5,7 +5,6 @@ const validateFavorInput = require("./favors")
 const Favor = require("../../models/FavorRequest")
 
 router.get("/test", (req, res)  => {
-
     res.json({msg: "This is the favors route"});
 
 });

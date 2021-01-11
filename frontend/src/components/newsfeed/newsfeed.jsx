@@ -59,7 +59,7 @@ class NewsFeed extends React.Component {
   
        
         favors = favors.map( (favor, idx)=> {
-            if (!this.props.currentUser) {
+            if (!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0)) {
                 return <div id={idx}  className="favor-item2">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p className="favor-newsfeed"> {favor.favor_description} </p>
