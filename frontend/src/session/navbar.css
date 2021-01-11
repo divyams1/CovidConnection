@@ -14,6 +14,9 @@
      
    }
 
+   #news a { text-decoration: none; color: white; }
+   #abt a { text-decoration: none; color: white; }
+
    .nav-btns-child{
     /* top: 20px;
     right: 60px; */

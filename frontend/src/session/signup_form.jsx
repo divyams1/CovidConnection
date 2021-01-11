@@ -105,7 +105,7 @@ class SignupForm extends React.Component {
           
            <br/>
            <center> Please  Sign Up or {this.props.other} </center>
-        <center> Use Demo <Link onClick={this.demoSignUp}>Demo </Link> </center>
+        <center> Use <Link onClick={this.demoSignUp}>Demo </Link> </center>
 
           <div onClick={this.props.closeModal} className="close-x">X</div>
                           
