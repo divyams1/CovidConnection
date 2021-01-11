@@ -4,6 +4,7 @@ import { logout } from '../actions/session_actions';
 import {openModal, closeModal} from '../actions/modal_actions';
 
 import NavBar from './navbar';
+import NavBarNoLogo from './navbar_no_logo'
 import './navbar.css'
 
 const mapStateToProps = state => ({

@@ -48,6 +48,15 @@ border: none;
 
  }
 
+  img.logo-header-none{
+width: 173.73px;
+height: 31px;
+align-self: center;
+margin: 0;
+border: none;
+
+ }
+
 
    .nav-btns-child-login{
     /* top: 30px;

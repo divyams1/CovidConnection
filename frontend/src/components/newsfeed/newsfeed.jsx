@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import './newsfeed.css'
 import ProfileNavContainer from '../profiles/profile_nav_container';
+import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props)
@@ -95,9 +96,17 @@ class NewsFeed extends React.Component {
                     </div>
             }
         })
+        if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
         return(
+            <>
+            <div id="no-logo">
+
+                 <NavBarNoLogoContainer />
+
+            </div>
+            
             <div className="newsfeed-whole">
-                <ProfileNavContainer />
+                
                 
                 <div className="news-banners">
                            <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
@@ -118,7 +127,35 @@ class NewsFeed extends React.Component {
                 <input type="text" className="input-search  user-search-bar" placeholder='Search for a User' onChange={this.updateName}></input>
                 {favors}
             </div>
-        )
+            </>
+        ) 
+    } else {
+            return (
+                <div className="newsfeed-whole">
+                    <ProfileNavContainer />
+
+                    <div className="news-banners">
+                        <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
+                       <NavLink to="/covid">Covid Help</NavLink> </h3>
+
+                        <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
+
+                        {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
+
+                        <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+
+                        <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
+
+                    </div>
+                    <h1 id="newsfeed-title"> Newsfeed </h1>
+                    <button className="map-button nav-btns-child" onClick={this.userShow}> {favor_text} </button>
+                    <button className="map-button nav-btns-child-login" onClick={this.requestShow}> {request_text} </button>
+                    <input type="text" className="input-search  user-search-bar" placeholder='Search for a User' onChange={this.updateName}></input>
+                    {favors}
+                </div>
+            ) 
+
+    }
     }
 }
 export default NewsFeed;

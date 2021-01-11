@@ -69,6 +69,20 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     margin-bottom: 4px;
 }
 
+.nav-btns {
+    margin-left: 25%;
+}
+
+.right-btns {
+    margin-left: 25%;
+}
+
+
+/* #nav-btns-no-logo {
+    margin-left: 225px;
+    color: red;
+    margin-top: 233px;
+} */
 
 .favor-item2 {
     border: 1px solid black;
