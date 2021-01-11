@@ -2,12 +2,14 @@ import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import './newsfeed.css'
 import ProfileNavContainer from '../profiles/profile_nav_container';
+import NavBar from '../../session/navbar_container'
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props)
         this.state = { myFavors: false, favorRequests: false, userSearch: false, forUser: ''}
         this.userShow = this.userShow.bind(this);
         this.requestShow = this.requestShow.bind(this);
+        // this.handleNav = this.handleNav.bind(this);
     }
     componentDidMount() {
         this.props.fetchFavors();
@@ -38,6 +40,14 @@ class NewsFeed extends React.Component {
             return "Click to Accept Favor"
         }
     }
+
+    handleNav() {
+        if (this.props.currentUser ) {
+            return <div> <ProfileNavContainer /> </div>
+        } else {
+            return <div> <NavBar /> </div>
+        }
+    }
     render() {
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Requests"
@@ -45,6 +55,8 @@ class NewsFeed extends React.Component {
         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
         favors = ( this.state.favorRequests? favors.filter( favor => favor.status === "Doing") : favors )
         favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+    //    const navBar =   ( Object.values(this.props.currentUser).length? ProfileNavContainer : NavBar )
+  
        
         favors = favors.map( (favor, idx)=> {
             if (!this.props.currentUser) {
@@ -98,7 +110,7 @@ class NewsFeed extends React.Component {
         return(
             <div className="newsfeed-whole">
                 <ProfileNavContainer />
-                
+                {/* {this.handleNav} */}
                 <div className="news-banners">
                            <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
                        <NavLink to="/covid">Covid Help</NavLink> </h3>   

@@ -54,10 +54,10 @@ export const deleteFavor = data => dispatch => {
 
 
 export const updateFavor = data => dispatch => {
-    debugger
+    
     return APIUtil.updateFavor(data)
         .then(favor => {
-            debugger
+           
             dispatch(changeFavor(favor.data))
         })
         .catch(err => console.log(err))

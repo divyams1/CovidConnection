@@ -1,9 +1,9 @@
-div.about.a { text-decoration: none; color:lightblue; }
-/* a { text-decoration: none; color: gray } */
+div.about.a { text-decoration: none; color: gray; }
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:hover, a:active { text-decoration: none; }
+
 
 /* body {
     background: #005eaa; 
@@ -35,4 +35,11 @@ head {
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 2px;
+    text-decoration: none;
+     color: gray;
+}
+
+.links{
+    text-decoration: none;
+    color: gray;
 }

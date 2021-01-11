@@ -192,7 +192,7 @@ class ProfileShow extends React.Component {
     }
   }
     render() {
-      debugger
+     
       // const this_user_favors = this.listOfRequest();
         // const noFavors = this.handleNoFavors();
         // const hasFavors = this.handleFavors();
@@ -208,7 +208,7 @@ class ProfileShow extends React.Component {
       
         
         
-        debugger
+      
           return (
             <>
             <ProfileNavContainer />

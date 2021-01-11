@@ -37,9 +37,19 @@ this.logoutUser = this.logoutUser.bind(this);
 
 
 showDropdown(field) {
+
+    
         return e => {
             e.preventDefault();
             e.stopPropagation();
+            this.setState({
+
+                notes: false,
+                info: false,
+                add: false,
+                favors: false
+
+            })
             this.setState({[field]: !this.state[field]}, () => {
             if (this.state[field] === true) { 
                 document.addEventListener('click', this.showDropdown);

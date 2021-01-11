@@ -16,12 +16,12 @@ export const signup = (userData) => {
 };
 
 export const login = (userData) => {
-  debugger
+  
   return axios.post('/api/users/login', userData);
 };
 
 export const getUser = data => {
-  debugger
+  
   return axios.get('/api/users/:id', { data: { data } });
 };
 
