@@ -75,8 +75,8 @@ align-self: center;
    padding: 20px;
    /* background:whitesmoke; */
    position: relative;
-   height: 650px;
-   width: 650px;
+   height: 600px;
+   width: 600px;
   background-color: aliceblue;
 
  }
@@ -87,6 +87,7 @@ color: #001f3f;
 padding: 10px;
 width: 180px;
 margin-bottom: 5px;
+border-radius: 8px;
 
  }
 
@@ -101,7 +102,8 @@ margin-bottom: 5px;
     width: 200px;
     height: 40px;
 
-    margin-bottom: 300px;
+    margin-bottom: 250px;
+    border-radius: 8px;
     
    }
 

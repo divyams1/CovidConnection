@@ -24,6 +24,26 @@ class Profile extends React.Component {
     componentWillReceiveProps(newState) {
       this.setState({ favors: newState.favors });
     }
+
+
+    componentDidUpdate(prevProps) {
+
+ 
+   
+
+
+        if (this.props.favors !== prevProps.favors) {
+
+        
+
+            const newFavors = this.props.favors;
+            this.setState({ favors: newFavors })
+        }
+
+
+}
+
+
     componentWillUnmount() {
         this.props.closeModal();
     }

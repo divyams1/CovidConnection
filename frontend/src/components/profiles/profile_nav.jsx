@@ -107,15 +107,20 @@ favorMenu(){
                    .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
                     .map(favor => {
             
-            return ( <li> {favor.favor_title}</li>);
+            return ( <span> {favor.favor_title} <br /></span> );
         })
 
       return (
 
-            <div className="favor-menu">
-            <span>  {favors} </span>
+            <section className="favor-menu-items" >
+          <h2 className="author-menu">  Favors  <span className="menu-x" onClick={this.showDropdown("favors")}>  X </span> </h2>
+         <div className="favor-menu-list">
+            <div className="add-menu-item">
+            <span className="favor-menu-list">  {favors} </span>
 
             </div>
+        </div>
+         </section>   
       )
     
     }

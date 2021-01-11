@@ -21,6 +21,16 @@ class FavorCreate extends React.Component {
         this.setState( { favor_lng: position.coords.longitude})
     })
   }
+
+
+   componentWillReceiveProps(newState) {
+      this.setState({  favor_title: newState.favor_title,
+            favor_description: newState.favor_description,
+            favor_lat: newState.favor_lat,
+            favor_lng: newState.favor_lng,
+            favor_status: newState.favor_status, });
+    }
+   
     handleInput(field) {
         return e=> {
             this.setState( { [field]: e.currentTarget.value })
