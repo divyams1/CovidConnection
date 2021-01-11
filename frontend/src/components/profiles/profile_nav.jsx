@@ -81,10 +81,18 @@ addMenu(){
 
 
 return(
-    <ul className="user-info-list">
-        <li className="add-menu-item" onClick={this.renderForm('favor')}>Add Favor</li>
+
+<section className="add-menu-items" >
+ <h2 className="author-menu">  Create  <span className="menu-x" onClick={this.showDropdown("add")}>  X </span> </h2>
+    <ul className="add-menu-list">
+        
+        <span className="add-menu-item" onClick={this.renderForm('favor')}>
+        <span><img className="logo-bm"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>Create Favor    
+        <p className="add-menu-desc" > A member of CC can either request a favor when in need or keep record of something they 
+        have done as a good deed. </p></span></span>
 
     </ul>
+    </section>
 
 )
 
@@ -123,14 +131,17 @@ showUserInfo(){
 
 return(
 
-<ul className="user-info-list" >
+<section className="info-menu" >
+ <h2 className="author-menu">  Account Info  <span className="menu-x" onClick={this.showDropdown("info")}>  X </span> </h2>
+<ul className="add-menu-list" >
     <li> User Profile </li>
 <li> Name: {this.props.currentUser.username}</li>
 
  <li> Email: {this.props.currentUser.email} </li>
-  <button className="logout-menu" onClick={this.logoutUser}>LogOut</button>
+  <li className="logout-menu" onClick={this.logoutUser}>LogOut</li>
 
-</ul> 
+</ul>
+</section> 
 
 
 )
