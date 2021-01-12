@@ -100,7 +100,7 @@ return(
 
 favorMenu(){
 
- if(this.props.favors.length === 0) return null;
+ if(this.props.favors.length === 0) return  null;
       
      
    const favors =  this.props.favors
