@@ -3,7 +3,7 @@ import ProfileNavContainer from '../profiles/profile_nav_container';
 import {NavLink, Link} from 'react-router-dom';
 // import FavorItem from '../favors/favor_item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faLifeRing, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
 
 class ProfileShow extends React.Component {
@@ -209,44 +209,60 @@ class ProfileShow extends React.Component {
       
         
         
-          return (
-            <>
-            <ProfileNavContainer />
-            <div className="profile-view">
-            <div  className="banners">
+      return (
+        <>
+          <ProfileNavContainer />
+          <div className="profile-view">
+            {/* <div  className="banners">
                      <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
                        <NavLink to="/covid">Covid Help</NavLink> </h3>
                       <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
-                      {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
+                      <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" />
                      <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+                     <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png
+                     <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" /> 
+                       <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
+
+                      <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
-              </div>
+              </div> */}
             <div className="prof-favors">
-              <h1 className="favor-header">  {this_user.username}  </h1>
-              <h3 className="prof-fav-hd2"> These are the good deeds you have done for others  </h3> <br />
-                <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Requested Favors</h2>
-                <center> </center>
-                <div className="favor-lst">
-                      {favors}
-                </div>
-                  <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Taken Favors</h2>
-                  <div className="favor-lst">
-                    {taken_favors}
+              <h1 className="favor-title">  Welcome {this.props.currentUser.username}!  </h1>
+              <div className="two-lists">
+                {/* <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br /> */}
+                <div className="favor-lst-requests">
+                  <div className="favor-request-boxes">
+                    <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faLifeRing} />  Requested Favors</h2>
+                    <div className="favor-button-and-text" onClick={this.renderForm('favor')}>
+                      <button className="favor-btn" onClick={this.renderForm('favor')}>
+                        <img className="add-favor" src="https://www.pinclipart.com/picdir/big/119-1195684_medical-transparent-cross-cross-shape-clip-art-png.png" />
+                      </button>
+                      <p id="add-favor-text">{"Ask Favor"}</p>
+                    </div>
                   </div>
-              <div className="prof-favors">
-                {/* {this.handleFavors()}
-                {this.handleNoFavors()} */}
+                  {favors}
+                </div>
+
+                <div className="favor-lst-taken">
+                  <h2 className="prof-fav-hd-taken"> <FontAwesomeIcon icon={faHandsHelping} />  Taken Favors</h2>
+                  <div className="favor-btn-taken"> </div>
+
+                  {taken_favors}
+                </div>
               </div>
-              </div>
-               <div>
-                        {/* <img className="banner" src="https://i.ibb.co/MSmtpdb/Stay.jpg" alt="covid help"/> */}
-              </div>
-              {/* {this.state.favors.map(favor => (
-                <FavorItem key={favor.id} title={favor.title} />
-              ))} */}
+
             </div>
-            </>
-          );
+            <div>
+              {/* <img className="banner" src="https://i.ibb.co/MSmtpdb/Stay.jpg" alt="covid help"/> */}
+            </div>
+            {/* {this.state.favors.map(favor => (
+                    <FavorItem key={favor.id} title={favor.title} />
+                  ))} */}
+          </div>
+        </>
+      );
         }
 }
 export default ProfileShow;

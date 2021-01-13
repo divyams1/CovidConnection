@@ -3,6 +3,7 @@ import {NavLink, Link} from 'react-router-dom';
 import './newsfeed.css'
 import ProfileNavContainer from '../profiles/profile_nav_container';
 import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
+import { faVirus } from '@fortawesome/free-solid-svg-icons';
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props)
@@ -35,8 +36,10 @@ class NewsFeed extends React.Component {
     handleButtonName(favor) {
         if (favor.favor_status === "Doing") {
             return "This is Taken by " + favor.favor_by_username
-        } else {
+        } else if (favor.favor_status === "Request") {
             return "Click to Accept Favor"
+        } else {
+            return "Debug this."
         }
     }
     render() {
@@ -46,6 +49,7 @@ class NewsFeed extends React.Component {
         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
         favors = ( this.state.favorRequests? favors.filter( favor => favor.status === "Doing") : favors )
         favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+        favors = favors.filter(favor => favor.favor_status !== "Done")
        
         favors = favors.map( (favor, idx)=> {
             if (!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0)) {
@@ -80,7 +84,7 @@ class NewsFeed extends React.Component {
                 return <div id={idx}  className="favor-item2">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p className="favor-newsfeed"> {favor.favor_description} </p>
-                    <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>Accepted Favor, Click to Undo</button>
+                    <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>You accepted this favor. Click to log favor as complete!.</button>
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                     <p className="newspage-links" >Favor for:  <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>               
                     </div>
@@ -105,22 +109,24 @@ class NewsFeed extends React.Component {
 
             </div>
             
-            <div className="newsfeed-whole">
+            <div className="profile-view">
                 
                 
-                <div className="news-banners">
-                           <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
-                       <NavLink to="/covid">Covid Help</NavLink> </h3>   
+                    <div className="news-banners">
+                        {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
+                       <NavLink to="/covid">Covid Help</NavLink> </h3> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" />  */}
+                        <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
+                        <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
 
-                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
-
-                      {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
-
-                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
-
-                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
-
-                </div>
+                        <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
+                        {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
+                    </div>
                 <h1 id="newsfeed-title"> Newsfeed </h1>
                 <button className="map-button nav-btns-child" onClick={this.userShow}> {favor_text} </button>
                 <button className="map-button nav-btns-child-login" onClick={this.requestShow}> {request_text} </button>
@@ -135,17 +141,19 @@ class NewsFeed extends React.Component {
                     <ProfileNavContainer />
 
                     <div className="news-banners">
-                        <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
-                       <NavLink to="/covid">Covid Help</NavLink> </h3>
-
-                        <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
-
+                        {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
+                       <NavLink to="/covid">Covid Help</NavLink> </h3> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" /> */}
                         {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
+                        {/* <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" />  */}
+                        <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
+                        <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
 
-                        <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
-
-                        <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
-
+                        <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
+                        {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
                     </div>
                     <h1 id="newsfeed-title"> Newsfeed </h1>
                     <button className="map-button nav-btns-child" onClick={this.userShow}> {favor_text} </button>

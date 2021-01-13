@@ -24,7 +24,7 @@ const FavorRequestSchema = new Schema({
     },
     favor_status: {
         type: String,
-        required: true
+        default: "request"
     },
 
     // string_favor_status: {

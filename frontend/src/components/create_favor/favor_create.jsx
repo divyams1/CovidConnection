@@ -75,10 +75,9 @@ class FavorCreate extends React.Component {
                     </label>
                     <h2 className="form-head"> Status:</h2>
                     <select value={this.state.favor_status} onChange={this.handleDropInput} >
-                          <option value="N/A">N/A </option>
-                          <option value= "Done" >Done</option> 
-                          <option value= "Request" >Request</option>
-                          <option value= "Doing"  >Doing</option>  
+                        <option value="Request" >Request</option>
+                        <option value= "Done" >Done</option> 
+                          
                     </select>
                     {/* <label>
                         <input id={"input-form"} type='text' placeholder="Request"  />

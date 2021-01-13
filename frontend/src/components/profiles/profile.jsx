@@ -2,10 +2,12 @@ import React from 'react';
 import ProfileNavContainer from './profile_nav_container';
 import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faLifeRing, faHandsHelping} from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
 import NavBarContainer from '../../session/navbar_container';
 import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
+
+
 
 // import FavorItem from '../favors/favor_item';
 class Profile extends React.Component {
@@ -80,13 +82,15 @@ class Profile extends React.Component {
       </>
     )
   }
-    handleButtonName(favor){
-      if (favor.favor_status === "Doing") {
-        return "Accepted Favor, Click to Undo"
-      } else {
-        return "Click to Accept Favor"
-      }
+  handleButtonName(favor) {
+    if (favor.favor_status === "Doing") {
+      return "This is Taken by you, " + favor.favor_by_username
+    } else if (favor.favor_status === "Request") {
+      return "Click to Accept Favor"
+    } else {
+      return "Debug this."
     }
+  }
     handleTime(time){
     let currentDate = new Date(time);
     let hours = currentDate.getHours();
@@ -105,48 +109,50 @@ class Profile extends React.Component {
     handleFavors(){
     if(this.props.favors){
       return (
-      <div className="prof-favors">
+      <div className="small-prof-favors">
          {this.props.favors
-          .filter(favor => favor.favor_for_user_id === this.props.currentUser.id)
+          .filter(favor => favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status !== "Done")
           .map( (favor, idx) => {
             if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
               return <div className="favor-item" >
-                 <h2 className="favor-header"> {favor.favor_title} </h2>
-                <p key={idx} className="favor-list">  {favor.favor_description}</p>
-                <p> {this.handleTime(favor.date)} </p>
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                <p className="favor-description"> {favor.favor_description}</p>
                 {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                 {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
               </div>
             } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Request") {
               return <div className="favor-item">
-                 <h2 className="favor-header"> {favor.favor_title} </h2>
-              <p key={idx} className="favor-list">  {favor.favor_description}</p>
-              <p> {this.handleTime(favor.date)} </p>
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                <p className="favor-description"> {favor.favor_description}</p>
               <p className="favor-list">This favor has not been taken yet</p>
               {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */ }
               <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
           </div>
             } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Doing") {
               return <div className="favor-item">
-                 <h2 className="favor-header"> {favor.favor_title} </h2>
-                <p key={idx}  className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
-                <p id="taken-favor">This favor has been taken by {favor.favor_by_username}</p>
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                <p className="favor-description"> {favor.favor_description}</p>
                 {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                 <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
               </div>
             }
             else if (favor.favor_for_user_id === this.props.currentUser.id) {
               return <div className="favor-item">
-                 <h2 className="favor-header"> {favor.favor_title} </h2>
-                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                <p className="favor-description"> {favor.favor_description}</p>
                 {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                 <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
               </div>
             }
             else if (favor.favor_by_user_id === this.props.currentUser.id) {
               return <div>
-                 <h2 className="favor-header"> {favor.favor_title} </h2>
-                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                <p className="favor-description"> {favor.favor_description}</p>
                 <p>For {favor.favor_for_username}</p>
                 <button className="map-button nav-btns-child-login" ionClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button>
                 {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
@@ -154,8 +160,9 @@ class Profile extends React.Component {
             }
             else {
               return <div>
-                 <h2 className="favor-header"> {favor.favor_title} </h2>
-                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                <h2 className="favor-header"> {favor.favor_title} </h2>
+                <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                <p className="favor-description">  {favor.favor_description}</p>
                 <p>This favor has been accepted by {favor.favor_by_username}</p>
                 {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                 {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
@@ -170,37 +177,40 @@ class Profile extends React.Component {
   handleTakenFavors() {
     if (this.props.favors) {
       return (
-        <div className="prof-favors">
+        <div className="small-prof-favors">
           {this.props.favors
-            .filter(favor => favor.favor_by_user_id === this.props.currentUser.id)
+            .filter(favor => favor.favor_by_user_id === this.props.currentUser.id && favor.favor_status !== "Done")
             .map((favor, idx) => {
               if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
                 return <div className="favor-item">
                   <h2 className="favor-header"> {favor.favor_title} </h2>
-                  <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
-                  {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
-                  {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
+                  <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                  <p className="favor-description"> {favor.favor_description}</p>               
+              {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                 </div>
               } else if (favor.favor_for_user_id === this.props.currentUser.id) {
                 return <div className="favor-item">
                    <h2 className="favor-header"> {favor.favor_title} </h2>
-                  <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                  <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                  <p className="favor-description"> {favor.favor_description}</p>               
                   {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                   <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
                 </div>
               } else if (favor.favor_by_user_id === this.props.currentUser.id) {
               return <div className="favor-item">
                <h2 className="favor-header"> {favor.favor_title} </h2>
-              <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
-              <p>You are currently fulfilling this favor for {favor.favor_for_username}</p>
+              <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+              <p className="favor-description"> {favor.favor_description}</p>               
+              <p id="currently-fulfilling">You are currently fulfilling this favor for {favor.favor_for_username}</p>
               <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button>
               {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
           </div>
             }
               else {
                 return <div>
-                   <h2 className="favor-header"> {favor.favor_title} </h2>
-                  <p key={idx} className="favor-list"> {this.handleTime(favor.date)} {favor.favor_description}</p>
+                  <h2 className="favor-header"> {favor.favor_title} </h2>
+                  <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
+                  <p className="favor-description"> {favor.favor_description}</p>               
                   <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button>
                   {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                 </div>
@@ -230,35 +240,37 @@ class Profile extends React.Component {
             <>
               <NavBarNoLogoContainer />
             <div className="profile-view">
-            <div  className="banners">
-                     {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
-                       <NavLink to="/covid">Covid Help</NavLink> </h3> */}
-                      {/* <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" /> */}
-                      {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
-                     {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
-                     {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
-                     {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
-                      {/* <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" />  */}
+            {/* <div  className="banners">
+                     <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
+                       <NavLink to="/covid">Covid Help</NavLink> </h3>
+                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" />
+                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+                     <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png
+                     <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" /> 
                        <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
                       <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
 
                       <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
-                      {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
-              </div>
+                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
+              </div> */}
             <div className="prof-favors">
-              <h1 className="favor-title">  Welcome {this.props.currentUser.username}!  </h1>
-              <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br />
-                <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Requested Favors</h2>
-                <center> <button className="favor-btn" onClick={this.renderForm('favor')}>
-                <img className="add-favor" src="https://i.ibb.co/Bz1RZS5/cross.png" /> Add Favor</button></center>
+              <h1 className="profile-name-title">  Welcome {this.props.currentUser.username}!  </h1>
+              {/* <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br /> */}
+                
                 <div className="favor-lst">
-                      {favors}
+                    
+                    <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faLifeRing} />  Requested Favors</h2>
+                    <button className="favor-btn" onClick={this.renderForm('favor')}>
+                    <img className="add-favor" src="https://i.ibb.co/Bz1RZS5/cross.png" /> Add Favor</button>
+                    {favors}
                 </div>
-                  <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Taken Favors</h2>
+                  <h2 className="prof-fav-hd-taken"> <FontAwesomeIcon icon={faHandsHelping} />  Taken Favors</h2>
                   <div className="favor-lst">
                     {taken_favors}
                   </div>
-              <div className="prof-favors">
+                  <div className="small-prof-favors">
                 {/* {this.handleFavors()}
                 {this.handleNoFavors()} */}
               </div>
@@ -278,38 +290,50 @@ class Profile extends React.Component {
               <>
                 <ProfileNavContainer />
                 <div className="profile-view">
-                  <div className="banners">
-                    {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
-                          <NavLink to="/covid">Covid Help</NavLink> </h3> */}
-                    {/* <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" /> */}
-                    {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
-                    {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
-                    {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
-                    {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
-                    {/* <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" />  */}
-                    <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
-                    <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
+                  {/* <div  className="banners">
+                     <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
+                       <NavLink to="/covid">Covid Help</NavLink> </h3>
+                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" />
+                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+                     <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png
+                     <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" /> 
+                       <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
+                      <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
 
-                    <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
-                    {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
-                  </div>
+                      <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
+                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
+              </div> */}
                   <div className="prof-favors">
                     <h1 className="favor-title">  Welcome {this.props.currentUser.username}!  </h1>
-                    <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br />
-                    <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Requested Favors</h2>
-                    <center> <button className="favor-btn" onClick={this.renderForm('favor')}>
-                      <img className="add-favor" src="https://i.ibb.co/Bz1RZS5/cross.png" /> Add Favor</button></center>
-                    <div className="favor-lst">
+                    <div className="two-lists">
+                    {/* <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br /> */}
+                    <div className="favor-lst-requests">
+                      <div className="favor-request-boxes">
+                          <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faLifeRing} />  Requested Favors</h2>
+                          <div className="favor-button-and-text" onClick={this.renderForm('favor')}>
+                          <button className="favor-btn" onClick={this.renderForm('favor')}>
+                            <img className="add-favor" src="https://www.pinclipart.com/picdir/big/119-1195684_medical-transparent-cross-cross-shape-clip-art-png.png" /> 
+                          </button>
+                          <p id="add-favor-text">{"Ask Favor"}</p>
+                        </div>
+                      </div>
                       {favors}
                     </div>
-                    <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faUser} />  Taken Favors</h2>
-                    <div className="favor-lst">
+                    
+                    <div className="favor-lst-taken">
+                        <h2 className="prof-fav-hd-taken"> <FontAwesomeIcon icon={faHandsHelping} />  Taken Favors</h2>
+                        <div className="favor-button-and-text" onClick={this.renderForm('favor')}>
+                          <div className="add-favor-ghost"></div>
+                          
+  
+                        </div>
+            
                       {taken_favors}
                     </div>
-                    <div className="prof-favors">
-                      {/* {this.handleFavors()}
-                    {this.handleNoFavors()} */}
-                    </div>
+                  </div>
+
                   </div>
                   <div>
                     {/* <img className="banner" src="https://i.ibb.co/MSmtpdb/Stay.jpg" alt="covid help"/> */}

@@ -19,6 +19,10 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&family=Press+Start+2P&
 
 }
 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,500&display=swap');
+
 #taken-favor {
   color: gold
 }
@@ -42,23 +46,7 @@ justify-content: center;
 }
 
 
-.prof-fav-hd{
 
-background: #005eaa; 
-color: white;
-font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
-font-size: 20px;
-border: 1px solid #001f3f;
-padding: 10px;
-border-radius: 0 ;
-position: relative; 
-display: inline-block;
-box-shadow: 1px 1px 1px #aaaaaa;
-justify-content: center;
-margin-left: -20%;
-
-}
 
 .date{
 display: flex;
@@ -89,9 +77,11 @@ position: relative;
 display: inline-block;
 box-shadow: 1px 1px 1px #aaaaaa;
 justify-content: center;
-margin-left: -20%;
+/* margin-left: -20%; */
 
 }
+
+
 
 .prof-req-hd{
 
@@ -107,7 +97,7 @@ position: relative;
 display: inline-block;
 box-shadow: 1px 1px 1px #aaaaaa;
 justify-content: center;
-margin-left: -500px;
+/* margin-left: -500px; */
 
 }
 
@@ -126,7 +116,7 @@ position: relative;
 display: inline-block;
 box-shadow: 1px 1px 1px #aaaaaa;
 justify-content: center;
-margin-left: -500px;
+/* margin-left: -500px; */
 
 }
 
@@ -142,58 +132,94 @@ margin-left: -500px;
   border-radius: 8px;
   font-family: 'Josefin Sans', sans-serif;
   cursor: pointer;
-  margin-left: -500px;
+  /* margin-left: -500px; */
 
 
 }
 
 .favor-req-btn:hover{
-     background-image: none;
-     filter: brightness(85%);
-    }
+  background-image: none;
+  filter: brightness(85%);
+}
 
 
 
 .prof-favors{
 
-/* background-color:   teal;  */
+
 color:#005eaa;
 font-weight: bolder;
 font-family: 'Josefin Sans', sans-serif;
 font-size: 24px;
-/* border: 1px solid orange; */
 padding: 10px;
 border-radius: 0 ;
 position: relative; 
 display: inline-block;
-/* box-shadow: 1px 1px 1px #aaaaaa; */
-/* font-weight: 200; */
 width: 100%;
-margin-left: 350px;
+margin-top: 6%;
+margin-bottom: 1%;
 align-items: center;
 justify-content: center;
 text-align: center;
 
 }
 
-.favor-lst2{
+.small-prof-favors {
+  color:#005eaa;
+font-weight: bolder;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 24px;
+padding: 10px;
+border-radius: 0 ;
+position: relative; 
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-top: 2%;
+margin-bottom: 1%;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
 
-margin-left: -500px;
+/* .profile-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+} */
+
+
+.favor-lst-requests {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10%;
+  border: 1px solid black;
+  border-right: none;
+  flex: 1;
+  box-sizing: padding-box;
+  
 
 }
 
-.prof-favors > * {
-
-margin-top: 40px;
-
-}
-
-.prof-favors > section {
-
-margin-top: 60px;
-margin-left: -700px;
+.favor-lst-taken {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 10%;
+  border: 1px solid black;
 
 }
+
+.two-lists {
+  display: flex;
+  justify-content: center;
+}
+
+
 
 .covid-help{
 
@@ -205,11 +231,7 @@ font-size: 18px;
 
 }
 
-.favor-lst{
 
-margin-left: -500px;
-
-}
 
 
 
@@ -225,26 +247,32 @@ margin-left: -500px;
     position: fixed;
     justify-content: space-evenly;
     margin-top: 20px;
+    position: absolute
 
 
    }
-   
 
-   .banners2{
-
+   .news-banners {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 20%;
+    width: 350px;
+    height: auto;
     overflow: auto;
     margin: 0;
     padding: 0;
+    position: fixed;
     justify-content: space-evenly;
+    margin-top: 30px;
+    left: 0;
+    padding-left: 0;
+    margin-left: 5px;
+    
+}
+   
 
+  
 
-   }
-
-   .add-menu-items{
+.add-menu-items{
 /* background: #FFFFFF; */
 width: 304px;
 height: auto;
@@ -584,6 +612,12 @@ button.home-lk{
   padding: 20px 10px;
 }
 
+/* .profile-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
 .header {
   overflow: hidden;
   background-color: #f1f1f1;
@@ -593,19 +627,41 @@ button.home-lk{
 
 .favor-btn{
 
-  width: 80px;
   height: 40px;
-  background-color: #005eaa;
+  padding: 2px;
   color: #FFFFFF;
   display: flex;
   flex-direction: row;
   border-radius: 8px;
   font-family: 'Josefin Sans', sans-serif;
   cursor: pointer;
-  margin-left: -20%;
+  margin-right: 10px;
+  
+  /* margin-left: -20%; */
 
 
 }
+
+.favor-button-and-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.favor-btn-taken{
+
+  width: 1px;
+  height: 7.7%;
+
+  /* margin-left: -20%; */
+
+
+}
+
+/* #add-favor-text {
+  flex: 1
+} */
 
 .logout-menu{
 
@@ -621,6 +677,11 @@ margin-top: 40px;
 width: 32px;
 height: 32px;
 
+}
+
+.add-favor-ghost {
+  width: 32px;
+  height: 72px;
 }
 
 .header a {
@@ -858,7 +919,7 @@ ul.favor-list{
   justify-self: center;
   border: 1px solid black;
   font-weight: 200;
-  margin: -80px;
+  /* margin: -80px; */
 
 
 
@@ -886,7 +947,7 @@ width: 150px;
 height: 85px;
 background-color: #005eaa;
 margin-top: -25px;
-margin-left: -10px;
+/* margin-left: -10px; */
  }  
 
 
@@ -905,7 +966,7 @@ margin-left: -10px; */
  }
 
  .favor-list { 
-   margin-left: -30px;
+   /* margin-left: -30px; */
    /* float: middle; */
  }
 
@@ -1083,15 +1144,61 @@ margin-left: -10px; */
 
    }
 
-   .favor-item {
-     border: 1px solid black;
-     padding-bottom: 20px;
-     width: 33%;
-     margin-left: 20%;
-     border-radius: 12px;
-     background-color: lightgray;
-     padding-left: 30px;
+   
 
+   .favor-item {
+    border: 1px solid black;
+    padding-bottom: 20px;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    margin-bottom: 1%;
+    height: auto;
+    width: 60%;
+
+   }
+
+
+.favor-description {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2%;
+    font-size: 22px;
+}
+
+.favor-request-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.favor-item > .map-button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #00538C;
+}
+
+
+
+   #currently-fulfilling {
+    margin: 0;
+    margin-bottom: 5%;
+    font-size: medium;
+    color: black
+   }
+
+.favor-header {
+  text-decoration: underline;
+}
+  
+
+   .date {
+     margin-bottom: -3%;
+     color: black;
+     font-size: 19px;
    }
 
 

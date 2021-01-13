@@ -138,8 +138,9 @@ router.patch('/:id',
      if (req.body.favor_status === "Request") {
         update = { favor_status: "Doing", favor_by_user_id: req.user.id, favor_by_username: req.user.username};
      } else {
-        update = { favor_status: "Request", favor_by_user_id: null, favor_by_username: null };
+        update = { favor_status: "Done"};
      }
+        // update = { favor_status: "Request", favor_by_user_id: null, favor_by_username: null };
 
         const favorr = Favor.findOneAndUpdate(filter, update, { new: true }).then(favor => res.json(favor));
 
