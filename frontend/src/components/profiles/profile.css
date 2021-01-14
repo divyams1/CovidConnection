@@ -81,6 +81,18 @@ justify-content: center;
 
 }
 
+.showLinks {
+  text-decoration: underline;
+  color: #005eaa;
+}
+
+.showLinksCurrently {
+  text-decoration: underline;
+  color: black;
+}
+
+
+
 
 
 .prof-req-hd{
@@ -676,12 +688,13 @@ margin-top: 40px;
 
 width: 32px;
 height: 32px;
-
+background-color: white;
 }
 
 .add-favor-ghost {
   width: 32px;
   height: 72px;
+  
 }
 
 .header a {
@@ -1165,8 +1178,12 @@ margin-left: -10px; */
 .favor-description {
     padding: 0;
     margin: 0;
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     font-size: 22px;
+}
+
+.favor-for-text {
+  margin-bottom: 5px;
 }
 
 .favor-request-boxes {
@@ -1178,13 +1195,24 @@ margin-left: -10px; */
 
 .favor-item > .map-button {
   font-family: 'Montserrat', sans-serif;
+  /* background-color: #005EAA; */
   background-color: #00538C;
+  
 }
 
 
 
+   .currently-fulfilling {
+    margin: 0;
+    height: 5px;
+    margin-bottom: 5%;
+    font-size: medium;
+    color: black
+   }
+
    #currently-fulfilling {
     margin: 0;
+    height: 5px;
     margin-bottom: 5%;
     font-size: medium;
     color: black

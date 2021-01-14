@@ -116,7 +116,7 @@ router.post("/",
             favor_lat: req.body.favor_lat,
             favor_lng: req.body.favor_lng,
             favor_for_username: req.user.username, 
-            favor_status: req.body.favor_status
+            favor_status: "Request"
             // req.body.favor_status,
         });
         newFavor
@@ -137,8 +137,10 @@ router.patch('/:id',
      
      if (req.body.favor_status === "Request") {
         update = { favor_status: "Doing", favor_by_user_id: req.user.id, favor_by_username: req.user.username};
+     } else if (req.body.favor_status === "Doing" && req.user.id === req.body.favor_by_user_id) {
+        update = { favor_status: "Request", favor_by_user_id: null, favor_by_username: null};
      } else {
-        update = { favor_status: "Done"};
+        update = { favor_status: "Done" };
      }
         // update = { favor_status: "Request", favor_by_user_id: null, favor_by_username: null };
 

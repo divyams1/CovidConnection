@@ -54,6 +54,10 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     
 }
 
+.favor-list-not-taken {
+    color: black;
+}
+
 .banners{
 
     display: flex;
@@ -88,16 +92,21 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 
    }
 
-
+.news-banners {
+    width: 20%;
+}
 
 #newsfeed-title {
     margin-top: 5%;
 }
 
 .newspage-links {
-    color: #005eaa;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    /* color: #005eaa; */
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: medium;
 }
 
 .favor-newsfeed {
@@ -115,6 +124,9 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     margin-left: 25%;
 }
 
+.favor-description {
+    text-align: center;
+}
 
 /* #nav-btns-no-logo {
     margin-left: 225px;
@@ -143,4 +155,9 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 
 .favor-item2:hover {
     background-color: pink;
+}
+
+.currently-fulfilling {
+    color:black;
+    font-size: medium;
 }

@@ -73,12 +73,12 @@ class FavorCreate extends React.Component {
                     <label>
                         <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
-                    <h2 className="form-head"> Status:</h2>
+                    {/* <h2 className="form-head"> Status:</h2>
                     <select value={this.state.favor_status} onChange={this.handleDropInput} >
                         <option value="Request" >Request</option>
                         <option value= "Done" >Done</option> 
                           
-                    </select>
+                    </select> */}
                     {/* <label>
                         <input id={"input-form"} type='text' placeholder="Request"  />
                     </label> */}
