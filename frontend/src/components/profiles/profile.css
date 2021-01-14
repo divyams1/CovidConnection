@@ -209,9 +209,10 @@ text-align: center;
   flex-direction: column;
   margin-left: 10%;
   border: 1px solid black;
-  border-right: none;
   flex: 1;
   box-sizing: padding-box;
+  margin-right: 1%;
+  border-radius: 3px;
   
 
 }
@@ -223,6 +224,8 @@ text-align: center;
   flex-direction: column;
   margin-right: 10%;
   border: 1px solid black;
+  margin-left: 1%;
+  border-radius: 3px;
 
 }
 

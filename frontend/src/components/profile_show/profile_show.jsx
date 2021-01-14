@@ -203,6 +203,7 @@ class ProfileShow extends React.Component {
                   <h2 className="favor-header"> {favor.favor_title} </h2>
                   <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                   <p className="favor-description"> {favor.favor_description}</p>
+                  <p className="favor-for-text">For <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>
                   <p id="currently-fulfilling">You are currently fulfilling this favor</p>
                   <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>
                     Click here to undo accepting this favor.
