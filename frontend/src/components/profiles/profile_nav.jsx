@@ -206,7 +206,7 @@ return (
 
     
  
-         <a href="https://hidden-caverns-32878.herokuapp.com/#">
+         <a href="https://covid-connection.herokuapp.com/#/">
                                  {/* <img className="logo-bx"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/> */}
 
                                   <img className="logo-bx"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>
@@ -228,6 +228,7 @@ return (
 
 
       </div> 
+  
 
       <div className="header-nav-mid">
            

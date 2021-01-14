@@ -41,13 +41,13 @@ class NewsFeed extends React.Component {
         }
     }
 
-    handleNav() {
-        if (this.props.currentUser ) {
-            return <div> <ProfileNavContainer /> </div>
-        } else {
-            return <div> <NavBar /> </div>
-        }
-    }
+    // handleNav() {
+    //     if (this.props.currentUser ) {
+    //         return <div> <ProfileNavContainer /> </div>
+    //     } else {
+    //         return <div> <NavBar /> </div>
+    //     }
+    // }
     render() {
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Requests"
@@ -109,7 +109,7 @@ class NewsFeed extends React.Component {
         })
         return(
             <div className="newsfeed-whole">
-                <ProfileNavContainer />
+                {<ProfileNavContainer />}
                 {/* {this.handleNav} */}
                 <div className="news-banners">
                            <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
