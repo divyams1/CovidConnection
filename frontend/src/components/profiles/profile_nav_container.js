@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import ProfileNav from './profile_nav';
+import ProfileNav2 from './profilenav2';
 
 import {fetchFavors} from '../../actions/favor_actions';
 
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => ({
     ),
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileNav));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileNav2));

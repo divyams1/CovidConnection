@@ -255,8 +255,9 @@ border: 1px solid black;
 align-content: center;
 text-align: left;
 position: fixed;
-top: 44px;
+top: 84px;
 right: 140px;
+overflow: visible;
 
 
 
@@ -295,8 +296,9 @@ border: 1px solid black;
 align-content: center;
 text-align: left;
 position: fixed;
-top: 44px;
-right: 240px;
+top: 84px;
+right: 440px;
+overflow: visible;
 
 
 
@@ -676,8 +678,8 @@ height: 32px;
   flex-direction: column;
   align-content: center;
 	text-align: left;
-	top: 44px;
-	right: 20;
+	top: 64px;
+	right: 200;
   width: 240px;
     
   box-shadow: 2px 6px 8px -4px rgba(9,30,66,.25);
@@ -760,7 +762,7 @@ height: 32px;
   width: 300px;
   cursor: pointer;
   margin-left: -40px;
-    
+  overflow: visible;
   box-shadow: 2px 6px 8px -4px rgba(9,30,66,.25);
 }
 
@@ -772,6 +774,7 @@ height: 32px;
     color: #172b4d; 
     font-size:14px;
     cursor: pointer;
+    overflow: visible;
 
 }
 
