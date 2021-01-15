@@ -214,7 +214,7 @@ text-align: center;
   box-sizing: padding-box;
   margin-right: 1%;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.938);
+  background-color: rgb(248, 252, 255)
   
 
 }
@@ -228,7 +228,7 @@ text-align: center;
   border: 1px solid black;
   margin-left: 1%;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.938);
+  background-color:rgb(248, 252, 255)
 
 }
 
@@ -1182,29 +1182,9 @@ margin-left: -10px; */
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 12px;
-    /* background-color: #f7fcfe; */
-    /* background-color: #DADDE1; */
-    background-color: #fafaffea;
-    /* #DADDE1 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
-    margin-bottom: 1%;
-    height: auto;
-    width: 60%;
-    /* background-image: url("https://media1.thehungryjpeg.com/thumbs2/ori_102294_4f540e71c0b301a66c49225c66770e38fb09ddba_26-white-paper-background-textures.jpg");
-    background-color: #cccccc; */
-    
-
-
-   }
-
-    .favor-item-accepted {
-    border: 1px solid black;
-    padding-bottom: 20px;
-    border-radius: 12px;
     background-color: #f7fcfe;
+    /* background-color: #DADDE1; */
+    /* background-color: #f1f1ff; */
     /* #DADDE1 */
     display: flex;
     flex-direction: column;
@@ -1219,6 +1199,7 @@ margin-left: -10px; */
 
 
    }
+
 
    .favor-item:hover {
     background-image: none;
@@ -1234,8 +1215,8 @@ margin-left: -10px; */
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 12px;
-    background-color: #fafaffea;
-    /* background-color: #f7fcfe; */
+     /* background-color: #fafaffea; */
+    background-color: #f7fcfe;
     display: flex;
     flex-direction: column;
     align-items: center;
