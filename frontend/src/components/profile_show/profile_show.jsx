@@ -279,7 +279,7 @@ class ProfileShow extends React.Component {
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
               </div> */}
             <div className="prof-favors">
-              <h1 className="favor-header">  {this_user.username}  </h1>
+              <h1 className="profile-username">  {this_user.username}'s page  </h1>
               <div className="two-lists">
                 {/* <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br /> */}
                 <div className="favor-lst-requests">

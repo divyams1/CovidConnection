@@ -633,7 +633,9 @@ button.home-lk{
 }
 
 .profile-view {
-  background-color: #547AA5;
+  /* background-color: #547AA5; */
+  background-color: #C2EDFF;
+  
 }
 
 
@@ -682,12 +684,18 @@ button.home-lk{
 .favor-title {
   color: #293132;
   font-size: 60px;
+  
   /* border: 1px solid black;
   height: auto;
   margin-left: 200px;
   margin-right: 200px; */
 
 
+}
+
+.profile-username {
+  color: #293132;
+  font-size: 60px;
 }
 
 /* #add-favor-text {
@@ -1179,7 +1187,7 @@ margin-left: -10px; */
    
 
    .favor-item {
-    border: 1px solid black;
+    border: 2px solid #005EAA;
     padding-bottom: 20px;
     border-radius: 12px;
     background-color: #f7fcfe;
@@ -1203,16 +1211,18 @@ margin-left: -10px; */
 
    .favor-item:hover {
     background-image: none;
-    filter: brightness(97%);
+    filter: brightness(95%);
+    /* background-color: pink */
    }
 
    .favor-item-accepted:hover {
     background-image: none;
-    filter: brightness(97%);
+    filter: brightness(95%);
+    /* background-color: rgb(255, 224, 229) */
    }
 
    .favor-item-newsfeed {
-    border: 1px solid black;
+    border: 2px solid #005EAA;
     padding-bottom: 20px;
     border-radius: 12px;
      /* background-color: #fafaffea; */
@@ -1230,7 +1240,8 @@ margin-left: -10px; */
 
    .favor-item-newsfeed:hover {
     background-image: none;
-    filter: brightness(97%);
+    filter: brightness(95%);
+    /* background-color: pink */
    }
 
 
