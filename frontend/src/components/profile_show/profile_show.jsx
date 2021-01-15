@@ -105,7 +105,7 @@ class ProfileShow extends React.Component {
                   <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                   <p className="favor-description"> {favor.favor_description}</p>
                   <p className="favor-for-text">For <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>
-                  <p className="currently-fulfilling">This favor has not been taken yet</p>
+                  <p className="currently-fulfilling-none">This favor has not been taken yet</p>
                   {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                   <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
                 </div>
@@ -184,7 +184,7 @@ class ProfileShow extends React.Component {
                   <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                   <p className="favor-description"> {favor.favor_description}</p>
                   <p className="favor-for-text">For <Link className="showLinks" to={`/user/${favor.favor_for_user_id}`} >{favor.favor_for_username}  </Link></p>
-                  <p className="currently-fulfilling">This favor has not been taken yet</p>
+                  <p className="currently-fulfilling-none">This favor has not been taken yet</p>
                   {/* <button onClick={() => this.props.updateFavor(favor)}>{this.handleButtonName(favor)}</button> */}
                   <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
                 </div>

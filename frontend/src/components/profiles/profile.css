@@ -88,8 +88,9 @@ justify-content: center;
 
 .showLinksCurrently {
   text-decoration: underline;
-  color: black;
+  color: green;
 }
+
 
 
 
@@ -681,6 +682,12 @@ button.home-lk{
 .favor-title {
   color: #293132;
   font-size: 60px;
+  /* border: 1px solid black;
+  height: auto;
+  margin-left: 200px;
+  margin-right: 200px; */
+
+
 }
 
 /* #add-favor-text {
@@ -1292,7 +1299,15 @@ margin-left: -10px; */
     height: 5px;
     margin-bottom: 5%;
     font-size: medium;
-    color: black
+    color: green
+   }
+
+   .currently-fulfilling-none {
+    margin: 0;
+    height: 5px;
+    margin-bottom: 5%;
+    font-size: medium;
+    color: red
    }
 
    #currently-fulfilling {
@@ -1300,7 +1315,7 @@ margin-left: -10px; */
     height: 5px;
     margin-bottom: 5%;
     font-size: medium;
-    color: black
+    color: green
    }
 
 .favor-header {
