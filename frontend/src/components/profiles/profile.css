@@ -212,7 +212,8 @@ text-align: center;
   flex: 1;
   box-sizing: padding-box;
   margin-right: 1%;
-  border-radius: 3px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.938);
   
 
 }
@@ -225,14 +226,17 @@ text-align: center;
   margin-right: 10%;
   border: 1px solid black;
   margin-left: 1%;
-  border-radius: 3px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.938);
 
 }
 
 .two-lists {
   display: flex;
   justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 
 
 
@@ -627,11 +631,11 @@ button.home-lk{
   padding: 20px 10px;
 }
 
-/* .profile-view {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+.profile-view {
+  background-color: #547AA5;
+}
+
+
 
 .header {
   overflow: hidden;
@@ -672,6 +676,11 @@ button.home-lk{
   /* margin-left: -20%; */
 
 
+}
+
+.favor-title {
+  color: #293132;
+  font-size: 60px;
 }
 
 /* #add-favor-text {
@@ -1166,7 +1175,30 @@ margin-left: -10px; */
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 12px;
+    /* background-color: #f7fcfe; */
+    /* background-color: #DADDE1; */
+    background-color: #fafaffea;
+    /* #DADDE1 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    margin-bottom: 1%;
+    height: auto;
+    width: 60%;
+    /* background-image: url("https://media1.thehungryjpeg.com/thumbs2/ori_102294_4f540e71c0b301a66c49225c66770e38fb09ddba_26-white-paper-background-textures.jpg");
+    background-color: #cccccc; */
+    
+
+
+   }
+
+    .favor-item-accepted {
+    border: 1px solid black;
+    padding-bottom: 20px;
+    border-radius: 12px;
     background-color: #f7fcfe;
+    /* #DADDE1 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1186,11 +1218,17 @@ margin-left: -10px; */
     filter: brightness(97%);
    }
 
+   .favor-item-accepted:hover {
+    background-image: none;
+    filter: brightness(97%);
+   }
+
    .favor-item-newsfeed {
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 12px;
-    background-color: #f7fcfe;
+    background-color: #fafaffea;
+    /* background-color: #f7fcfe; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1227,6 +1265,13 @@ margin-left: -10px; */
 }
 
 .favor-item > .map-button {
+  font-family: 'Montserrat', sans-serif;
+  /* background-color: #005EAA; */
+  background-color: #00538C;
+  
+}
+
+.favor-item-accepted > .map-button {
   font-family: 'Montserrat', sans-serif;
   /* background-color: #005EAA; */
   background-color: #00538C;
