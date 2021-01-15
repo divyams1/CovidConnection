@@ -69,7 +69,7 @@ class NewsFeed extends React.Component {
        
         favors = favors.map( (favor, idx)=> {
             if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
-                return <div className="favor-item" >
+                return <div className="favor-item-newsfeed" >
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                     <p className="favor-description"> {favor.favor_description}</p>
@@ -79,7 +79,7 @@ class NewsFeed extends React.Component {
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                 </div>
             } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Request") {
-                return <div className="favor-item">
+                return <div className="favor-item-newsfeed">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                     <p className="favor-description"> {favor.favor_description}</p>
@@ -89,7 +89,7 @@ class NewsFeed extends React.Component {
                     <button className="map-button nav-btns-child-login" onClick={() => this.props.deleteFavor(favor)}>Delete</button>
                 </div>
             } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Doing") {
-                return <div className="favor-item">
+                return <div className="favor-item-newsfeed">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                     <p className="favor-description"> {favor.favor_description}</p>
@@ -99,7 +99,7 @@ class NewsFeed extends React.Component {
                     <button className="map-button nav-btns-child-login" onClick={() => this.props.updateFavor(favor)}>Click here to log favor as complete.</button>
                 </div>
             } else if (favor.favor_by_user_id === this.props.currentUser.id) {
-                return <div className="favor-item">
+                return <div className="favor-item-newsfeed">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                     <p className="favor-description"> {favor.favor_description}</p>
@@ -112,7 +112,7 @@ class NewsFeed extends React.Component {
                 </div>
             }
             else if (favor.favor_by_username) {
-                return <div className="favor-item">
+                return <div className="favor-item-newsfeed">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                     <p className="favor-description">  {favor.favor_description}</p>
@@ -122,7 +122,7 @@ class NewsFeed extends React.Component {
                     {/* <button onClick={() => this.props.deleteFavor(favor)}>delete</button> */}
                 </div>
             } else {
-                return <div className="favor-item">
+                return <div className="favor-item-newsfeed">
                     <h2 className="favor-header"> {favor.favor_title} </h2>
                     <p key={idx} className="favor-list"> {this.handleTime(favor.date)} </p>
                     <p className="favor-description">  {favor.favor_description}</p>

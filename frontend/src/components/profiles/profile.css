@@ -1166,7 +1166,7 @@ margin-left: -10px; */
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 12px;
-    background-color: whitesmoke;
+    background-color: #f7fcfe;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1174,7 +1174,37 @@ margin-left: -10px; */
     margin-bottom: 1%;
     height: auto;
     width: 60%;
+    /* background-image: url("https://media1.thehungryjpeg.com/thumbs2/ori_102294_4f540e71c0b301a66c49225c66770e38fb09ddba_26-white-paper-background-textures.jpg");
+    background-color: #cccccc; */
+    
 
+
+   }
+
+   .favor-item:hover {
+    background-image: none;
+    filter: brightness(97%);
+   }
+
+   .favor-item-newsfeed {
+    border: 1px solid black;
+    padding-bottom: 20px;
+    border-radius: 12px;
+    background-color: #f7fcfe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    margin-bottom: 1%;
+    height: auto;
+    width: 40%;
+    
+
+   }
+
+   .favor-item-newsfeed:hover {
+    background-image: none;
+    filter: brightness(97%);
    }
 
 
@@ -1197,6 +1227,13 @@ margin-left: -10px; */
 }
 
 .favor-item > .map-button {
+  font-family: 'Montserrat', sans-serif;
+  /* background-color: #005EAA; */
+  background-color: #00538C;
+  
+}
+
+.favor-item-newsfeed > .map-button {
   font-family: 'Montserrat', sans-serif;
   /* background-color: #005EAA; */
   background-color: #00538C;
