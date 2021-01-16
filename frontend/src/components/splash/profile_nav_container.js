@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import ProfileNav2 from './profilenav2';
+import SplashNav2 from './profilenav2';
 
 import {fetchFavors} from '../../actions/favor_actions';
 
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch) => ({
     fetchFavors: () => dispatch(fetchFavors()),
     makeFavor: (
         <button className="submit-btn" onClick={() => dispatch(openModal('favor'))}>
-            Create new favor
+            Create new favor_actions
         </button>
     ),
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileNav2));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SplashNav2));

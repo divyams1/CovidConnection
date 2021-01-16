@@ -6,7 +6,7 @@ import '../../App.css'
 import {Link} from 'react-router-dom'
 import AboutContainer from '../about/about_container'
 import NavBar from '../../session/navbar';
-
+import SplashNav2 from './profile_nav_container'
 class Splash extends React.Component {
     constructor(props){
         super(props);
@@ -51,20 +51,9 @@ class Splash extends React.Component {
         const button_text = ( this.state.userShow ? "View All Favors" : "View Your Favors" )
         const request_text =  ( this.state.requestShow? "View Favor Requests" : "View Completed Favors")
         return (
+            <>
+            <SplashNav2 />
             <div className="splash">
-                <div className="splash-header">
-                    <div className="nav-header-left">
-                          <button className="splash-btns" > Newsfeed </button>
-                          <button className="splash-btns" > About </button>
-                    </div>
-                    <div className="nav-header-middle">
-                         <h1 className="splash-title-home"> CovidConnection </h1>
-                    </div>
-                    <div className="nav-header-right">
-                          <button className="splash-btns" > Sign Up </button>
-                          <button className="splash-btns" > Log In </button>
-                    </div>
-                </div>
             <div className="covid-connection-header"> 
                 <div className="grid-container">
                     <div className="grid-item item1 left-edge">
@@ -102,7 +91,7 @@ class Splash extends React.Component {
                 </div>
                 </div>
             </div>
-            
+            </>
         )
     }
 }

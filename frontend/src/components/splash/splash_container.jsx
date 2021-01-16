@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { fetchFavors } from '../../actions/favor_actions';
 import Splash from './splash';
-
+import { logout } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
     return {
@@ -13,7 +14,11 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchFavors: () => dispatch(fetchFavors())
+        fetchFavors: () => dispatch(fetchFavors()),
+        logout: () => dispatch(logout()),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal()),
+    fetchFavors: () => dispatch(fetchFavors())
     }
 }
 
