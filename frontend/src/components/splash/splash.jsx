@@ -11,42 +11,40 @@ class Splash extends React.Component {
     constructor(props){
         super(props);
         this.state = { userShow:  false , requestShow: false, userSearch: false, forUser: '' }
-        this.userShow = this.userShow.bind(this);
-        this.requestShow = this.requestShow.bind(this);
+        this.getLinks = this.getLinks.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchFavors();
     }
-       updateName() {
-        return e=> {
-            
-            
-            if ( e.currentTarget.value === "") {
-                this.setState( {userSearch: false })
-            } else {
-                this.setState( {userSearch: true })
-            }
-            this.setState( { 'forUser' : e.currentTarget.value })
-            
-        }
+      logoutUser(e) {
+      e.preventDefault();
+      this.props.logout();
+  }
 
-    }
-    userShow() {
-        if ( !this.state.userShow ) {
-            this.setState( { userShow: true})
-        } else {
-            this.setState( {userShow: false })
-        }
-    }
 
-    requestShow() {
-        if ( !this.state.requestShow) {
-            this.setState( {requestShow: true })
-        } else {
-            this.setState( {requestShow: false})
-        }
-    }
+getLinks() {
+      if (this.props.loggedIn) {
+        return (
+            <div className="nav-bar-right">
+                <button  className="splash-btns"><Link to={'/profile'}>View Profile</Link></button>
+                <button className="splash-btns" onClick={this.logoutUser}>Logout</button>
+            </div>
+        );
+      } else {
+        return (
+            <div className="nav-bar-right">
+                {this.props.sign}
+                   
+                   <br/>
+
+                {this.props.log} 
+                 
+            </div>
+        );
+      }
+  }
+
     render() {
         const button_text = ( this.state.userShow ? "View All Favors" : "View Your Favors" )
         const request_text =  ( this.state.requestShow? "View Favor Requests" : "View Completed Favors")
@@ -63,8 +61,7 @@ class Splash extends React.Component {
                         <h1> Need help during COVID? Create a favor and connect with other users </h1>
                         <p> Starting is simple, sign up and create a favor! </p>
                         <div className="button-div">
-                            <button className="splash-btns" > Sign Up </button>
-                            <button className="splash-btns" > Log In </button>
+                            {this.getLinks() }
                         </div>
                     </div>
                     <div className="grid-item item3">

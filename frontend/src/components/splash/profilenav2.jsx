@@ -198,7 +198,8 @@ return (
 
 
 render(){
-
+const signUpOrProfile 
+const logInOr
 return (
 
     <section className="navcontainer content">

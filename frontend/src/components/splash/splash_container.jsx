@@ -18,7 +18,14 @@ const mDTP = dispatch => {
         logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
-    fetchFavors: () => dispatch(fetchFavors())
+    fetchFavors: () => dispatch(fetchFavors()),
+    sign: (<button  className="splash-btns" onClick={() => dispatch(openModal('signup'))}>
+          Sign Up
+        </button>
+    ),
+    log: (<button  className="splash-btns"  onClick={() => dispatch(openModal('login'))}>
+          Log In 
+        </button>)
     }
 }
 
