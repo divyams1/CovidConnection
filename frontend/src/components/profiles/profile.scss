@@ -26,7 +26,7 @@ header{
 .navcontainer{
   display: table;
   height: $icon-size;
-  width: 70%;
+  width: 100%;
 //   padding-bottom: 5vh;
   margin: 0;
   overflow: hidden;
@@ -87,8 +87,9 @@ header{
 //   margin-top: -40%;
   border-radius: $icon-size*$border-radius *100;
   overflow: visible;
-  &::before, &::after{
+  &::before,  &::after{
     content: '';
+    
     position: absolute;
     // top: 0;
     // left: 0;
@@ -99,6 +100,8 @@ header{
     color: $white;
 
   }
+
+ 
   i{
     position: relative;
     color: $white;
@@ -144,14 +147,27 @@ color: white;
 
 }
 
+.fa-plus:hover{
 
-.icon-link:visited{
+color: red;
 
-text-decoration: none;
-color: white;
+}
+.fa-user:hover{
+
+// text-decoration: none;
+color: red;
 
 }
 
+.fa-bars:hover{
+
+   color: red; 
+}
+
+.fa-newspaper:hover{
+
+    color: red;
+}
 
 
 .fa-home{
@@ -162,6 +178,11 @@ margin-top: 13px;
 z-index: 1000;
 opacity: .9;
 
+}
+
+.fa-home:hover{
+
+    color: red;
 }
 
 
@@ -208,6 +229,30 @@ opacity: .9;
 
 }
 
+.prof-info{
+
+ display: flex;
+ flex-direction: column;
+}
+
+.prof-men-name{
+
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 22px;
+}
 
 
+.user-menu-link{
+
+text-decoration: none;
+
+}
+
+
+.fa-user-circle{
+
+font-size: 48px;
+
+}
 
