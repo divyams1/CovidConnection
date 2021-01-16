@@ -26,7 +26,7 @@ header{
 .navcontainer{
   display: table;
   height: $icon-size;
-  width: 70%;
+  width: 100%;
 //   padding-bottom: 5vh;
   margin: 0;
   overflow: hidden;
@@ -43,6 +43,7 @@ header{
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  width: 100%;
 //   justify-content: space-evenly;
 //   margin-top:  500px;
 //   height: fit-content;
@@ -57,12 +58,14 @@ header{
 
 .icon-container{
 //   margin-top: 200px;
+display: flex;
+align-items: center;
   width: 100%;
   height: fit-content;
   top: 0;
   left: 0;
   overflow: visible;
-  margin-left: $icon-size * 3.125;
+  margin-left: 0;
 //   position: fixed;
   overflow: sticky;
   margin-top: -8px;
@@ -77,8 +80,8 @@ header{
   display: inline-block;
   width: $icon-size;
   height: $icon-size;
-  margin-left: $icon-size * 6.25;
-  margin-right: $icon-size* 6.25;
+  // margin-left: $icon-size * 6.25;
+  // margin-right: $icon-size* 6.25;
 //   margin-top: -150px;
 
 //    padding-left: 15px;
@@ -141,7 +144,9 @@ header{
 
 text-decoration: none;
 color: white;
-
+margin-left: 5%;
+margin-right: 5%;
+width: 10%;
 }
 
 
@@ -211,3 +216,18 @@ opacity: .9;
 
 
 
+.fa-user-plus {
+  color: $white;
+margin-left: 15px;
+margin-top: 14px;
+z-index: 1000;
+opacity: .9;
+}
+
+.fa-sign-in-alt {
+    color: $white;
+margin-left: 15px;
+margin-top: 14px;
+z-index: 1000;
+opacity: .9;
+}

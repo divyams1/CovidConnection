@@ -8,7 +8,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mSTP = state => {
     return {
         favors: state.entities.favors,
-        currentUser: state.session.user 
+        currentUser: state.session.user,
+        loggedIn: state.session.isAuthenticated
     }
 }
 
@@ -21,8 +22,8 @@ const mDTP = dispatch => {
     fetchFavors: () => dispatch(fetchFavors()),
     sign: (<button  className="splash-btns" onClick={() => dispatch(openModal('signup'))}>
           Sign Up
-        </button>
-    ),
+        </button>)
+        ,
     log: (<button  className="splash-btns"  onClick={() => dispatch(openModal('login'))}>
           Log In 
         </button>)
