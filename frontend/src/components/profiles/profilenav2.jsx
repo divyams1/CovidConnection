@@ -2,11 +2,16 @@ import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCircle, faPlus, faBell, faNewspaper, faUser, faBars} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCircle, faPlus, faBell, faNewspaper, faUser, faBars, faHandsHelping} from '@fortawesome/free-solid-svg-icons';
 
 // npm install --save-dev @iconify/react @iconify-icons/fluent
 import { Icon, InlineIcon } from '@iconify/react';
 import signOut20Regular from '@iconify-icons/fluent/sign-out-20-regular';
+// npm install --save-dev @iconify/react @iconify-icons/fxemoji
+import emailIcon from '@iconify-icons/fxemoji/email';
+// npm install --save-dev @iconify/react @iconify-icons/fa-solid
+
+
 
 
 import './profile.scss';
@@ -88,11 +93,13 @@ return(
 
 <section className="add-menu-items" >
  <h2 className="author-menu">  Create  <span className="menu-x" onClick={this.showDropdown("add")}>  X </span> </h2>
+    <hr />
+
     <div className="add-menu-list">
 
         
         <span className="add-menu-item" onClick={this.renderForm('favor')}>
-        <span><img className="logo-bm"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>Create Favor    
+        <span><FontAwesomeIcon icon={faHandsHelping} />Create Favor    
         <p className="add-menu-desc" > A member of CC can either request a favor when in need or keep record of something they 
         have done as a good deed. </p></span></span>
 
@@ -145,13 +152,16 @@ return(
  <h2 className="author-menu">  Account Info  <span className="menu-x" onClick={this.showDropdown("info")}>  X </span> </h2>
  <hr />
 <div className="profile-menu-list" >
-    <Link to="/profile" className="user-menu-link"> <span className="prof-info"><i className="fas fa-user-circle"> <p className="prof-men-name"> See your profile <br /> {this.props.currentUser.username}</p></i></span></Link>
-    <hr />
+    <Link to="/profile" className="user-menu-link"> <span className="prof-info"> 
+      <i className="fas fa-user-circle"> {this.props.currentUser.username} <p className="pi-style">See your profile </p></i></span></Link>
+    
+ <hr />
 
- <span> Email: {this.props.currentUser.email} </span>
+ <span > <Icon icon={emailIcon} />  <span className="email-info">{this.props.currentUser.email}</span></span>
 
  <hr />
-  <span className="logout-menu" onClick={this.logoutUser}> <Icon className="fa-user-circle" icon={signOut20Regular} /> Log Out</span>
+  <span className="logout-menu" onClick={this.logoutUser}> <Icon className="log-men-door" icon={signOut20Regular} />
+  <span className="lg-men">Log Out</span></span> 
 
 </div>
 </section> 
@@ -220,12 +230,12 @@ return (
 
 
         
-           <Link className="icon-link" to={"/"}> <i className="fas fa-home icon icon-fill"> <FontAwesomeIcon  icon={faHome} /> </i></Link>
+           <Link className="icon-link" to={"/"}> <i className="fas fa-home icon icon-fill"><span>Home</span> <FontAwesomeIcon  icon={faHome} /> </i></Link>
             
      
        
     
-         <Link className="icon-link" to={"/newsfeed"}>  <i class="fas fa-newspaper icon icon-fill"><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
+         <Link className="icon-link" to={"/newsfeed"}>  <i class="fas fa-newspaper icon icon-fill"><span>Newsfeed</span><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
        
   
 
@@ -233,20 +243,20 @@ return (
 
     
            
-           <Link className="icon-link" to={"/profile"}> <i class="fas fa-user icon icon-fill"> <FontAwesomeIcon  icon={faUser} /></i> </Link>                 
+           <Link className="icon-link" to={"/profile"}> <i class="fas fa-user icon icon-fill"><span>Profile</span> <FontAwesomeIcon  icon={faUser} /></i> </Link>                 
           
 
 
     
 
       
-     <i class="fas fa-bars icon icon-fill"  onClick={this.showDropdown("info")}> <FontAwesomeIcon  icon={faBars} /> </i> 
+     <i class="fas fa-bars icon icon-fill"  onClick={this.showDropdown("info")}> <span>Account</span> <FontAwesomeIcon  icon={faBars} /> </i> 
 
             {this.state.info ? this.showUserInfo() : null}
 
    
 
-      <i class="fas fa-plus icon icon-fill" onClick={this.showDropdown("add")}>  <FontAwesomeIcon className="fai" icon={faPlus} /> </i>
+      <i class="fas fa-plus icon icon-fill" onClick={this.showDropdown("add")}> <span>Create</span>  <FontAwesomeIcon className="fai" icon={faPlus} /> </i>
                         {this.state.add ? this.addMenu() : null}
 
 

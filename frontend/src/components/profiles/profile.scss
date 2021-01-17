@@ -232,13 +232,13 @@ opacity: .9;
 .prof-info{
 
  display: flex;
- flex-direction: column;
+ flex-direction: row;
 }
 
 .prof-men-name{
 
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     font-size: 22px;
 }
 
@@ -252,7 +252,237 @@ text-decoration: none;
 
 .fa-user-circle{
 
-font-size: 48px;
+font-size: 18px;
 
 }
+
+p.pi-style{
+
+font-size: 15px;
+margin-left: 43px;
+color: dark gray;
+
+}
+
+.email-info{
+
+margin-top: 10px;
+font-weight: 300;
+
+
+}
+
+span.lg-men{
+
+// margin-top: -15px;
+font-weight: 300;
+
+
+}
+.log-men-door{
+
+font-size: 32px;
+margin-top: -12px;
+
+}
+
+i.fa-home span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-home:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 6%;
+    // left: 125px;
+    left: 6.3%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+  }
+
+  i.fa-home:hover span:after{ /*the span will display just on :hover state*/
+    content:'';
+    position:absolute;
+    bottom:-11px;
+    width:10px;
+    height:10px;
+    border-bottom:5px solid #0cf;
+    border-right:5px solid #0cf;
+    background:#cff;
+    left:50%;
+    margin-left:-5px;
+    overflow: hidden;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+
+
+  i.fa-newspaper span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-newspaper:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 6%;
+    // left: 515px;
+    left: 27.3%;
+
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+  }
+
+  i.fa-newspaper:hover span:after{ /*the span will display just on :hover state*/
+    content:'';
+    position:absolute;
+    bottom:-11px;
+    width:10px;
+    height:10px;
+    border-bottom:5px solid #0cf;
+    border-right:5px solid #0cf;
+    background:#cff;
+    left:50%;
+    margin-left:-5px;
+    overflow: hidden;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+
+
+  i.fa-user span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-user:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 6%;
+    left: 47%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    // overflow: visible;
+    overflow: hidden;
+
+  }
+
+  i.fa-user:hover span:after{ /*the span will display just on :hover state*/
+    content:'';
+    position:absolute;
+    bottom:-11px;
+    width:10px;
+    height:10px;
+    border-bottom:5px solid #0cf;
+    border-right:5px solid #0cf;
+    background:#cff;
+    left:50%;
+    margin-left:-5px;
+    overflow: hidden;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+
+
+  i.fa-bars span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-bars:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 6%;
+    left: 67%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+
+    // overflow: visible;
+  }
+
+  i.fa-bars:hover span:after{ /*the span will display just on :hover state*/
+    content:'';
+    position:absolute;
+    bottom:-11px;
+    width:10px;
+    height:10px;
+    border-bottom:5px solid #0cf;
+    border-right:5px solid #0cf;
+    background:#cff;
+    left:50%;
+    margin-left:-5px;
+    // overflow: visible;
+    overflow: hidden;
+
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+
+
+
+  i.fa-plus span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+
+i.fa-plus:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 6%;
+    left: 87%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+  }
+
+  i.fa-plus:hover span:after{ /*the span will display just on :hover state*/
+    content:'';
+    position:absolute;
+    bottom:-11px;
+    width:10px;
+    height:10px;
+    border-bottom:5px solid #0cf;
+    border-right:5px solid #0cf;
+    background:#cff;
+    left:50%;
+    margin-left:-5px;
+    overflow: hidden;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
 

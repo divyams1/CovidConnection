@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Icon, InlineIcon } from '@iconify/react';
+import windowClose from '@iconify-icons/fa-solid/window-close';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -80,7 +82,7 @@ class LoginForm extends React.Component {
              
            <center>Please  Login or {this.props.other}</center>
             
-          <div onClick={this.props.closeModal} className="close-x">X</div>
+          <div onClick={this.props.closeModal} className="close-x"><Icon className="fstylet" icon={windowClose} /></div>
           {this.renderErrors()}
           <div className="login-form">
               <input type="text"

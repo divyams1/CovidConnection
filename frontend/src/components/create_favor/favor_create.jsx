@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 class FavorCreate extends React.Component {
     constructor(props) {
@@ -66,7 +68,7 @@ class FavorCreate extends React.Component {
                        <center><img className="logo-img"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/></center>
 
                      {/* <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center> */}
-                     <div onClick={this.props.closeModal} className="close-x">X</div>
+                     <div onClick={this.props.closeModal} className="close-x"><FontAwesomeIcon   icon={faTimes} className='fstylec'/></div>
 
                     <div className="favor-form-div">
                     <h2 className="form-head"> Title: </h2>
