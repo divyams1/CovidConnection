@@ -2,14 +2,13 @@ import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCircle, faPlus, faBell, faNewspaper, faUser} from '@fortawesome/free-solid-svg-icons';
-// import {faFileuser} from '@fortawesome/free-solid-svg-icons';
-import './profile.css';
+import { faHome, faCircle, faPlus, faBell, faNewspaper, faUser, faBars} from '@fortawesome/free-solid-svg-icons';
+
+import './profile.scss';
 
 
 
-
-class ProfileNav extends React.Component{
+class ProfileNav2 extends React.Component{
 constructor(props){
 super(props);
 
@@ -201,74 +200,61 @@ return (
 render(){
 
 return (
+
+    <section className="navcontainer content">
+
+       
    
-    <header className="header-nav">
+    <header className="icon-container">
 
     
- 
-         <a href="https://covid-connection.herokuapp.com/#/">
-                                 {/* <img className="logo-bx"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/> */}
 
-                                  <img className="logo-bx"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>
 
-         </a>
-                   
-     <div className="-left">
-                     
-
-         
-           <button className="home-lk"><Link to={"/"}><FontAwesomeIcon className="fstyle" icon={faHome}  /></Link></button> 
+        
+           <Link className="icon-link" to={"/"}> <i className="fas fa-home icon icon-fill"> <FontAwesomeIcon  icon={faHome} /> </i></Link>
             
-        </div>
-
-         <div className="header-nav-left2">
-           
-           <button className="home-lk3"><Link to={"/newsfeed"}> <span className="news"> News  </span> <FontAwesomeIcon className="fstyle2" icon={faNewspaper}  /> </Link>                 
-           </button> 
-
-
-      </div> 
+     
+       
+    
+         <Link className="icon-link" to={"/newsfeed"}>  <i class="fas fa-newspaper icon icon-fill"><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
+       
   
 
-      <div className="header-nav-mid">
+      
+
+    
            
-           <button className="home-lk4"><Link to={"/profile"}> <span className="profiles"> Profile <FontAwesomeIcon className="fstyle3" icon={faUser}  />  </span> </Link>                 
-           </button> 
+           <Link className="icon-link" to={"/profile"}> <i class="fas fa-user icon icon-fill"> <FontAwesomeIcon  icon={faUser} /></i> </Link>                 
+          
 
 
-      </div> 
+    
 
-      <div className="header-nav-mid">     
-            <button className="favor-button" onClick={this.showDropdown("favors")}>
-                <span className="favor-button"> Favors </span>
-                
-
-                     <img className="logo-bd"  src="https://i.ibb.co/ZWSmV2V/doublec-2.png"/>
-                
-                </button>
-
-                {this.state.favors ? this.favorMenu() : null}
-
-    </div>
-    <div className="header-nav-mid" onClick={this.showDropdown("info")}> <button className="home-lk5"> <FontAwesomeIcon className="fstyle" icon={faCircle}/></button> 
+      
+     <i class="fas fa-bars icon icon-fill"  onClick={this.showDropdown("info")}> <FontAwesomeIcon  icon={faBars} /> </i> 
 
             {this.state.info ? this.showUserInfo() : null}
 
-    </div>
+   
 
-    <div className="header-nav-right" onClick={this.showDropdown("add")}><button className="home-lk"><FontAwesomeIcon className="fstyle" icon={faPlus}/></button> 
+      <i class="fas fa-plus icon icon-fill" onClick={this.showDropdown("add")}>  <FontAwesomeIcon className="fai" icon={faPlus} /> </i>
                         {this.state.add ? this.addMenu() : null}
 
 
-    </div>
-
-    <div className="header-nav-right" className="notifications" onClick={this.showDropdown("notes")}>  <button className="home-lk"><FontAwesomeIcon className="fstyle" icon={faBell}/></button> 
-                    {this.state.notes ? this.showNotesMenu() : null}
-
-    </div>
 
 
+{/* 
+        <div className="mid">     
+            <div onClick={this.showDropdown("favors")}>
+                <span className="favor-button"> Favors </span>
+            </div>
+                
 
+                    
+
+                {this.state.favors ? this.favorMenu() : null}
+
+    </div> */}
 
 
 
@@ -277,6 +263,10 @@ return (
 
 
     </header>
+
+ 
+
+    </section>
 
    
 
@@ -296,4 +286,4 @@ return (
 
 
 
-export default withRouter(ProfileNav);
+export default withRouter(ProfileNav2);

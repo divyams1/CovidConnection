@@ -4,7 +4,7 @@ import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLifeRing, faHandsHelping} from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
-import NavBarContainer from '../../session/navbar_container';
+import NavBarContainer from './../splash/profile_nav_container';
 import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
 
 
@@ -303,6 +303,9 @@ class Profile extends React.Component {
                       <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
                       <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
               </div> */}
+              
+           
+
             <div className="prof-favors">
               <h1 className="profile-name-title">  Welcome {this.props.currentUser.username}!  </h1>
               {/* <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br /> */}
@@ -336,7 +339,8 @@ class Profile extends React.Component {
 
             return (
               <>
-                <ProfileNavContainer />
+                {/* <ProfileNavContainer /> */}
+                <NavBarContainer/>
                 <div className="profile-view">
                   {/* <div  className="banners">
                      <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --

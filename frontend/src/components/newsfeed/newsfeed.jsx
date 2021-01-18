@@ -4,12 +4,15 @@ import './newsfeed.css'
 import ProfileNavContainer from '../profiles/profile_nav_container';
 import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
+import NavBar from '../../session/navbar_container'
+import NavBarContainer from './../splash/profile_nav_container';
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props)
         this.state = { myFavors: false, favorRequests: false, userSearch: false, forUser: ''}
         this.userShow = this.userShow.bind(this);
         this.requestShow = this.requestShow.bind(this);
+        // this.handleNav = this.handleNav.bind(this);
     }
     componentDidMount() {
         this.props.fetchFavors();
@@ -58,6 +61,13 @@ class NewsFeed extends React.Component {
             </div>
         )
     }
+    // handleNav() {
+    //     if (this.props.currentUser ) {
+    //         return <div> <ProfileNavContainer /> </div>
+    //     } else {
+    //         return <div> <NavBar /> </div>
+    //     }
+    // }
     render() {
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Unaccepted Favors"
@@ -66,6 +76,8 @@ class NewsFeed extends React.Component {
         favors = ( this.state.favorRequests? favors.filter( favor => favor.favor_status === "Request") : favors )
         favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
         favors = favors.filter(favor => favor.favor_status !== "Done")
+    //    const navBar =   ( Object.values(this.props.currentUser).length? ProfileNavContainer : NavBar )
+  
        
         favors = favors.map( (favor, idx)=> {
             if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
@@ -136,45 +148,12 @@ class NewsFeed extends React.Component {
 
             }
         })
-        if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
-        return(
-            <>
-            <div id="no-logo">
-
-                 <NavBarNoLogoContainer />
-
-            </div>
-            
-            <div className="profile-view">
-                
-                
-                    <div className="news-banners">
-                        {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
-                       <NavLink to="/covid">Covid Help</NavLink> </h3> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" /> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" /> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" /> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" />  */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" /> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" /> */}
-
-                        {/* <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" /> */}
-                        {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
-                    </div>
-                <h1 id="newsfeed-title"> Newsfeed </h1>
-                <button className="map-button nav-btns-child" onClick={this.userShow}> {favor_text} </button>
-                <button className="map-button nav-btns-child-login" onClick={this.requestShow}> {request_text} </button>
-                <input type="text" className="input-search  user-search-bar" placeholder='Search for a User' onChange={this.updateName}></input>
-                {favors}
-            </div>
-            </>
-        ) 
-    } else {
+        
             return (
+                <>
+                <NavBarContainer />
                 <div className="newsfeed-whole">
-                    <ProfileNavContainer />
+                    
 
                     <div className="news-banners">
                         {/* <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
@@ -197,27 +176,28 @@ class NewsFeed extends React.Component {
                     <input type="text" className="input-search  user-search-bar" placeholder='Search for a User' onChange={this.updateName}></input>
                     {favors}
                 </div>
+                </>
             ) 
 
     }
     }
-}
+
 export default NewsFeed;
 
 
-     <div className="news-banners">
-                           <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
-                       <NavLink to="/covid">Covid Help</NavLink> </h3>   
+    //  <div className="news-banners">
+    //                        <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --      
+    //                    <NavLink to="/covid">Covid Help</NavLink> </h3>   
 
-                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
+    //                   <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
 
-                      {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
+    //                   {/* <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" /> */}
 
-                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
+    //                  <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
 
-                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
+    //                   <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
 
-                </div>
+    //             </div>
 
     // <button onClick={this.userShow} className="map-button nav-btns-child" > {favor_text} </button>
     //                 <button onClick={this.requestShow} className="map-button nav-btns-child-login"> {request_text} </button>

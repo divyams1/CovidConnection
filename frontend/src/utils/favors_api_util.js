@@ -18,7 +18,7 @@ export const updateFavor = data => {
 }
 
 export const deleteFavor = data => {
-    
+   
     return axios.delete('/api/favors/:id', { data: { data }})
 }
 

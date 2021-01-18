@@ -58,10 +58,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #005eaa;
+  background-color: #FFFBEB;
+  color: #005EAA;
   font-family: 'Open Sans', sans-serif;
   padding-top: 40px;
   padding-bottom: 50px;
+  height: 100%;
   
 }
 
@@ -114,6 +116,9 @@
 .nav-bar-top {
   background-color:#005eaa;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
 }
 
 .nav-bar-left {
@@ -226,3 +231,7 @@ body {
      filter: brightness(85%);
     }
 
+.nav-bar-right {
+  display: flex;
+  margin-left: 2%;
+}

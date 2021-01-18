@@ -11,6 +11,7 @@ router.get("/test", (req, res)  => {
 
 
 router.get("/", (req, res) => {
+    
     Favor
         .find()
         .sort({ date: -1 })

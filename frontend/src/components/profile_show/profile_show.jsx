@@ -5,6 +5,7 @@ import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLifeRing, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
+import NavBarContainer from './../splash/profile_nav_container';
 
 class ProfileShow extends React.Component {
     constructor(props) {
@@ -261,9 +262,18 @@ class ProfileShow extends React.Component {
 
       return (
         <>
-          <ProfileNavContainer />
+          <NavBarContainer />
           <div className="profile-view">
             {/* <div  className="banners">
+      
+        
+        
+      
+          return (
+            <>
+            <ProfileNavContainer />
+            <div className="profile-view">
+            <div  className="banners">
                      <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
                        <NavLink to="/covid">Covid Help</NavLink> </h3>
                       <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
