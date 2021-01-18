@@ -230,12 +230,12 @@ return (
 
 
         
-           <Link className="icon-link" to={"/"}> <i className="fas fa-home icon icon-fill"><span>Home</span> <FontAwesomeIcon  icon={faHome} /> </i></Link>
+           <Link className="icon-link" to={"/"}> <i className="fas fa-home icon icon-fill"><span className="nav-menu-txt">Home</span> <FontAwesomeIcon  icon={faHome} /> </i></Link>
             
      
        
     
-         <Link className="icon-link" to={"/newsfeed"}>  <i class="fas fa-newspaper icon icon-fill"><span>Newsfeed</span><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
+         <Link className="icon-link" to={"/newsfeed"}>  <i class="fas fa-newspaper icon icon-fill"><span className="nav-menu-txt">Newsfeed</span><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
        
   
 
@@ -243,20 +243,20 @@ return (
 
     
            
-           <Link className="icon-link" to={"/profile"}> <i class="fas fa-user icon icon-fill"><span>Profile</span> <FontAwesomeIcon  icon={faUser} /></i> </Link>                 
+           <Link className="icon-link" to={"/profile"}> <i class="fas fa-user icon icon-fill"><span className="nav-menu-txt">Profile</span> <FontAwesomeIcon  icon={faUser} /></i> </Link>                 
           
 
 
     
 
       
-     <i class="fas fa-bars icon icon-fill"  onClick={this.showDropdown("info")}> <span>Account</span> <FontAwesomeIcon  icon={faBars} /> </i> 
+     <i class="fas fa-bars icon icon-fill"  onClick={this.showDropdown("info")}> <span className="nav-menu-txt">Account</span> <FontAwesomeIcon  icon={faBars} /> </i> 
 
             {this.state.info ? this.showUserInfo() : null}
 
    
 
-      <i class="fas fa-plus icon icon-fill" onClick={this.showDropdown("add")}> <span>Create</span>  <FontAwesomeIcon className="fai" icon={faPlus} /> </i>
+      <i class="fas fa-plus icon icon-fill" onClick={this.showDropdown("add")}> <span className="nav-menu-txt">Create</span>  <FontAwesomeIcon className="fai" icon={faPlus} /> </i>
                         {this.state.add ? this.addMenu() : null}
 
 

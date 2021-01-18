@@ -34,6 +34,7 @@ header{
   @media (max-width: 900px){
   }
   background: $background;
+//   position: static;
   z-index: -1;
 //   justify-content: space-evenly;
 
@@ -296,9 +297,9 @@ color: #172b4d;
 i.fa-home:hover span{ /*the span will display just on :hover state*/
     display:block;
     position: fixed;
-    top: 6%;
+    top: 10%;
     // left: 125px;
-    left: 6.3%;
+    left: 8.3%;
     width: 5em;
     border:5px solid #0cf;
     background-color:#cff; color:#000;
@@ -307,22 +308,22 @@ i.fa-home:hover span{ /*the span will display just on :hover state*/
     overflow: hidden;
   }
 
-  i.fa-home:hover span:after{ /*the span will display just on :hover state*/
-    content:'';
-    position:absolute;
-    bottom:-11px;
-    width:10px;
-    height:10px;
-    border-bottom:5px solid #0cf;
-    border-right:5px solid #0cf;
-    background:#cff;
-    left:50%;
-    margin-left:-5px;
-    overflow: hidden;
-    -moz-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
-    transform:rotate(45deg);
-  }
+//   i.fa-home:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
 
 
   i.fa-newspaper span{
@@ -335,9 +336,9 @@ color: #172b4d;
 i.fa-newspaper:hover span{ /*the span will display just on :hover state*/
     display:block;
     position: fixed;
-    top: 6%;
+    top: 10%;
     // left: 515px;
-    left: 27.3%;
+    left: 28.3%;
 
     width: 5em;
     border:5px solid #0cf;
@@ -347,22 +348,22 @@ i.fa-newspaper:hover span{ /*the span will display just on :hover state*/
     overflow: hidden;
   }
 
-  i.fa-newspaper:hover span:after{ /*the span will display just on :hover state*/
-    content:'';
-    position:absolute;
-    bottom:-11px;
-    width:10px;
-    height:10px;
-    border-bottom:5px solid #0cf;
-    border-right:5px solid #0cf;
-    background:#cff;
-    left:50%;
-    margin-left:-5px;
-    overflow: hidden;
-    -moz-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
-    transform:rotate(45deg);
-  }
+//   i.fa-newspaper:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
 
 
   i.fa-user span{
@@ -375,8 +376,8 @@ color: #172b4d;
 i.fa-user:hover span{ /*the span will display just on :hover state*/
     display:block;
     position: fixed;
-    top: 6%;
-    left: 47%;
+    top: 10%;
+    left: 48.5%;
     width: 5em;
     border:5px solid #0cf;
     background-color:#cff; color:#000;
@@ -387,22 +388,22 @@ i.fa-user:hover span{ /*the span will display just on :hover state*/
 
   }
 
-  i.fa-user:hover span:after{ /*the span will display just on :hover state*/
-    content:'';
-    position:absolute;
-    bottom:-11px;
-    width:10px;
-    height:10px;
-    border-bottom:5px solid #0cf;
-    border-right:5px solid #0cf;
-    background:#cff;
-    left:50%;
-    margin-left:-5px;
-    overflow: hidden;
-    -moz-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
-    transform:rotate(45deg);
-  }
+//   i.fa-user:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
 
 
   i.fa-bars span{
@@ -415,8 +416,8 @@ color: #172b4d;
 i.fa-bars:hover span{ /*the span will display just on :hover state*/
     display:block;
     position: fixed;
-    top: 6%;
-    left: 67%;
+    top: 10%;
+    left: 68.5%;
     width: 5em;
     border:5px solid #0cf;
     background-color:#cff; color:#000;
@@ -427,24 +428,24 @@ i.fa-bars:hover span{ /*the span will display just on :hover state*/
     // overflow: visible;
   }
 
-  i.fa-bars:hover span:after{ /*the span will display just on :hover state*/
-    content:'';
-    position:absolute;
-    bottom:-11px;
-    width:10px;
-    height:10px;
-    border-bottom:5px solid #0cf;
-    border-right:5px solid #0cf;
-    background:#cff;
-    left:50%;
-    margin-left:-5px;
-    // overflow: visible;
-    overflow: hidden;
+//   i.fa-bars:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     // overflow: visible;
+//     overflow: hidden;
 
-    -moz-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
-    transform:rotate(45deg);
-  }
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
 
 
 
@@ -459,8 +460,8 @@ color: #172b4d;
 i.fa-plus:hover span{ /*the span will display just on :hover state*/
     display:block;
     position: fixed;
-    top: 6%;
-    left: 87%;
+    top: 10%;
+    left: 88.5%;
     width: 5em;
     border:5px solid #0cf;
     background-color:#cff; color:#000;
@@ -469,20 +470,28 @@ i.fa-plus:hover span{ /*the span will display just on :hover state*/
     overflow: hidden;
   }
 
-  i.fa-plus:hover span:after{ /*the span will display just on :hover state*/
-    content:'';
-    position:absolute;
-    bottom:-11px;
-    width:10px;
-    height:10px;
-    border-bottom:5px solid #0cf;
-    border-right:5px solid #0cf;
-    background:#cff;
-    left:50%;
-    margin-left:-5px;
-    overflow: hidden;
-    -moz-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
-    transform:rotate(45deg);
-  }
+//   i.fa-plus:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
 
+
+
+.nav-menu-txt{
+
+font-size: 12px;
+color: #172b4d; 
+
+}
