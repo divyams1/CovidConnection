@@ -637,6 +637,7 @@ button.home-lk{
 .profile-view {
   /* background-color: #547AA5; */
   background-color: #C2EDFF;
+  min-height: 100vh;
   
 }
 
