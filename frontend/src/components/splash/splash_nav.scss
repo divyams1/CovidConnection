@@ -56,7 +56,7 @@ header{
   color: $white;
 }
 
-.icon-container{
+.icon-container-splash{
 //   margin-top: 200px;
 display: flex;
 align-items: center;
@@ -74,7 +74,7 @@ align-items: center;
 //   margin-top: $icon-size / 10;
 }
 
-.icon{
+.icon-splash{
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -140,7 +140,7 @@ align-items: center;
 
 
 
-.icon-link{
+.icon-link-splash{
 
 text-decoration: none;
 color: white;
@@ -150,7 +150,7 @@ width: 10%;
 }
 
 
-.icon-link:visited{
+.icon-link-splash:visited{
 
 text-decoration: none;
 color: white;

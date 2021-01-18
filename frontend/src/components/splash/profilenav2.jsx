@@ -103,9 +103,9 @@ renderForm(field) {
 
 render(){
     
-const signUpOrProfile = this.props.loggedIn? (   <Link class="icon-link" to={'/profile'} > <i class="fas fa-user icon icon-fill">  <FontAwesomeIcon className="fai" icon={faUser} /> </i> </Link>):
+const signUpOrProfile = this.props.loggedIn? (   <Link class="icon-link-splash" to={'/profile'} > <i class="fas fa-user icon-splash icon-fill">  <FontAwesomeIcon className="fai" icon={faUser} /> </i> </Link>):
   (this.props.sign);
-const logInOrLogOut = this.props.loggedIn?  (<i class="fas fa-sign-in icon icon-fill"  onClick={this.logoutUser}> <FontAwesomeIcon  icon={faSignOutAlt} /> </i> ): 
+const logInOrLogOut = this.props.loggedIn?  (<i class="fas fa-sign-in icon-splash icon-fill"  onClick={this.logoutUser}> <FontAwesomeIcon  icon={faSignOutAlt} /> </i> ): 
 (this.props.log);
 return (
 
@@ -113,25 +113,25 @@ return (
 
        
    
-    <header className="icon-container">
+    <header className="icon-container-splash">
 
     
 
 
-        <div className="header-div">
-           <Link className="icon-link" to={"/"}> <i className="fas fa-home icon icon-fill"> <FontAwesomeIcon  icon={faHome} /> </i></Link>
+        <div className="header-div header-div-1">
+           <Link className="icon-link-splash" to={"/"}> <i className="fas fa-home icon-splash icon-fill"> <FontAwesomeIcon  icon={faHome} /> </i></Link>
         </div>
      
         
         <div className="header-div">
-         <Link className="icon-link" to={"/newsfeed"}>  <i class="fas fa-newspaper icon icon-fill"><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
+         <Link className="icon-link-splash" to={"/newsfeed"}>  <i class="fas fa-newspaper icon-splash icon-fill"><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
         </div>
   
 
       
 
     
-        <div className="header-div">
+        <div className="header-div header-splash-text">
             <h1> CovidConnection </h1>
         </div>
           
@@ -146,7 +146,7 @@ return (
            
 
    
-        <div className="header-div">
+        <div className="header-div header-div-4">
       {logInOrLogOut}
         </div>         
 

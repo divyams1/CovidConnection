@@ -12,6 +12,7 @@ class Splash extends React.Component {
         super(props);
         this.state = { userShow:  false , requestShow: false, userSearch: false, forUser: '' }
         this.getLinks = this.getLinks.bind(this);
+        this.logoutUser = this.logoutUser.bind(this);
     }
 
     componentDidMount() {

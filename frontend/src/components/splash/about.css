@@ -301,4 +301,18 @@
 
 .header-div {
     width: 20%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.header-div-1 {
+    margin-left: 6%;
+}
+
+.header-div-4 {
+    margin-right: 6%;
+}
+
+.header-splash-text {
+    margin-right: 8%;
 }
