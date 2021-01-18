@@ -5,7 +5,7 @@ import {Link, withRouter } from 'react-router-dom';
 
 import './session.css';
 
-const faker = require('faker');
+
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -57,21 +57,19 @@ class SignupForm extends React.Component {
 
     }
 
-    this.props.signupUser(user);
+    this.props.login(user);
   }
 
 
   demoSignUp(e) {
     e.preventDefault();
-    let passw = faker.internet.password();
     let user = {
-      email: faker.internet.email(),
-      username: faker.internet.userName(),
-      password: passw,
-      password2: passw
+      email: "random@gmail.com",
+      password: "random"
     }
 
-    this.props.signupUser(user);
+    this.props.login(user);
+    this.props.closeModal();
   }
 
   componentWillUnmount(){
