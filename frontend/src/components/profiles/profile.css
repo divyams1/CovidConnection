@@ -155,7 +155,10 @@ justify-content: center;
   filter: brightness(85%);
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 .prof-favors{
 
@@ -1009,10 +1012,7 @@ margin-left: -10px; */
     width: 40px;
  }
 
- .favor-list { 
-   /* margin-left: -30px; */
-   /* float: middle; */
- }
+
 
 
  .header-nav{
