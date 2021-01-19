@@ -171,9 +171,9 @@ class NewsFeed extends React.Component {
                         {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
                     </div>
                     <h1 id="newsfeed-title"> Newsfeed </h1>
-                    <button className="map-button nav-btns-child" onClick={this.userShow}> {favor_text} </button>
-                    <button className="map-button nav-btns-child-login" onClick={this.requestShow}> {request_text} </button>
-                    <input type="text" className="input-search  user-search-bar" placeholder='Search for a User' onChange={this.updateName}></input>
+                    <button className="news-btn" onClick={this.userShow}> {favor_text} </button>
+                    <button className="news-btn" onClick={this.requestShow}> {request_text} </button>
+                    <input type="text" className="news-input-search" placeholder='Search for a User' onChange={this.updateName}></input>
                     {favors}
                 </div>
                 </>

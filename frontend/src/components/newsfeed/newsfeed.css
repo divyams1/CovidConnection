@@ -165,3 +165,39 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 .currently-fulfilling {
     font-size: medium;
 }
+
+.news-btn {
+    background-color: #C2EDFF;
+    color: #005eaa;
+    border: 1px solid #005eaa;
+    margin: 5px;
+    width: 20%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.news-btn:hover {
+    border: 1px solid red; 
+    color: red;
+}
+
+.news-input-search {
+    background-color: #C2EDFF;
+    color: #005eaa;
+    border: 1px solid #005eaa;
+    margin: 5px;
+    width: 20%;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.news-input-search:hover {
+    border: 1px solid red; 
+}
+.news-input-search:hover::placeholder {
+   color: red; 
+}
+.news-input-search::placeholder {
+    color: #005eaa;
+}
