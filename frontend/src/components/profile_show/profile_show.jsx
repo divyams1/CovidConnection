@@ -255,7 +255,7 @@ class ProfileShow extends React.Component {
     //   )
     // }
     let this_user = "";
-
+    debugger 
     if (this.props.users) {
       this_user = this.props.users.find(user => user._id === this.props.user_profile_id);
     }
