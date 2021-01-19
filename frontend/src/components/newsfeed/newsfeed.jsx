@@ -13,6 +13,7 @@ class NewsFeed extends React.Component {
         this.userShow = this.userShow.bind(this);
         this.requestShow = this.requestShow.bind(this);
         // this.handleNav = this.handleNav.bind(this);
+        this.updateName = this.updateName.bind(this);
     }
     componentDidMount() {
         this.props.fetchFavors();
@@ -34,6 +35,9 @@ class NewsFeed extends React.Component {
     updateName() {
         return e=> {
             this.setState( { forUser: e.currentTarget.value })
+            if ( this.state.forUser !== '') {
+                this.setState( { userSearch: true })
+            }
         }
     }
     handleButtonName(favor) {
@@ -72,11 +76,16 @@ class NewsFeed extends React.Component {
         let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Unaccepted Favors"
         let favors = (this.props.favors.data) || [];
+        debugger 
         favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
         favors = ( this.state.favorRequests? favors.filter( favor => favor.favor_status === "Request") : favors )
-        favors = ( this.state.userSearch? favors.filter( favor => favor.favor_for_username === this.state.forUser) : favors)
+        favors = ( this.state.userSearch? favors.filter( favor => {
+            const length = this.state.forUser.length; 
+
+            return favor.favor_for_username.splice(0,length) === this.state.forUser
+        }) : favors)
         favors = favors.filter(favor => favor.favor_status !== "Done")
-    //    const navBar =   ( Object.values(this.props.currentUser).length? ProfileNavContainer : NavBar )
+
   
        
         favors = favors.map( (favor, idx)=> {
