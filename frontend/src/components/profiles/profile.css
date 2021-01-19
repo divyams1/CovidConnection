@@ -173,7 +173,7 @@ border-radius: 0 ;
 position: relative; 
 display: inline-block;
 width: 100%;
-margin-top: 6%;
+margin-top: 0%;
 margin-bottom: 1%;
 align-items: center;
 justify-content: center;
@@ -1032,10 +1032,7 @@ margin-left: -10px; */
     width: 40px;
  }
 
- .favor-list { 
-   /* margin-left: -30px; */
-   /* float: middle; */
- }
+
 
 
  .header-nav{
@@ -1225,7 +1222,7 @@ margin-left: -10px; */
     flex-direction: column;
     align-items: center;
     padding: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 6%;
     height: auto;
     width: 60%;
     /* background-image: url("https://media1.thehungryjpeg.com/thumbs2/ori_102294_4f540e71c0b301a66c49225c66770e38fb09ddba_26-white-paper-background-textures.jpg");
