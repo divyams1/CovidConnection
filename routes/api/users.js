@@ -87,13 +87,17 @@ router.post("/register", (req, res) => {
             .then(user => {
               const payload = { id: user.id, username: user.username, email: user.email };
 
-              jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
-                res.json({
-                  success: true,
-                  token: "Bearer " + token
-                });
-              });
-            })
+              jwt.sign(
+                payload,
+                keys.secretOrKey,
+                // Tell the key to expire in one hour
+                { expiresIn: 3600 },
+                (err, token) => {
+                  res.json({
+                    success: true,
+                    token: 'Bearer ' + token
+                  });
+                })
             .catch(err => console.log(err));
         });
       });
