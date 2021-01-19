@@ -60,16 +60,14 @@ header{
 //   margin-top: 200px;
 display: flex;
 align-items: center;
-  width: 100%;
+  min-width: 100vh;
   height: fit-content;
-  top: 0;
-  left: 0;
   overflow: visible;
-  margin-left: 0;
+  
 //   position: fixed;
   overflow: sticky;
-  margin-top: -8px;
-  padding-bottom: 5px;
+  justify-content: center;
+  
 //   position: fixed;
 //   margin-top: $icon-size / 10;
 }

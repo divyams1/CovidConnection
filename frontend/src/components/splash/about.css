@@ -300,19 +300,24 @@
 }
 
 .header-div {
-    width: 20%;
-    margin-right: 2%;
-    margin-left: 2%;
+    width: 64px;
+    height: 64px;
+   
 }
 
 .header-div-1 {
-    margin-left: 6%;
+    width: 64px;
+    height: 64px;
 }
 
 .header-div-4 {
-    margin-right: 6%;
+    width: 64px;
+    height: 64px;
+    
 }
 
 .header-splash-text {
-    margin-right: 8%;
+    width: auto;
+    height: auto;
+    
 }

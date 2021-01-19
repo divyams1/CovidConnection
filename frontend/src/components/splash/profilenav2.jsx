@@ -105,7 +105,7 @@ render(){
     
 const signUpOrProfile = this.props.loggedIn? (   <Link class="icon-link-splash" to={'/profile'} > <i class="fas fa-user icon-splash icon-fill">  <FontAwesomeIcon className="fai" icon={faUser} /> </i> </Link>):
   (this.props.sign);
-const logInOrLogOut = this.props.loggedIn?  (<i class="fas fa-sign-in icon-splash icon-fill"  onClick={this.logoutUser}> <FontAwesomeIcon  icon={faSignOutAlt} /> </i> ): 
+  const logInOrLogOut = this.props.loggedIn ? (<i class="fas fa-user icon-splash icon-fill"  onClick={this.logoutUser}> <FontAwesomeIcon  icon={faSignOutAlt} /> </i> ): 
 (this.props.log);
 return (
 
@@ -146,7 +146,7 @@ return (
            
 
    
-        <div className="header-div header-div-4">
+        <div className="header-div">
       {logInOrLogOut}
         </div>         
 
