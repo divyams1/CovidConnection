@@ -12,7 +12,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USERS:  
             return Object.assign({}, state, action.users)
         case RECEIVE_USER:
-            
+            debugger
             return Object.assign({}, state, { [action.user.id]: action.thisUser });
         default:
             return state;
