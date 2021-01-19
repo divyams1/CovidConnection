@@ -33,10 +33,11 @@ class NewsFeed extends React.Component {
         }
     }
     updateName() {
+        
         return e=> {
-            this.setState( { forUser: e.currentTarget.value })
+            this.setState( { 'forUser' : e.currentTarget.value })
             if ( this.state.forUser !== '') {
-                this.setState( { userSearch: true })
+                this.setState( { 'userSearch' : true })
             }
         }
     }
@@ -82,7 +83,7 @@ class NewsFeed extends React.Component {
         favors = ( this.state.userSearch? favors.filter( favor => {
             const length = this.state.forUser.length; 
 
-            return favor.favor_for_username.splice(0,length) === this.state.forUser
+            return favor.favor_for_username.slice(0,length) === this.state.forUser
         }) : favors)
         favors = favors.filter(favor => favor.favor_status !== "Done")
 
@@ -182,7 +183,7 @@ class NewsFeed extends React.Component {
                     <h1 id="newsfeed-title"> Newsfeed </h1>
                     <button className="news-btn" onClick={this.userShow}> {favor_text} </button>
                     <button className="news-btn" onClick={this.requestShow}> {request_text} </button>
-                    <input type="text" className="news-input-search" placeholder='Search for a User' onChange={this.updateName}></input>
+                    <input type="text" className="news-input-search" placeholder='Search for a User' onChange={this.updateName()}></input>
                     {favors}
                 </div>
                 </>
