@@ -190,7 +190,7 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
     height: 30px;
     border-radius: 10px;
     text-align: center;
-    
+    margin-bottom: 5%;
 }
 .news-input-search:hover {
     border: 1px solid red; 
