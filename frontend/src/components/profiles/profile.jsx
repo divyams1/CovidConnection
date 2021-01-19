@@ -5,11 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLifeRing, faHandsHelping} from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
 import NavBarContainer from './../splash/profile_nav_container';
-<<<<<<< Updated upstream
-=======
 // import NavBarContainer from './profile_nav_container';
 
->>>>>>> Stashed changes
 import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
 
 
