@@ -1,63 +1,51 @@
-// $icon-size    : 50px;
-// $border-radius: 0.5;//15% = 0.15, 50% = 0.50 etc.
+$icon-size    : 50px;
+$border-radius: 0.5;//15% = 0.15, 50% = 0.50 etc.
 
-// $background   : #0052ae;
-// $background-b : #2d2c3e;
+$background   : #0052ae;
+$background-b : #2d2c3e;
 
-// // Icon Colors
-// $green        : #16A085;
-// $red          : #C82647;
-// $green-l      : #8CC63F;
-// $orange       : #EB9532;
-// $purple       : #7E3661;
+// Icon Colors
+$green        : #16A085;
+$red          : #C82647;
+$green-l      : #8CC63F;
+$orange       : #EB9532;
+$purple       : #7E3661;
 
-// // Text
-// $white      : #FFFFFF;
+// Text
+$white      : #FFFFFF;
 
-// header{
-//   background: $background;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   overflow: hidden;
-//   z-index: -1;
-//   color: $white;
-// }
+header{
+  background: $background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  z-index: -1;
+  color: $white;
+}
 
-// .navcontainer{
-//   display: table;
-//   height: $icon-size;
-//   width: 70%;
-// //   padding-bottom: 5vh;
-//   margin: 0;
-//   overflow: hidden;
+.navcontainer{
+  display: table;
+  height: $icon-size;
+  width: 100%;
+//   padding-bottom: 5vh;
+  margin: 0;
+  overflow: hidden;
   
-//   @media (max-width: 900px){
-//   }
-//   background: $background;
-//   z-index: -1;
-// //   justify-content: space-evenly;
+  @media (max-width: 900px){
+  }
+  background: $background;
+//   position: static;
+  z-index: -1;
+//   justify-content: space-evenly;
 
-// }
+}
 
-// .content{
-//   display: table-cell;
-//   text-align: center;
-//   vertical-align: middle;
-// //   justify-content: space-evenly;
-// //   margin-top:  500px;
-// //   height: fit-content;
-// }
-
-// header{
-//   font-family: 'Lato', sans-serif;
-//   font-size: 24px;
-//   font-weight: 300;
-//   color: $white;
-// }
-
-// .icon-container{
-// //   margin-top: 200px;
-//   width: 100%;
+.content{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+//   justify-content: space-evenly;
+//   margin-top:  500px;
 //   height: fit-content;
 //   top: 0;
 //   left: 0;
@@ -84,30 +72,33 @@
 // //    padding-left: 15px;
 // //   padding-right: 15px;
     
-// //   margin-top: -40%;
-//   border-radius: $icon-size*$border-radius *100;
-//   overflow: visible;
-//   &::before, &::after{
-//     content: '';
-//     position: absolute;
-//     // top: 0;
-//     // left: 0;
-//     height: 100%;
-//     width: 100%;
-//     transition: all 0.25s ease;
-//     border-radius: $icon-size*$border-radius ;
-//     color: $white;
+//   margin-top: -40%;
+  border-radius: $icon-size*$border-radius *100;
+  overflow: visible;
+  &::before,  &::after{
+    content: '';
+    
+    position: absolute;
+    // top: 0;
+    // left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.25s ease;
+    border-radius: $icon-size*$border-radius ;
+    color: $white;
 
-//   }
-//   i{
-//     position: relative;
-//     color: $white;
-//     font-size: $icon-size;
-//     margin-top: $icon-size;
-//     transition: all 0.25s ease;
-//     margin-top: 40px;
-//   }
-// }
+  }
+
+ 
+  i{
+    position: relative;
+    color: $white;
+    font-size: $icon-size;
+    margin-top: $icon-size;
+    transition: all 0.25s ease;
+    margin-top: 40px;
+  }
+}
 
 // .icon-fill{
 //   &::before{
@@ -144,14 +135,27 @@
 
 // }
 
+.fa-plus:hover{
 
-// .icon-link:visited{
+color: red;
+
+}
+.fa-user:hover{
 
 // text-decoration: none;
-// color: white;
+color: red;
 
-// }
+}
 
+.fa-bars:hover{
+
+   color: red; 
+}
+
+.fa-newspaper:hover{
+
+    color: red;
+}
 
 
 // .fa-home{
@@ -163,6 +167,11 @@
 // opacity: .9;
 
 // }
+
+.fa-home:hover{
+
+    color: red;
+}
 
 
 // .fa-newspaper{
@@ -208,6 +217,268 @@
 
 // }
 
+.prof-info{
+
+ display: flex;
+ flex-direction: row;
+}
+
+.prof-men-name{
+
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+
+
+.user-menu-link{
+
+text-decoration: none;
+
+}
+
+
+.fa-user-circle{
+
+font-size: 18px;
+
+}
+
+p.pi-style{
+
+font-size: 15px;
+margin-left: 43px;
+color: dark gray;
+
+}
+
+.email-info{
+
+margin-top: 10px;
+font-weight: 300;
+
+
+}
+
+span.lg-men{
+
+// margin-top: -15px;
+font-weight: 300;
+
+
+}
+.log-men-door{
+
+font-size: 32px;
+margin-top: -12px;
+
+}
+
+i.fa-home span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-home:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 10%;
+    // left: 125px;
+    left: 8.3%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+  }
+
+//   i.fa-home:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
+
+
+  i.fa-newspaper span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-newspaper:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 10%;
+    // left: 515px;
+    left: 28.3%;
+
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+  }
+
+//   i.fa-newspaper:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
+
+
+  i.fa-user span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-user:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 10%;
+    left: 48.5%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    // overflow: visible;
+    overflow: hidden;
+
+  }
+
+//   i.fa-user:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
+
+
+  i.fa-bars span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+i.fa-bars:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 10%;
+    left: 68.5%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+
+    // overflow: visible;
+  }
+
+//   i.fa-bars:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     // overflow: visible;
+//     overflow: hidden;
+
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
 
 
 
+  i.fa-plus span{
+
+display: none;
+color: #172b4d; 
+
+}
+
+
+i.fa-plus:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position: fixed;
+    top: 10%;
+    left: 88.5%;
+    width: 5em;
+    border:5px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center;
+    padding:10px;
+    overflow: hidden;
+  }
+
+//   i.fa-plus:hover span:after{ /*the span will display just on :hover state*/
+//     content:'';
+//     position:absolute;
+//     bottom:-11px;
+//     width:10px;
+//     height:10px;
+//     border-bottom:5px solid #0cf;
+//     border-right:5px solid #0cf;
+//     background:#cff;
+//     left:50%;
+//     margin-left:-5px;
+//     overflow: hidden;
+//     -moz-transform:rotate(45deg);
+//     -webkit-transform:rotate(45deg);
+//     transform:rotate(45deg);
+//   }
+
+
+
+.nav-menu-txt {
+
+font-size: 12px;
+color: #172b4d; 
+
+}

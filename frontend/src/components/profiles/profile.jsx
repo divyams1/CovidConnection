@@ -4,7 +4,9 @@ import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLifeRing, faHandsHelping} from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
-import NavBarContainer from './../splash/profile_nav_container';
+// import NavBarContainer from './../splash/profile_nav_container';
+import NavBarContainer from './profile_nav_container';
+
 import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
 
 

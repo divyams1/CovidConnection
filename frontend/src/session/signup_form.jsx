@@ -3,6 +3,11 @@
 import React from 'react';
 import {Link, withRouter } from 'react-router-dom';
 
+import { Icon, InlineIcon } from '@iconify/react';
+import windowClose from '@iconify-icons/fa-solid/window-close';
+// npm install --save-dev @iconify/react @iconify-icons/fa-solid
+
+
 import './session.css';
 
 
@@ -105,7 +110,7 @@ class SignupForm extends React.Component {
            <center> Please  Sign Up or {this.props.other} </center>
         <center id="demo-sign"> Use <Link onClick={this.demoSignUp}>Demo</Link> </center>
 
-          <div onClick={this.props.closeModal} className="close-x">X</div>
+          <div onClick={this.props.closeModal} className="close-x"><Icon className="fstylet" icon={windowClose} /></div>
                           
                           {this.renderErrors()}
           <div className="login-form">
