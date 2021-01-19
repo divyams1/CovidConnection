@@ -97,7 +97,8 @@ router.post("/register", (req, res) => {
                     success: true,
                     token: 'Bearer ' + token
                   });
-                })
+                });
+            })
             .catch(err => console.log(err));
         });
       });
