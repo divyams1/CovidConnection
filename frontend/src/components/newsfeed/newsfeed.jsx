@@ -26,10 +26,14 @@ class NewsFeed extends React.Component {
         }
     }
       userShow() {
-          if (!this.state.myFavors && !!this.props.currentUser && (!(Object.keys(this.props.currentUser).length === 0))) {
-            this.setState( { myFavors: true})
+          if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
+            return null
+            } else if (!this.state.myFavors && !!this.props.currentUser && (!(Object.keys(this.props.currentUser).length === 0))) {
+           
+              return < button className="news-btn" onClick={() => this.setState({ myFavors: true })} > View All Favors </button >
         } else {
-            this.setState( {myFavors: false })
+            
+              return < button className="news-btn" onClick={() => this.setState({ myFavors: false })} > View Other Users Favors </button >
         }
     }
     updateName() {
@@ -181,7 +185,7 @@ class NewsFeed extends React.Component {
                         {/* <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" /> */}
                     </div>
                     <h1 id="newsfeed-title"> Newsfeed </h1>
-                    <button className="news-btn" onClick={this.userShow}> {favor_text} </button>
+                    {this.userShow()}
                     <button className="news-btn" onClick={this.requestShow}> {request_text} </button>
                     <input type="text" className="news-input-search" placeholder='Search for a User' onChange={this.updateName()}></input>
                     {favors}
