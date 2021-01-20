@@ -188,6 +188,8 @@ class NewsFeed extends React.Component {
                     {this.userShow()}
                     <button className="news-btn" onClick={this.requestShow}> {request_text} </button>
                     <input type="text" className="news-input-search" placeholder='Search for a User' onChange={this.updateName()}></input>
+                    {/* <button className="news-btn" > <Link className="showLinks" to={`/map`} >Map  </Link> </button> */}
+                        
                     {favors}
                 </div>
                 </>
