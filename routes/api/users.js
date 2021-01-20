@@ -80,14 +80,13 @@ router.post("/register", (req, res) => {
 
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
-          if (err) throw err;
+          // if (err) throw err;
           newUser.password = hash;
-          newUser
-            .save()
+          newUser.save()
             .then(user => {
               const payload = { id: user.id, username: user.username, email: user.email };
 
-              jwt.sign(
+              return jwt.sign(
                 payload,
                 keys.secretOrKey,
                 // Tell the key to expire in one hour
