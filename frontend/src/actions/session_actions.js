@@ -49,11 +49,16 @@ export const logoutUser = () => ({
 });
 
 export const signup = user => dispatch => (
-    APIUtil.signup(user).then(() => (
-        dispatch(receiveUserSignIn())
-    ), err => (
-        dispatch(receiveErrors(err.response.data))
-    ))
+  APIUtil.signup(user).then(res => {
+    const { token } = res.data;
+    localStorage.setItem('jwtToken', token);
+    APIUtil.setAuthToken(token);
+    const decoded = jwt_decode(token);
+    dispatch(receiveCurrentUser(decoded))
+  })
+    .catch(err => {
+      dispatch(receiveErrors(err.response.data));
+    })
 );
 
 export const login = user => dispatch => (
@@ -93,13 +98,18 @@ export const loginUser = user => dispatch => (
 )
 
 export const signupUser = user => dispatch => (
-  APIUtil.signup(user).then(() => {
-    dispatch(loginUser(user))
-
-  }, err => {
-    dispatch(receiveErrors(err.response.data))
-  }
-  )
+  APIUtil.signup(user).then(res => {
+    const { token } = res.data;
+    localStorage.setItem('jwtToken', token);
+    APIUtil.setAuthToken(token);
+    const decoded = jwt_decode(token);
+    dispatch(receiveCurrentUser(decoded));
+    dispatch(closeModal());
+    dispatch(clearSessionErrors());
+  })
+    .catch(err => {
+      dispatch(receiveErrors(err.response.data));
+    })
 );
 
 export const getUser = user_id => dispatch => {
