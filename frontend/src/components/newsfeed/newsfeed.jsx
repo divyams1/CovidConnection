@@ -30,10 +30,10 @@ class NewsFeed extends React.Component {
             return null
             } else if (!this.state.myFavors && !!this.props.currentUser && (!(Object.keys(this.props.currentUser).length === 0))) {
            
-              return < button className="news-btn" onClick={() => this.setState({ myFavors: true })} > View All Favors </button >
+              return < button className="news-btn" onClick={() => this.setState({ myFavors: true })} > View Other Users Favors </button >
         } else {
             
-              return < button className="news-btn" onClick={() => this.setState({ myFavors: false })} > View Other Users Favors </button >
+              return < button className="news-btn" onClick={() => this.setState({ myFavors: false })} > View All Favors </button >
         }
     }
     updateName() {
