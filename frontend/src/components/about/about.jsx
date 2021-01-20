@@ -5,13 +5,16 @@ import { faCodeBranch} from '@fortawesome/free-solid-svg-icons'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
 import './about.css'
-
+import NavBarContainer from './../splash/profile_nav_container';
 class About extends React.Component {
 
     render() {
         const git = <img alt="icon" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height={30} width={30}></img>;
         const link = <img alt="icon" src="https://pngmind.com/wp-content/uploads/2019/08/Linkedin-Logo-Png-Transparent-Background.png" width={30} height = {30} ></img>
         return(
+            <div>
+                <NavBarContainer />
+           
             <div className="about">
                     <div className="about-header">
                         <h1> About Us </h1>
@@ -82,7 +85,7 @@ class About extends React.Component {
                     <Link id="back-link" to={'/'}>Back</Link>
                 </div>
 
-                
+                 </div>
         )
     }
 }

@@ -5,7 +5,7 @@
    right: 0;
    left: 0;
    background: rgba(0, 0, 0, 0.7);
-   z-index: 10;
+   z-index: 100;
  }
 
  .modal {
@@ -20,4 +20,5 @@
    top: 5px;
    right: 5px;
    cursor: pointer;
+   z-index: 10000;
  }

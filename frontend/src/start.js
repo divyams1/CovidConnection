@@ -13,7 +13,7 @@ import AboutContainer from './components/about/about_container';
 import CovidHelp from './components/covid_help/covid_help';
 import NewsFeedContainer from './components/newsfeed/newsfeed_container';
 import ProfileShowContainer from './components/profile_show/profile_show_container';
-
+import WholeMapContainer from './components/splash/whole_map_container';
 
 const App = () => (
   <div>
@@ -22,6 +22,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={SplashContainer} /> 
       <Route exact path="/about" component={AboutContainer} />
+      <Route exact path="/map" component={WholeMapContainer} />
       <Route exact path="/newsfeed" component={NewsFeedContainer} />
       <ProtectedRoute exact path='/add' component = {FavorCreateContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -30,7 +31,7 @@ const App = () => (
       <ProtectedRoute exact path="/:user_id" component={ProfileContainer} /> 
       <ProtectedRoute exact path="profile" component={ProfileContainer} /> 
       <Route exact path="/user/:user_id" component={ProfileShowContainer} />
-    
+      
     </Switch>
   </div>
 );

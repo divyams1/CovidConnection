@@ -1,8 +1,9 @@
 .about {
     text-align: center;
-    background-color: teal;
+    background-color:#C2EDFF;
     width: 100%;
     height: 100%;
+    color: #005eaa;
 }
 
 .about-people {
@@ -28,7 +29,7 @@
     }
 
 .map-div {
-    background-color: teal;
+    background-color: #C2EDFF;
 }
 
 .link-image {
@@ -46,6 +47,11 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
+    color: #005eaa;
+}
+a {
+    color : #005eaa;
+    text-decoration: none;
 }
 
 .user-search-bar {
@@ -59,7 +65,9 @@
 
 .map-search {
     display: flex;
+    justify-content: center;
     align-items: baseline;
+    background-color:  #C2EDFF;
 }
 
 .input-search {
@@ -320,4 +328,15 @@
     width: auto;
     height: auto;
     
+}
+
+.map-head {
+    display: flex;
+    flex-direction: column;
+    background-color:  #C2EDFF;
+}
+
+.map-text {
+    text-align: center;
+    color: #005EAA;
 }

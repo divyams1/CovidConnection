@@ -1,5 +1,5 @@
 div.about.a { text-decoration: none; color: gray; }
-.about a { text-decoration: none; color: white; }
+/* .about a { text-decoration: none; color: white; } */
 a { text-decoration: none;}
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
@@ -16,7 +16,7 @@ a:hover, a:active { text-decoration: none; }
 } */
 
 div.about {
-     background: #005eaa;
+     background: #C2EDFF;
      height: 100vh;
      margin: 0;
      padding-top: 100px;

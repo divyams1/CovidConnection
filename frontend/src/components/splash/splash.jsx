@@ -81,6 +81,7 @@ getLinks() {
                          <h1 > Want to help others in Need? </h1>
                         <p> View favors other users have made and try to help someone in need! </p>
                         <button  className="splash-btns"><Link to={'/newsfeed'}>Newsfeed</Link></button>
+                        <button  className="splash-btns"><Link to={'/map'}>Favor Map</Link></button>
 
                     </div>
                     <div className="grid-item item8 right-edge">
