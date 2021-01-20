@@ -65,13 +65,14 @@ router.post("/register", (req, res) => {
 
   if (!isValid) {
     return res.status(400).json(errors);
-  }
+  };
 
   User.findOne({ username: req.body.username }).then(user => {
     if (user) {
       errors.username = "User already exists";
       return res.status(400).json(errors);
     } else {
+      console.log('Found newUser')
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
@@ -86,7 +87,7 @@ router.post("/register", (req, res) => {
             .save()
             .then(user => {
               const payload = { id: user.id, username: user.username, email: user.email };
-
+                console.log('hit user callback')
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
                   success: true,
