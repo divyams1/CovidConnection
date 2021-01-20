@@ -55,6 +55,7 @@ class NavBar extends React.Component {
           </div>
           <div id="logo">
             <h1 className="covid-big-text"> COVID Connection  </h1>
+            
           </div>
             { this.getLinks() }
         </div>

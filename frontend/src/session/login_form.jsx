@@ -1,7 +1,7 @@
 // src/components/session/login_form.js
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Icon, InlineIcon } from '@iconify/react';
 import windowClose from '@iconify-icons/fa-solid/window-close';
 
@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoSignUp = this.demoSignUp.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -55,6 +56,17 @@ class LoginForm extends React.Component {
    
   }
 
+  demoSignUp(e) {
+    e.preventDefault();
+    let user = {
+      email: "demo@gmail.com",
+      password: "random"
+    }
+
+    this.props.loginUser(user);
+    this.props.closeModal();
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -81,6 +93,7 @@ class LoginForm extends React.Component {
            <br/>
              
            <center>Please  Login or {this.props.other}</center>
+          <center id="demo-sign"> Use <Link onClick={this.demoSignUp}>Demo</Link> </center>
             
           <div onClick={this.props.closeModal} className="close-x"><Icon className="fstylet" icon={windowClose} /></div>
           {this.renderErrors()}

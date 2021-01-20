@@ -284,60 +284,7 @@ class Profile extends React.Component {
       //   )
       // }
 
-      if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
-
-          return (
-            <>
-              <NavBarNoLogoContainer />
-            <div className="profile-view">
-            {/* <div  className="banners">
-                     <h3 className="covid-help">  Currently experiencing Covid symptoms?  Visit our info page for tips handling stress --
-                       <NavLink to="/covid">Covid Help</NavLink> </h3>
-                      <img className="support-banner" src="https://i.ibb.co/qxSdNMH/sustain-2.png" />
-                      <img className="support-banner" src="https://i.ibb.co/10YkVyz/covidtips.png" />
-                     <img className="support-banner" src="https://i.ibb.co/41BLxw2/covidflag.png" />
-                     <img className="support-banner" src="https://i.ibb.co/LzLgWcc/connected-1.png" />https://i.ibb.co/1JDb3PM/connected-2.png
-                     <img className="support-banner" src="https://i.ibb.co/1JDb3PM/connected-2.png" />
-                      <img className="support-banner" src="https://i.ibb.co/gt2Lfs5/ccmessage-1.png" /> 
-                       <img className="support-banner" src="https://i.ibb.co/6mFTFMS/ccmessage-2.png" />
-                      <img className="support-banner" src="https://i.ibb.co/LpRyT28/staysafe.png" />
-
-                      <img className="support-banner" src="https://i.ibb.co/KXzV90D/connected-3.png" />
-                      <img className="support-banner" src="https://i.ibb.co/bbg6wy4/favorpic-1.png" />
-              </div> */}
-              
-           
-
-            <div className="prof-favors">
-              <h1 className="profile-name-title">  Welcome {this.props.currentUser.username}!  </h1>
-              {/* <h3 className="prof-fav-hd2"> These are the good deeds you have requested from others  </h3> <br /> */}
-                
-                <div className="favor-lst">
-                    
-                    <h2 className="prof-fav-hd"> <FontAwesomeIcon icon={faLifeRing} />  Requested Favors</h2>
-                    <button className="favor-btn" onClick={this.renderForm('favor')}>
-                      <img className="add-favor" src="https://cdn2.iconfinder.com/data/icons/vibrancie-health/30/health_002-medical-cross-hospital-first-aid-doctor-512.png" /> Add Favor</button>
-                    {favors}
-                </div>
-                  <h2 className="prof-fav-hd-taken"> <FontAwesomeIcon icon={faHandsHelping} />  Taken Favors</h2>
-                  <div className="favor-lst">
-                    {taken_favors}
-                  </div>
-                  <div className="small-prof-favors">
-                {/* {this.handleFavors()}
-                {this.handleNoFavors()} */}
-              </div>
-              </div>
-               <div>
-                        {/* <img className="banner" src="https://i.ibb.co/MSmtpdb/Stay.jpg" alt="covid help"/> */}
-              </div>
-              {/* {this.state.favors.map(favor => (
-                <FavorItem key={favor.id} title={favor.title} />
-              ))} */}
-            </div>
-            </>
-          );
-        } else {
+     
 
             return (
               <>
@@ -378,11 +325,13 @@ class Profile extends React.Component {
                     
                     <div className="favor-lst-taken">
                         <h2 className="prof-fav-hd-taken"> <FontAwesomeIcon icon={faHandsHelping} />  Taken Favors</h2>
-                        <div className="favor-button-and-text" onClick={this.renderForm('favor')}>
-                          <div className="add-favor-ghost"></div>
+                        
+                          <div className="add-favor-ghost">
+                          <p>Visit the <Link className={"showLinks"} to={'/newsfeed'}>Newsfeed</Link> to accept new favors</p>
+                          </div>
                           
   
-                        </div>
+                       
             
                       {taken_favors}
                     </div>
@@ -400,6 +349,6 @@ class Profile extends React.Component {
             );
 
         }
-      } 
+       
 }
 export default Profile;

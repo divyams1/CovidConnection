@@ -26,7 +26,7 @@ class NewsFeed extends React.Component {
         }
     }
       userShow() {
-        if ( !this.state.myFavors ) {
+          if (!this.state.myFavors && !!this.props.currentUser && (!(Object.keys(this.props.currentUser).length === 0))) {
             this.setState( { myFavors: true})
         } else {
             this.setState( {myFavors: false })
@@ -74,11 +74,11 @@ class NewsFeed extends React.Component {
     //     }
     // }
     render() {
-        let favor_text = this.state.myFavors? "View All Favors" : "View Your Favors"
+        let favor_text = this.state.myFavors? "View All Favors" : "View Other Users Favors"
         let request_text = this.state.favorRequests?   "View All Posts" : "View Unaccepted Favors"
         let favors = (this.props.favors.data) || [];
         
-        favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id === favor.favor_for_user_id) : favors)
+        favors = ( this.state.myFavors? favors.filter( favor => this.props.currentUser.id !== favor.favor_for_user_id) : favors)
         favors = ( this.state.favorRequests? favors.filter( favor => favor.favor_status === "Request") : favors )
         favors = ( this.state.userSearch? favors.filter( favor => {
             const length = this.state.forUser.length; 

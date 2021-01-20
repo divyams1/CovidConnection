@@ -132,7 +132,8 @@ return (
 
     
         <div className="header-div header-splash-text">
-            <h1> CovidConnection </h1>
+            <h1 id="title-text"> CovidConnection </h1>
+            <Link id="team-link" className="showLinksCurrently" to={`/about`} >Team Members</Link>
         </div>
           
           
