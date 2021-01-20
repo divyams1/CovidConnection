@@ -1,7 +1,7 @@
 // src/components/session/login_form.js
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Icon, InlineIcon } from '@iconify/react';
 import windowClose from '@iconify-icons/fa-solid/window-close';
 
@@ -81,6 +81,7 @@ class LoginForm extends React.Component {
            <br/>
              
            <center>Please  Login or {this.props.other}</center>
+          <center id="demo-sign"> Use <Link onClick={this.demoSignUp}>Demo</Link> </center>
             
           <div onClick={this.props.closeModal} className="close-x"><Icon className="fstylet" icon={windowClose} /></div>
           {this.renderErrors()}
