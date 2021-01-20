@@ -86,7 +86,7 @@ router.post("/register", (req, res) => {
             .then(user => {
               const payload = { id: user.id, username: user.username, email: user.email };
 
-              return jwt.sign(
+              jwt.sign(
                 payload,
                 keys.secretOrKey,
                 // Tell the key to expire in one hour
@@ -97,8 +97,9 @@ router.post("/register", (req, res) => {
                     token: 'Bearer ' + token
                   });
                 });
+                return payload;
             })
-            .catch(err => console.log(err));
+            
         });
       });
     }
