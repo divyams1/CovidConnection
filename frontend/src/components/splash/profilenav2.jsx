@@ -103,9 +103,9 @@ renderForm(field) {
 
 render(){
     
-const signUpOrProfile = this.props.loggedIn? (   <Link class="icon-link-splash" to={'/profile'} > <i class="fas fa-user icon-splash icon-fill">  <FontAwesomeIcon className="fai" icon={faUser} /> </i> </Link>):
+const signUpOrProfile = this.props.loggedIn? (   <Link className="icon-link-splash" to={'/profile'} > <i className="fas fa-user icon-splash icon-fill">  <FontAwesomeIcon className="fai" icon={faUser} /> </i> </Link>):
   (this.props.sign);
-  const logInOrLogOut = this.props.loggedIn ? (<i class="fas fa-user icon-splash icon-fill"  onClick={this.logoutUser}> <FontAwesomeIcon  icon={faSignOutAlt} /> </i> ): 
+  const logInOrLogOut = this.props.loggedIn ? (<i className="fas fa-user icon-splash icon-fill"  onClick={this.logoutUser}> <FontAwesomeIcon  icon={faSignOutAlt} /> </i> ): 
 (this.props.log);
 return (
 
@@ -124,7 +124,7 @@ return (
      
         
         <div className="header-div">
-         <Link className="icon-link-splash" to={"/newsfeed"}>  <i class="fas fa-newspaper icon-splash icon-fill"><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
+         <Link className="icon-link-splash" to={"/newsfeed"}>  <i className="fas fa-newspaper icon-splash icon-fill"><FontAwesomeIcon  icon={faNewspaper} /> </i> </Link>                
         </div>
   
 

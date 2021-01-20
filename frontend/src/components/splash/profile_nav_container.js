@@ -23,10 +23,10 @@ const mapDispatchToProps = (dispatch) => ({
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
     fetchFavors: () => dispatch(fetchFavors()),
-    sign:  (<i class="fas fa-user-plus icon-splash icon-fill" onClick={() => dispatch(openModal('signup'))}>  <FontAwesomeIcon className="fai" icon={faUserPlus} /> </i> )
+    sign:  (<i className="fas fa-user-plus icon-splash icon-fill" onClick={() => dispatch(openModal('signup'))}>  <FontAwesomeIcon className="fai" icon={faUserPlus} /> </i> )
     ,
      log:
-        (<i class="fas fa-sign-in-alt icon-splash icon-fill"  onClick={() => dispatch(openModal('login'))}> <FontAwesomeIcon  icon={faSignInAlt} /> </i> )
+        (<i className="fas fa-sign-in-alt icon-splash icon-fill"  onClick={() => dispatch(openModal('login'))}> <FontAwesomeIcon  icon={faSignInAlt} /> </i> )
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SplashNav2));
