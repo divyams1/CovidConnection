@@ -26,7 +26,7 @@ class NewsFeed extends React.Component {
         }
     }
       userShow() {
-        if ( !this.state.myFavors ) {
+          if (!this.state.myFavors && !!this.props.currentUser && (!(Object.keys(this.props.currentUser).length === 0))) {
             this.setState( { myFavors: true})
         } else {
             this.setState( {myFavors: false })
