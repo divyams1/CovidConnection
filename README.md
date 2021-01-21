@@ -27,7 +27,7 @@ You can accept favor requests on the Newsfeed by clicking the accept favor butto
 
 ![accepting-a-favor-gif](https://user-images.githubusercontent.com/62472030/105387715-d2f66900-5be3-11eb-81a3-40677ae9ccf0.gif)
 
-## Logging Your Favor as Complete
+## Logging A Favor as Complete
 
 We can log out using the right-most icon in our navbar so that we can sign into the account that originally made the favor request for demonstration purposes. Here we can see that the favor request for this user has a button that allows for the user to mark the favor as complete. 
 
