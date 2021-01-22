@@ -1,10 +1,10 @@
 # CovidConnection
 
 ## Architecture and Technologies
-* MongoDB
-* Express
-* React
-* Node
+* Mongoose (5.10.19)
+* Express (4.17.1)
+* React (17.0.1)
+* Node (10.13.0)
 
 ## Background and Overview
 In these uncertain times, we could all use a little help. CovidConnection connects those who need help with tasks that have become more difficult for them, with those happy to lend a helping hand.
