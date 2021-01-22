@@ -197,7 +197,8 @@ a {
     display: flex; 
     flex-direction: column;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 12%;
+    margin-top: 2%;
 }
 .item3 {
     grid-column-start: 3;
