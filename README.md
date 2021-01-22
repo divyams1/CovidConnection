@@ -27,10 +27,52 @@ You can accept favor requests on the Newsfeed by clicking the accept favor butto
 
 ![accepting-a-favor-gif](https://user-images.githubusercontent.com/62472030/105387715-d2f66900-5be3-11eb-81a3-40677ae9ccf0.gif)
 
-## Logging A Favor as Complete
+## Logging Your Favor as Complete
 
-We can log out using the right-most icon in our navbar so that we can sign into the account that originally made the favor request for demonstration purposes. Here we can see that the favor request for this user has a button that allows for the user to mark the favor as complete. 
-
-Currently this keeps the favor off of any favor lists on the site to increase focus on fulfilling new favors, but in the future we may add a seperate display of all the completed favors to show all the good that has been done for people who needed a helping hand.
+We can log out using the right-most icon in our navbar so that we can sign into the account that originally made the favor request for demonstration purposes. Here we can see that the favor request for this user has a button that allows for the user to mark the favor as complete. Currently this keeps the favor off of any favor lists on the site to increase focus on fulfilling new favors, but in the future we may add a display of all the completed favors to show all the good that has been done for people who needed a helping hand.
 
 ![logging-favor-complete-gif](https://user-images.githubusercontent.com/62472030/105387782-e30e4880-5be3-11eb-9739-2c9a73ca09d8.gif)
+
+## Favor Button Logic
+
+The logic what changes a particular user can make to any particular favor is regulated mainly by which onClick property is assigned to the button at the bottom of each favor. This button element is determined by the conditional logic presented in the code snippet below.
+
+This logic starts by checking if there is any user signed in, if not, there will be no button since a sign in is required for any favor actions to be performed. From there the conditionals use logic determined by the comparing the user ID of those associated with the favor against the current user's ID, along with the current status of the favor.
+
+For example, if the favor.status is equal to "Doing", we know the favor has been accepted, and if the favor_for_user_id property is equal to the currentUser.id, we should present the option to "log favor as complete", since we only want the user who requested the favor to be able to mark the favor as being completed and no longer requiring assistance.
+
+```javascript
+handleFavorButton(favor) {
+    if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
+      return null
+    } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.status === "Request") {
+      return (
+        <button className="favor-button" onClick={() => this.props.deleteFavor(favor)}>
+          Delete
+        </button>
+      )
+    } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.status === "Doing") {
+      return ( 
+        <button className="favor-button" onClick={() => this.props.updateFavor(favor)}>
+          Click here to log favor as complete.
+        </button>
+      )
+    } else if (favor.favor_by_user_id === this.props.currentUser.id && favor.status === "Doing") {
+      return (
+        <button className="favor-button" onClick={() => this.props.updateFavor(favor)}>
+          Click here to undo accepting this favor.
+        </button>
+      )
+    } else if (favor.favor_by_username) {
+      return null
+    }
+     else {
+      return (
+        <button className="favor-button" onClick={() => this.props.updateFavor(favor)}>
+          Click here to accept favor
+        </button>
+      )
+    }
+  }
+```
+
