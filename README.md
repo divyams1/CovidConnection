@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# CovidConnection
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Architecture and Technologies
+* MongoDB
+* Express
+* React
+* Node
 
-## Available Scripts
+## Background and Overview
+In these uncertain times, we could all use a little help. CovidConnection connects those who need help with tasks that have become more difficult for them, with those happy to lend a helping hand.
 
-In the project directory, you can run:
+## Authorization and Profile Page
 
-### `npm start`
+User login is supported by backend authentication. When creating an account emails are validated and passwords are hashed using BCrypt to ensure the protection of password security even if one were able to view the user database. Each user has a profile page which can be accessed by the navbar user icon. Profile pages show all of the users accepted favors and favor requests; it is also where the user can create a new favor request.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![user-auth-gif](https://user-images.githubusercontent.com/62472030/105387522-a3476100-5be3-11eb-9474-a5b3376160fd.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Creating a Favor Request and Viewing the Newsfeed
 
-### `npm test`
+Creating a favor request is done by press the "Ask Favor" button on the profile page. You can see this generate a favor request on the profile page, confirming that this favor request has been added to the database. Clicking the newspaper icon in the navbar brings us to the favor Newsfeed. Here we can see the favor request we just created, as well as favor requests from all other users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![new-favor-gif](https://user-images.githubusercontent.com/62472030/105387656-c2de8980-5be3-11eb-8d94-08b400455f54.gif)
 
-### `npm run build`
+## Accepting a Favor
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can accept favor requests on the Newsfeed by clicking the accept favor button at the bottom of each favor. This you can see the favor update immediately to show that you have accepted it. You can now go back to your profile see the favor you have just taken in the "Taken Favors" portion of the profile page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![accepting-a-favor-gif](https://user-images.githubusercontent.com/62472030/105387715-d2f66900-5be3-11eb-81a3-40677ae9ccf0.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Logging A Favor as Complete
 
-### `npm run eject`
+We can log out using the right-most icon in our navbar so that we can sign into the account that originally made the favor request for demonstration purposes. Here we can see that the favor request for this user has a button that allows for the user to mark the favor as complete. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Currently this keeps the favor off of any favor lists on the site to increase focus on fulfilling new favors, but in the future we may add a seperate display of all the completed favors to show all the good that has been done for people who needed a helping hand.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![logging-favor-complete-gif](https://user-images.githubusercontent.com/62472030/105387782-e30e4880-5be3-11eb-9739-2c9a73ca09d8.gif)
