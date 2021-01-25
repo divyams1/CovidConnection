@@ -22,9 +22,9 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 
 router.get('/:id', (req, res) => {
-  console.log(req)
-  console.log(req.body)
-  console.log(req.params)
+  // console.log(req)
+  // console.log(req.body)
+  // console.log(req.params)
   
   User
     .findById( req.body )
@@ -72,7 +72,7 @@ router.post("/register", (req, res) => {
       errors.username = "User already exists";
       return res.status(400).json(errors);
     } else {
-      console.log('Found newUser')
+      // console.log('Found newUser')
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
