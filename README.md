@@ -27,6 +27,21 @@ You can accept favor requests on the Newsfeed by clicking the accept favor butto
 
 ![accepting-a-favor-gif](https://user-images.githubusercontent.com/62472030/105387715-d2f66900-5be3-11eb-81a3-40677ae9ccf0.gif)
 
+``` JavaScript
+    updateFavor: (favor) => dispatch(updateFavor(favor))
+``` 
+Accepting a favor will trigger the update Favor route on the frontend. Depending on the current status of the favor, the status will change accordingly and will mark the username and id of the person who accepts the favor depending on its status so that it can properly render on the frontend. 
+
+```JavaScript
+        if (req.body.favor_status === "Request") {
+        update = { favor_status: "Doing", favor_by_user_id: req.user.id, favor_by_username: req.user.username};
+     } else if (req.body.favor_status === "Doing" && req.user.id === req.body.favor_by_user_id) {
+        update = { favor_status: "Request", favor_by_user_id: null, favor_by_username: null};
+     } else {
+        update = { favor_status: "Done" };
+     }      
+```
+
 ## Logging Your Favor as Complete
 
 We can log out using the right-most icon in our navbar so that we can sign into the account that originally made the favor request for demonstration purposes. Here we can see that the favor request for this user has a button that allows for the user to mark the favor as complete. Currently this keeps the favor off of any favor lists on the site to increase focus on fulfilling new favors, but in the future we may add a display of all the completed favors to show all the good that has been done for people who needed a helping hand.
@@ -74,5 +89,30 @@ handleFavorButton(favor) {
       )
     }
   }
+```
+
+## Searching for Favors 
+
+We can search for favors on the newsfeed by using the search bar. This search filters the favors on the frontend only so that no requests to the backend need to be sent. Typing into the bar will trigger a state change and will also track what the user types into state, which will be used to filter the favors accordingly. In the future, the search can be edited to allow partial searches, and searchs that are not caps sensitive.
+
+```JavaScript 
+this.state = { myFavors: false, favorRequests: false, userSearch: false, forUser: ''}
+``` 
+```JavaScript
+       updateName() {
+        
+        return e=> {
+            this.setState( { 'forUser' : e.currentTarget.value })
+            if ( this.state.forUser !== '') {
+                this.setState( { 'userSearch' : true })
+            }
+        }
+    }
+```
+```JavaScript 
+favors.filter( favor => {
+            const length = this.state.forUser.length; 
+
+            return favor.favor_for_username.slice(0,length) === this.state.forUser
 ```
 
