@@ -65,6 +65,42 @@ class Profile extends React.Component {
     }
     return () => this.props.openModal(field)
   }
+
+
+  handleFavorButton(favor) {
+    if ((!this.props.currentUser || (Object.keys(this.props.currentUser).length === 0))) {
+      return null
+    } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Request") {
+      return (
+        <button className="favor-button" onClick={() => this.props.deleteFavor(favor)}>
+          Delete
+        </button>
+      )
+    } else if (favor.favor_for_user_id === this.props.currentUser.id && favor.favor_status === "Doing") {
+      return ( 
+        <button className="favor-button" onClick={() => this.props.updateFavor(favor)}>
+          Click here to log favor as complete.
+        </button>
+      )
+    } else if (favor.favor_by_user_id === this.props.currentUser.id && favor.favor_status === "Doing") {
+      return (
+        <button className="favor-button" onClick={() => this.props.updateFavor(favor)}>
+          Click here to undo accepting this favor.
+        </button>
+      )
+    } else if (favor.favor_by_username) {
+      return null
+    }
+     else {
+      return (
+        <button className="favor-button" onClick={() => this.props.updateFavor(favor)}>
+          Click here to accept favor
+        </button>
+      )
+    }
+  }
+
+
     handleNoFavors(){
      
               if (!this.props.favors) return (
