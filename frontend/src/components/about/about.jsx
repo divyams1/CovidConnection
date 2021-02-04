@@ -6,11 +6,14 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
 import './about.css'
 import NavBarContainer from './../splash/profile_nav_container';
+import gitlogo from './Git-Icon-1788C.png'
+import linklogo from './LI-In-Bug.png'
+
 class About extends React.Component {
 
     render() {
-        const git = <img alt="icon" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height={30} width={30}></img>;
-        const link = <img alt="icon" src="https://pngmind.com/wp-content/uploads/2019/08/Linkedin-Logo-Png-Transparent-Background.png" width={30} height = {30} ></img>
+        const git = <img alt="icon" src={gitlogo} height={40} width={40}></img>;
+        const link = <img alt="icon" src={linklogo} width={40} height = {40} ></img>
         return(
             <div>
                 <NavBarContainer />
