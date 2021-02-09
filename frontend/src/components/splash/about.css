@@ -131,7 +131,7 @@ a {
     height: 300px;
     margin: 20px;
     border-radius: 10px;
-    border: 5px solid #E6B600;
+    border: 1px solid black;
 }
 
 .help-text {

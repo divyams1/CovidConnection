@@ -66,7 +66,7 @@ getLinks() {
                         </div>
                     </div>
                     <div className="grid-item item3">
-                         <img id="img1" className="splash-image" src="https://i.ibb.co/LpRyT28/staysafe.png" ></img>
+                         <img id="img1" className="splash-image" src="https://www.alphagamma.eu/wp-content/uploads/2017/06/alphagamma-3-reasons-why-helping-people-is-not-always-good-for-business-entrepreneurship.jpg" ></img>
                     </div>
                     <div className="grid-item item4 right-edge">
                         
@@ -75,7 +75,7 @@ getLinks() {
                         
                     </div>
                     <div className="grid-item item6">
-                         <img id="img2" className="splash-image" src="https://i.ibb.co/KXzV90D/connected-3.png"></img>
+                         <img id="img2" className="splash-image" src="https://d15az4ytij9694.cloudfront.net/photos/blog-post-feature-image-Day2connected-world-1000x500.jpg"></img>
                     </div>
                     <div className="grid-item item7 grid-text">
                          <h1 > Want to help others in Need? </h1>
