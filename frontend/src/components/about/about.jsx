@@ -6,11 +6,14 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
 import './about.css'
 import NavBarContainer from './../splash/profile_nav_container';
+import gitlogo from './Git-Icon-1788C.png'
+import linklogo from './LI-In-Bug.png'
+
 class About extends React.Component {
 
     render() {
-        const git = <img alt="icon" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height={30} width={30}></img>;
-        const link = <img alt="icon" src="https://pngmind.com/wp-content/uploads/2019/08/Linkedin-Logo-Png-Transparent-Background.png" width={30} height = {30} ></img>
+        const git = <img alt="icon" src={gitlogo} height={40} width={40}></img>;
+        const link = <img alt="icon" src={linklogo} width={40} height = {40} ></img>
         return(
             <div>
                 <NavBarContainer />
@@ -41,26 +44,7 @@ class About extends React.Component {
                             <h4> Phone: 443-838-7815</h4>
                         </div>
 
-                        <div className="person-div">
-                            <h2> Aaron Robinson </h2>
-                            <div className="links">
-                                <div className="link-text-image">
-                                    <a href="https://github.com/indierusky"> 
-                                        {git}
-                                        <p> Github </p>
-                                    </a>
-                                </div>
-                                <div className="link-text-image">
-                                     <a href="https://www.linkedin.com/in/aaron-robinson-258a77201/"> 
-                                         {link}
-                                         <p> LinkedIn </p>
-                                    </a>
-                                </div>
-                            </div>
-                            <h4> Email: aaronjrobinson@hotmail.com </h4>
-                            <h4> Phone: 347-664-0151</h4>
-                            
-                        </div>
+                        
 
                         <div className="person-div">
                             <h2> Anthony Collichio </h2>
