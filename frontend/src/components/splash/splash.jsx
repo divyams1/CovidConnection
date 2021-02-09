@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import AboutContainer from '../about/about_container'
 import NavBar from '../../session/navbar';
 import SplashNav2 from './profile_nav_container'
+import NewSplash from './new_splash_container';
 class Splash extends React.Component {
     constructor(props){
         super(props);
@@ -51,7 +52,7 @@ getLinks() {
         const request_text =  ( this.state.requestShow? "View Favor Requests" : "View Completed Favors")
         return (
             <>
-            <SplashNav2 />
+            <NewSplash />
             <div className="splash">
             <div className="covid-connection-header"> 
                 <div className="grid-container">

@@ -1,0 +1,16 @@
+.new-splash-cont {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    
+}
+
+.navbar-buttons {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+li > a {
+    color: white;
+}
