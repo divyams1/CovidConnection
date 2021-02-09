@@ -31,7 +31,6 @@ You can accept favor requests on the Newsfeed by clicking the accept favor butto
     updateFavor: (favor) => dispatch(updateFavor(favor))
 ``` 
 Accepting a favor will trigger the update Favor route on the frontend. Depending on the current status of the favor, the status will change accordingly and will mark the username and id of the person who accepts the favor depending on its status so that it can properly render on the frontend. 
-<<<<<<< HEAD
 
 ```JavaScript
         if (req.body.favor_status === "Request") {
@@ -46,8 +45,6 @@ Accepting a favor will trigger the update Favor route on the frontend. Depending
 
 
 ## Logging A Favor as Complete
-=======
->>>>>>> 432fc62025863064f2df1a05b16ea369f5a8dd66
 
 ```JavaScript
         if (req.body.favor_status === "Request") {
@@ -65,8 +62,6 @@ We can log out using the right-most icon in our navbar so that we can sign into 
 
 ![logging-favor-complete-gif](https://user-images.githubusercontent.com/62472030/105387782-e30e4880-5be3-11eb-9739-2c9a73ca09d8.gif)
 
-<<<<<<< HEAD
-=======
 ## Favor Button Logic
 
 The logic what changes a particular user can make to any particular favor is regulated mainly by which onClick property is assigned to the button at the bottom of each favor. This button element is determined by the conditional logic presented in the code snippet below.
@@ -109,7 +104,6 @@ handleFavorButton(favor) {
     }
   }
 ```
->>>>>>> 432fc62025863064f2df1a05b16ea369f5a8dd66
 
 ## Searching for Favors 
 
@@ -134,9 +128,4 @@ favors.filter( favor => {
             const length = this.state.forUser.length; 
 
             return favor.favor_for_username.slice(0,length) === this.state.forUser
-<<<<<<< HEAD
 ```
-=======
-```
-
->>>>>>> 432fc62025863064f2df1a05b16ea369f5a8dd66
