@@ -7,7 +7,7 @@
     align-items: center;
     height: 100%;
     color:  #005eaa;
-    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
@@ -19,7 +19,7 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 }
 
 .whole-favor {
-    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
     width: 40%;
     margin-bottom: 30px;
     margin-right: 30px;
