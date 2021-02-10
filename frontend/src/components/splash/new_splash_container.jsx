@@ -20,11 +20,11 @@ const mDTP = dispatch => {
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
     fetchFavors: () => dispatch(fetchFavors()),
-    sign: (<button  className="splash-btns" onClick={() => dispatch(openModal('signup'))}>
+    sign: (<button onClick={() => dispatch(openModal('signup'))}>
           Sign Up
         </button>)
         ,
-    log: (<button  className="splash-btns"  onClick={() => dispatch(openModal('login'))}>
+    log: (<button onClick={() => dispatch(openModal('login'))}>
           Log In 
         </button>)
     }

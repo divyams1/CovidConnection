@@ -51,47 +51,15 @@ getLinks() {
         const button_text = ( this.state.userShow ? "View All Favors" : "View Your Favors" )
         const request_text =  ( this.state.requestShow? "View Favor Requests" : "View Completed Favors")
         return (
-            <>
-            <NewSplash />
-            <div className="splash">
-            <div className="covid-connection-header"> 
-                <div className="grid-container">
-                    <div className="grid-item item1 left-edge">
-
-                    </div>
-                    <div className="grid-item item2 grid-text">
-                        <h1> Need help during COVID? Create a favor and connect with other users </h1>
-                        <p> Starting is simple, sign up and create a favor! </p>
-                        <div className="button-div">
-                            {this.getLinks() }
-                        </div>
-                    </div>
-                    <div className="grid-item item3">
-                         <img id="img1" className="splash-image" src="https://www.alphagamma.eu/wp-content/uploads/2017/06/alphagamma-3-reasons-why-helping-people-is-not-always-good-for-business-entrepreneurship.jpg" ></img>
-                    </div>
-                    <div className="grid-item item4 right-edge">
-                        
-                    </div>
-                    <div className="grid-item item5 left-edge">
-                        
-                    </div>
-                    <div className="grid-item item6">
-                         <img id="img2" className="splash-image" src="https://d15az4ytij9694.cloudfront.net/photos/blog-post-feature-image-Day2connected-world-1000x500.jpg"></img>
-                    </div>
-                    <div className="grid-item item7 grid-text">
-                         <h1 > Want to help others in Need? </h1>
-                        <p> View favors other users have made and try to help someone in need! </p>
-                        <button  className="splash-btns"><Link to={'/newsfeed'}>Newsfeed</Link></button>
-                        <button  className="splash-btns"><Link to={'/map'}>Favor Map</Link></button>
-
-                    </div>
-                    <div className="grid-item item8 right-edge">
-                        
-                    </div>
-                </div>
+         
+            <div className="splash-background">
+                <NewSplash />
+                <div className="main-splash-items">
+                    <h1 className="main-splash-text"> CovidConnection</h1>
+                    <p> Connect with users across the world by making a favor or fufilling a favor</p>
+                    <button className="splash-main-button">Get Started</button> 
                 </div>
             </div>
-            </>
         )
     }
 }

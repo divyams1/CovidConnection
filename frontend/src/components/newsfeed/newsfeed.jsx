@@ -6,6 +6,7 @@ import NavBarNoLogoContainer from '../../session/navbar_no_logo_container';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
 import NavBar from '../../session/navbar_container'
 import NavBarContainer from './../splash/profile_nav_container';
+import NewNav from '../splash/new_splash_container'
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props)
@@ -165,7 +166,7 @@ class NewsFeed extends React.Component {
         
             return (
                 <>
-                <NavBarContainer />
+                <NewNav />
                 <div className="newsfeed-whole">
                     
 

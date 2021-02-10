@@ -341,3 +341,14 @@ a {
     text-align: center;
     color: #005EAA;
 }
+
+.splash-background {
+      position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+    
+    background-image: url("https://www.studentresearchfoundation.org/wp-content/uploads/2019/04/Applying-to-College-and-Helping-People-Student-Research-Foundation-e1554651380426.jpg");
+}
