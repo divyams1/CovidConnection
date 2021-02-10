@@ -16,7 +16,7 @@ a:hover, a:active { text-decoration: none; }
 } */
 
 div.about {
-     background: #C2EDFF;
+     background: #E5E5E5;
      height: 100vh;
      margin: 0;
      padding-top: 100px;
@@ -27,7 +27,7 @@ div.about {
 } */
 
 head {
-    background: #005eaa; 
+    background: #E5E5E5; 
 }
 
 #back-link {
@@ -38,7 +38,7 @@ head {
     padding-right: 5px;
     padding-bottom: 2px;
     text-decoration: none;
-     color: gray;
+     color: #14213D;
 }
 
 .links{

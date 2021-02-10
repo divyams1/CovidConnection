@@ -5,10 +5,15 @@ import {withRouter, Link} from 'react-router-dom';
 class NewSplash extends React.Component {
     constructor(props) {
         super(props)
+        this.logoutUser = this.logoutUser.bind(this);
     }
+    logoutUser(e) {
+      e.preventDefault();
+      this.props.logout();
+  }
 
     render() {
-        const logInOrLogOut = this.props.loggedIn? ( "Log Out") : ("Log In")
+        const logInOrLogOut = this.props.loggedIn? <button className="splash-new-btn-log" onClick={this.logoutUser}> Log Out</button> : (this.props.log)
         const SignUpOrProfile =  this.props.loggedIn? ( <Link  to={'/profile'} >Profile</Link>) : (this.props.sign) 
         return (
             <div className="new-splash-cont">

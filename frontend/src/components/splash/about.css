@@ -1,9 +1,9 @@
 .about {
     text-align: center;
-    background-color:#C2EDFF;
+    background-color:#E5E5E5;
     width: 100%;
     height: 100%;
-    color: #005eaa;
+    color: #14213D;
 }
 
 .about-people {
@@ -29,7 +29,7 @@
     }
 
 .map-div {
-    background-color: #C2EDFF;
+    background-color: #E5E5E5;
 }
 
 .link-image {
@@ -47,10 +47,10 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    color: #005eaa;
+    color: #14213D;
 }
 a {
-    color : #005eaa;
+    color : #14213D;
     text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: baseline;
-    background-color:  #C2EDFF;
+    background-color:  #E5E5E5;
 }
 
 .input-search {
@@ -334,12 +334,12 @@ a {
 .map-head {
     display: flex;
     flex-direction: column;
-    background-color:  #C2EDFF;
+    background-color:  #E5E5E5;
 }
 
 .map-text {
     text-align: center;
-    color: #005EAA;
+    color: #14213D;
 }
 
 .splash-background {
