@@ -57,7 +57,7 @@ getLinks() {
                 <div className="main-splash-items">
                     <h1 className="main-splash-text"> CovidConnection</h1>
                     <p> Connect with users across the world by making a favor or fufilling a favor</p>
-                    <button className="splash-main-button">Get Started</button> 
+                    {this.props.sign} 
                 </div>
             </div>
         )

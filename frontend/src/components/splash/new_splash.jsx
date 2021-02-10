@@ -30,7 +30,7 @@ class NewSplash extends React.Component {
                             <Link to='/about'> Contact </Link>
                         </li >
                         <li className="nav-item" >
-                            <a> {logInOrLogOut} </a>
+                             {logInOrLogOut} 
                         </li>
                         <li className="nav-item" >
                             {SignUpOrProfile} 

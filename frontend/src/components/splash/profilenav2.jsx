@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCircle, faPlus, faBell, faNewspaper, faUser, faBars, faSignOutAlt, faUserPlus, faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 
-import './splash_nav.scss';
+// import './splash_nav.scss';
 
 
 

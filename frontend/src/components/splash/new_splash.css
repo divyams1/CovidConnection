@@ -59,4 +59,5 @@ li > a {
     color: white;
     background-color: black;
     border: none;
+    width: 100%;
 }
