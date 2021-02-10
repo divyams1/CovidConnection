@@ -49,7 +49,7 @@
 .map-container {
   width: 80%;
   height: 80%;
-  background-color:  #C2EDFF;
+  background-color:  #E5E5E5;
 }
 
 .covid-connection-header {
@@ -134,7 +134,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Oxygen:wght@300&display=swap');
 ​
 #favor-form {
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
   /* font-family: 'Oxygen', sans-serif; */
   /* display: flex; */
   margin-left: 50px;
@@ -189,7 +189,7 @@
 ​
 #favor-form-title {
   /* font-family: 'Oxygen', sans-serif; */
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
   margin-top: 100px;
   margin-left: 50px;
 }

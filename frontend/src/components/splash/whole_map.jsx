@@ -1,6 +1,7 @@
 import React from 'react';
 import MapContainer from './map';
 import NavBarContainer from './../splash/profile_nav_container';
+import NewNav from '../splash/new_splash_container';
 
 class WholeMap extends React.Component {
     constructor(props){
@@ -43,7 +44,7 @@ class WholeMap extends React.Component {
         return(
             
         <div>
-            <NavBarContainer />
+            <NewNav />
             <div className="map-head">
                 <div className='map-text'>
                     <h1> Favor Map </h1>

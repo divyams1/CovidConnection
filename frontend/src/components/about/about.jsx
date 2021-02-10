@@ -8,6 +8,7 @@ import './about.css'
 import NavBarContainer from './../splash/profile_nav_container';
 import gitlogo from './Git-Icon-1788C.png'
 import linklogo from './LI-In-Bug.png'
+import NewNav from '../splash/new_splash_container';
 
 class About extends React.Component {
 
@@ -16,7 +17,7 @@ class About extends React.Component {
         const link = <img alt="icon" src={linklogo} width={40} height = {40} ></img>
         return(
             <div>
-                <NavBarContainer />
+                <NewNav />
            
             <div className="about">
                     <div className="about-header">

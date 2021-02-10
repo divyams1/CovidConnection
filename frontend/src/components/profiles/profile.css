@@ -33,7 +33,7 @@ src: url('https://fonts.googleapis.com/css2?family=Langar&family=Press+Start+2P&
 background: #F0BBD4; 
 color: #001f3f;
 font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 20px;
 border: 1px solid #001f3f;
 padding: 10px;
@@ -68,7 +68,7 @@ margin-left: 20px;
 
 background: #005eaa; 
 color:white;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 20px;
 border: 1px solid #001f3f;
 padding: 10px;
@@ -83,7 +83,7 @@ justify-content: center;
 
 .showLinks {
   text-decoration: underline;
-  color: #005eaa;
+  color: #14213D;
 }
 
 .showLinksCurrently {
@@ -101,7 +101,7 @@ justify-content: center;
 background: #F0BBD4; 
 color: #001f3f;
 font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 20px;
 border: 1px solid #001f3f;
 padding: 10px;
@@ -120,7 +120,7 @@ justify-content: center;
 background: #F0BBD4; 
 color: #001f3f;
 font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 20px;
 border: 1px solid #001f3f;
 padding: 10px;
@@ -143,7 +143,7 @@ justify-content: center;
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
   cursor: pointer;
   /* margin-left: -500px; */
 
@@ -164,9 +164,9 @@ justify-content: center;
 .prof-favors{
 
 
-color:#005eaa;
+color:#14213D;
 font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 24px;
 padding: 10px;
 border-radius: 0 ;
@@ -185,7 +185,7 @@ overflow: hidden;
 .small-prof-favors {
   color:#005eaa;
 font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 24px;
 padding: 10px;
 border-radius: 0 ;
@@ -240,7 +240,7 @@ text-align: center;
 .two-lists {
   display: flex;
   justify-content: center;
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
 }
 
 
@@ -250,7 +250,7 @@ text-align: center;
 
 color:#001f3f;
 font-weight: bolder;
-font-family: 'Josefin Sans', sans-serif;
+/* font-family: 'Josefin Sans', sans-serif; */
 font-size: 18px;
 /* margin-top: 300px; */
 
@@ -656,7 +656,7 @@ button.home-lk{
 
 .profile-view {
   /* background-color: #547AA5; */
-  background-color: #C2EDFF;
+  background-color: #E5E5E5;
   min-height: 100vh;
   
 }
@@ -678,7 +678,7 @@ button.home-lk{
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
   cursor: pointer;
   margin-right: 10px;
   
@@ -705,7 +705,7 @@ button.home-lk{
 }
 
 .favor-title {
-  color: #293132;
+  color: black;
   font-size: 60px;
   
   /* border: 1px solid black;
@@ -1214,7 +1214,8 @@ margin-left: -10px; */
    
 
    .favor-item {
-    border: 2px solid #005EAA;
+     color: #14213D;
+    border: 2px solid ;
     padding-bottom: 20px;
     border-radius: 12px;
     background-color: #f7fcfe;
@@ -1250,7 +1251,7 @@ margin-left: -10px; */
    }
 
    .favor-item-newsfeed {
-    border: 2px solid #005EAA;
+    border: 2px solid black;
     padding-bottom: 20px;
     border-radius: 12px;
      /* background-color: #fafaffea; */
@@ -1263,6 +1264,7 @@ margin-left: -10px; */
     height: auto;
     width: 40%;
     text-align: center;
+    color: #14213D;
     
 
    }
@@ -1333,8 +1335,7 @@ margin-left: -10px; */
 
    #currently-fulfilling {
     margin: 0;
-    height: 5px;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     font-size: medium;
     color: green
    }
