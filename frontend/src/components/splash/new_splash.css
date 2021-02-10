@@ -54,3 +54,9 @@ li > a {
     font-weight: bold;
     font-size: 350%;
 }
+
+.splash-new-btn-log {
+    color: white;
+    background-color: black;
+    border: none;
+}
