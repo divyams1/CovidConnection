@@ -1334,8 +1334,7 @@ margin-left: -10px; */
 
    #currently-fulfilling {
     margin: 0;
-    height: 5px;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     font-size: medium;
     color: green
    }
