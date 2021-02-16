@@ -1206,9 +1206,12 @@ margin-left: -10px; */
 
    .form-head{
 
-    color: #FFFFFF;
     font-weight: bolder;
 
+   }
+
+   #favor-form-title {
+     text-decoration: underline;
    }
 
    
@@ -1354,8 +1357,7 @@ margin-left: -10px; */
 
    .submit-btn[disabled] {
   cursor: not-allowed;
-  background-color: #f4f5f7;
-  color: #a5adba;
+  background-color: black;
 }
 
 
