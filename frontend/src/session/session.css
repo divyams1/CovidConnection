@@ -5,7 +5,7 @@
    overflow: hidden;
   background-color: aliceblue;
   margin: 0px 8px 0px 4px;
-  color: #001f3f;
+  color: black;
   
 
  }
@@ -113,7 +113,7 @@ border-radius: 8px;
  .submit-btn{
     /* top: 30px;
     right: 70px; */
-    background-color: #001f3f;
+    background-color: black;
     color: white ;
     position: relative;
     padding: 4px 8px;
@@ -135,3 +135,19 @@ border-radius: 8px;
       font-size: small;
     }
 
+    .error-box {
+      max-height: 20%;
+      overflow: hidden;
+    }
+
+    .covid-text-sign-up {
+      text-align: center;
+      margin: 0;
+      margin-bottom: 3%;
+    }
+
+    .error-box > p {
+      margin-bottom: 0;
+      margin-top: 2px;
+      color: red;
+    }

@@ -17,7 +17,7 @@
    #news a { text-decoration: none; color: white; }
    #abt a { text-decoration: none; color: white; }
    #pro a { text-decoration: none; color: white; }
-   #demo-sign a { text-decoration: none; color: blue; }
+   #demo-sign a { text-decoration: underline; color: black; }
 
    .nav-btns-child{
     /* top: 20px;
@@ -63,7 +63,7 @@ border: none;
    .nav-btns-child-login{
     /* top: 30px;
     right: 70px; */
-    background-color: #001f3f;
+    background-color: black;
     color: white ;
     position: relative;
     padding: 4px 8px;

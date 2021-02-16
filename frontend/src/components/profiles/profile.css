@@ -1295,23 +1295,23 @@ margin-left: -10px; */
 }
 
 .favor-item > .map-button {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   /* background-color: #005EAA; */
-  background-color: #00538C;
+  background-color: black;
   
 }
 
 .favor-item-accepted > .map-button {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   /* background-color: #005EAA; */
-  background-color: #00538C;
+  background-color: black;
   
 }
 
 .favor-item-newsfeed > .map-button {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   /* background-color: #005EAA; */
-  background-color: #00538C;
+  background-color: black;
   
 }
 

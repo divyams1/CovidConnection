@@ -83,10 +83,7 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <center>Welcome to Covid Connection! </center>
-          <br/>
-           <br/>
-             
+            <h1 className="covid-text-sign-up">Welcome to CovidConnection! </h1>
            <center>Please  Login or {this.props.other}</center>
           <center id="demo-sign"> Use <Link onClick={this.demoSignUp}>Demo</Link> </center>
             
