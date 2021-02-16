@@ -48,6 +48,7 @@ getLinks() {
   }
 
     render() {
+        const getStarted = this.props.loggedIn? this.props.profile : this.props.sign;
         const button_text = ( this.state.userShow ? "View All Favors" : "View Your Favors" )
         const request_text =  ( this.state.requestShow? "View Favor Requests" : "View Completed Favors")
         return (
@@ -57,7 +58,7 @@ getLinks() {
                 <div className="main-splash-items">
                     <h1 className="main-splash-text"> CovidConnection</h1>
                     <p> Connect with users across the world by making a favor or fufilling a favor</p>
-                    {this.props.sign} 
+                    {getStarted}
                 </div>
             </div>
         )

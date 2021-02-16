@@ -4,7 +4,7 @@ import { fetchFavors } from '../../actions/favor_actions';
 import Splash from './splash';
 import { logout } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-
+import {Link} from 'react-router-dom'
 const mSTP = state => {
     return {
         favors: state.entities.favors,
@@ -26,7 +26,8 @@ const mDTP = dispatch => {
         ,
     log: (<button  className="splash-btns"  onClick={() => dispatch(openModal('login'))}>
           Log In 
-        </button>)
+        </button>),
+    profile: ( <Link className="splash-main-button" to="/profile"> Get Started </Link>)
     }
 }
 

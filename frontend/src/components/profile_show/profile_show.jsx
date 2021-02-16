@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLifeRing, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import FavorsReducer from '../../reducers/favors_reducer';
 import NavBarContainer from './../splash/profile_nav_container';
-
+import NewNav from '../splash/new_splash_container'
 class ProfileShow extends React.Component {
     constructor(props) {
         super(props);
@@ -262,7 +262,7 @@ class ProfileShow extends React.Component {
 
       return (
         <>
-          <NavBarContainer />
+          <NewNav />
           <div className="profile-view">
            
       
