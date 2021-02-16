@@ -87,7 +87,7 @@ class FavorCreate extends React.Component {
                     </label> */}
                     <h2 className="form-head"> Description: </h2>
                     <label>
-                        <textarea id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
+                        <textarea className="text-area-label" id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
                     <br/>
                     <button id={"favor-form-button"}  disabled={!this.state.favor_title} onClick={this.handleSubmit}>Create Favor</button>

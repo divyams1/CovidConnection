@@ -3,7 +3,8 @@
    justify-content: center;
     flex-direction: column;
    overflow: hidden;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-color: whitesmoke;
   margin: 0px 8px 0px 4px;
   z-index: 100;
 
@@ -29,7 +30,7 @@ align-self: center;
    overflow: hidden;
    color: #001f3f;
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-   background-color: aliceblue;
+   /* background-color: aliceblue; */
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -39,11 +40,11 @@ align-self: center;
  .login-form-box {
    outline: 1px solid black;
    padding: 20px;
-   background:whitesmoke;
+   background-color:whitesmoke;
    position: relative;
    height: 500px;
    width: 500px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   border-radius: 8px;
 
  }
