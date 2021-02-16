@@ -159,4 +159,7 @@ border-radius: 8px;
 
      .text-area-label2 {
       height: 80%;
+      border-radius: 8px;
+      color: black;
+      width: 250px;
     }
