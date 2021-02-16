@@ -69,13 +69,13 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <div>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <p key={`error-${i}`}>
             {this.state.errors[error]}
-          </li>
+          </p>
         ))}
-      </ul>
+      </div>
     );
   }
 
@@ -83,13 +83,8 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <center>Welcome to the Covid Connection! </center>
+          <center>Welcome to Covid Connection! </center>
           <br/>
-
-            <center><img className="logo-img"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/></center>
-            
-
-           
            <br/>
              
            <center>Please  Login or {this.props.other}</center>

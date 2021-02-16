@@ -131,3 +131,7 @@ border-radius: 8px;
      filter: brightness(85%);
     }
 
+    .error-text-modal {
+      font-size: small;
+    }
+

@@ -85,13 +85,13 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <div>
         {Object.keys(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <p className="error-text-modal" key={`error-${i}`}>
             {this.props.errors[error]}
-          </li>
+          </p>
         ))}
-      </ul>
+      </div>
     );
   }
 
@@ -100,13 +100,8 @@ class SignupForm extends React.Component {
       <div className="login-form-container">
          
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <center>Welcome to the Covid Connection! </center>
-          <br/>
-
-             <center><img className="logo-img"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/></center>
-          
-          
-           <br/>
+          <center>Welcome to Covid Connection! </center>
+          <br></br>
            <center> Please  Sign Up or {this.props.other} </center>
         <center id="demo-sign"> Use <Link onClick={this.demoSignUp}>Demo</Link> </center>
 
