@@ -63,10 +63,14 @@ class FavorCreate extends React.Component {
             <div className="favor-create-form">
                 
                 <form id={"favor-form"}>
+
                     <center><h1 className="form-head" id={"favor-form-title"}> Create a Favor </h1></center>
 
                     <br/>
-                       <center><img className="logo-img"  src="https://i.ibb.co/5MynHJQ/Clogo3.png"/></center>
+                    <br/>
+                    <br/>
+                    <br/>
+                       
 
                      {/* <center><img className="logo-img"  src="https://i.ibb.co/1mHJgBD/C.png"/></center> */}
                      <div onClick={this.props.closeModal} className="close-x"><FontAwesomeIcon   icon={faTimes} className='fstylec'/></div>
@@ -74,7 +78,7 @@ class FavorCreate extends React.Component {
                     <div className="favor-form-div">
                     <h2 className="form-head"> Title: </h2>
                     <label>
-                        <input id={"input-form"} type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
+                        <input className="form-input" type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
                     {/* <h2 className="form-head"> Status:</h2>
                     <select value={this.state.favor_status} onChange={this.handleDropInput} >
@@ -86,11 +90,11 @@ class FavorCreate extends React.Component {
                         <input id={"input-form"} type='text' placeholder="Request"  />
                     </label> */}
                     <h2 className="form-head"> Description: </h2>
-                    <label>
-                        <textarea className="text-area-label" id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
+                    <label className="text-area-label">
+                        <textarea className="text-area-label2" id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
                     <br/>
-                    <button id={"favor-form-button"}  disabled={!this.state.favor_title} onClick={this.handleSubmit}>Create Favor</button>
+                    <button  className="submit-btn"  disabled={!this.state.favor_title} onClick={this.handleSubmit}>Create Favor</button>
                     </div>
                 </form>
             </div>
@@ -104,3 +108,5 @@ class FavorCreate extends React.Component {
 }
 
 export default FavorCreate;
+
+
