@@ -29,13 +29,13 @@ class About extends React.Component {
                             <h2> Divyam Satyarthi </h2>
                             <div className="links">
                                 <div className="link-text-image">
-                                    <a href="https://github.com/divyams1">
+                                    <a target="_blank" href="https://github.com/divyams1">
                                         {git}
                                         <p> Github </p>
                                     </a>
                                 </div>
                                 <div className="link-text-image">
-                                    <a href="https://www.linkedin.com/in/divyam-satyarthi-b6628513b/">
+                                    <a target="_blank" href="https://www.linkedin.com/in/divyam-satyarthi-b6628513b/">
                                     {link}
                                     <p> LinkedIn</p>
                                     </a>
@@ -51,13 +51,13 @@ class About extends React.Component {
                             <h2> Anthony Collichio </h2>
                             <div className="links">
                                     <div className="link-text-image">
-                                <a  href="https://github.com/collich55">
+                                <a  target="_blank" href="https://github.com/collich55">
                                             {git}
                                             <p> Github</p>
                                             </a>
                                     </div>
                                     <div className="link-text-image">
-                                <a  href="https://www.linkedin.com/in/anthony-collichio-451b11103/"> 
+                                <a target="_blank"  href="https://www.linkedin.com/in/anthony-collichio-451b11103/"> 
                                             {link}
                                             <p> LinkedIn </p>
                                         </a>
