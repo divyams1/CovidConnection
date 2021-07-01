@@ -78,7 +78,7 @@ class FavorCreate extends React.Component {
                     <div className="favor-form-div">
                     <h2 className="form-head"> Title: </h2>
                     <label>
-                        <input className="form-input" type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
+                        <input required className="form-input" type='text' placeholder="Title" value={this.state.favor_title} onChange={this.handleInput('favor_title')} />
                     </label>
                     {/* <h2 className="form-head"> Status:</h2>
                     <select value={this.state.favor_status} onChange={this.handleDropInput} >
@@ -94,11 +94,12 @@ class FavorCreate extends React.Component {
                         <textarea className="text-area-label2" id={"text-form"} type='text' placeholder="Description" value={this.state.favor_description} onChange={this.handleInput('favor_description')} />
                     </label>
                     <br/>
-                    <button  className="submit-btn"  disabled={!this.state.favor_title} onClick={this.handleSubmit}>Create Favor</button>
+                    <button  className="submit-btn" disabled={!this.state.favor_title || !this.state.favor_description}  onClick={this.handleSubmit}>Create Favor</button>
                     </div>
                 </form>
             </div>
         )
+        
     return( 
         <div>
             {display}
