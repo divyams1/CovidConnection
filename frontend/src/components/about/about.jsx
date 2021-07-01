@@ -45,7 +45,26 @@ class About extends React.Component {
                             <h4> Phone: 443-838-7815</h4>
                         </div>
 
-                        
+                        <div className="person-div">
+                            <h2> Aaron Robinson </h2>
+                            <div className="links">
+                                <div className="link-text-image">
+                                    <a href="https://github.com/indierusky">
+                                        {git}
+                                        <p> Github </p>
+                                    </a>
+                                </div>
+                                <div className="link-text-image">
+                                    <a href="https://www.linkedin.com/in/aaron-robinson-258a77201/">
+                                        {link}
+                                        <p> LinkedIn </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <h4> Email: aaronjrobinson@hotmail.com </h4>
+                            <h4> Phone: 347-664-0151</h4>
+
+                        </div>
 
                         <div className="person-div">
                             <h2> Anthony Collichio </h2>
